@@ -6,10 +6,16 @@ import random
 TOKEN = os.getenv("BOT_TOKEN")
 CHANNEL_ID = -1003961580601
 matches = [
-    "⚽ Milan vs Roma",
-    "⚽ Arsenal vs Chelsea",
-    "⚽ Real Madrid vs Barcelona",
-    "⚽ Inter vs Juventus"
+matches = [
+    "⚽ Manchester City vs Arsenal",
+    "⚽ Real Madrid vs Girona",
+    "⚽ Inter vs Napoli",
+    "⚽ PSG vs Monaco",
+    "⚽ Bayern Munich vs Dortmund",
+    "⚽ Liverpool vs Tottenham",
+    "⚽ Juventus vs Milan",
+    "⚽ Barcelona vs Atletico Madrid"
+]    
 ]
 
 over_signals = [
