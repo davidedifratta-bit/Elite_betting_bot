@@ -150,5 +150,22 @@ app.add_handler(CommandHandler("vip", vip))
 app.add_handler(CallbackQueryHandler(buttons))
 
 print("Bot avviato!!")
+from telegram.ext import JobQueue
 
+async def auto_signal(context: ContextTypes.DEFAULT_TYPE):
+
+    match = random.choice(matches)
+
+    await context.bot.send_message(
+        chat_id=CHANNEL_ID,
+        text=
+            f"🔥 DAILY SIGNAL\n\n"
+            f"{match}\n"
+            f"✅ Over 2.5 Goals @1.85\n"
+            f"Confidence: 82%"
+    )
+
+job_queue = app.job_queue
+
+job_queue.run_repeating(auto_signal, interval=3600, first=10)
 app.run_polling()
