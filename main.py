@@ -25,13 +25,19 @@ btts_signals = [
 ]
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
+
+    keyboard = [
+        [InlineKeyboardButton("🎯 Daily Signal", callback_data="signal")],
+        [InlineKeyboardButton("🔥 Over 2.5", callback_data="over")],
+        [InlineKeyboardButton("⚽ BTTS", callback_data="btts")],
+        [InlineKeyboardButton("💎 VIP", callback_data="vip")]
+    ]
+
+    reply_markup = InlineKeyboardMarkup(keyboard)
+
     await update.message.reply_text(
-        "🔥 ELITE BETTING LAB 🔥\n\n"
-        "Available Commands:\n\n"
-        "/signal - Daily Signal\n"
-        "/over - Over 2.5 Prediction\n"
-        "/btts - BTTS Prediction\n"
-        "/vip - VIP Access"
+        "🔥 ELITE BETTING LAB 🔥\n\nChoose an option:",
+        reply_markup=reply_markup
     )
 
 async def signal(update: Update, context: ContextTypes.DEFAULT_TYPE):
