@@ -4,7 +4,7 @@ import os
 import random
 
 TOKEN = os.getenv("BOT_TOKEN")
-
+CHANNEL_ID = -1003961580601
 matches = [
     "⚽ Milan vs Roma",
     "⚽ Arsenal vs Chelsea",
