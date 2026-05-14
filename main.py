@@ -141,6 +141,6 @@ app.add_handler(CommandHandler("vip", vip))
 
 app.add_handler(CallbackQueryHandler(buttons))
 
-print("Bot avviato...")
+print("Bot avviato!!")
 
 app.run_polling()
