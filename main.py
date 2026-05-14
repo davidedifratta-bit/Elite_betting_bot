@@ -18,8 +18,8 @@ async def signal(update: Update, context):
 app = ApplicationBuilder().token(TOKEN).build()
 
 app.add_handler(CommandHandler("start", start))
-
+app.add_handler(CommandHandler("signal", signal))
 print("Bot avviato...")
 
 app.run_polling()
-app.add_handler(CommandHandler("signal", signal))
+
