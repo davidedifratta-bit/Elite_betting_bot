@@ -64,7 +64,6 @@ f"💰 Stake: 8/10\n"
 f"📊 Confidence: 82%\n\n"
 f"💎 Elite Betting Lab"        
 )
-
 async def over(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     match = random.choice(over_signals)
