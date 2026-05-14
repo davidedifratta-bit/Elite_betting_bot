@@ -10,7 +10,7 @@ import random
 
 TOKEN = os.getenv("BOT_TOKEN")
 
-CHAT_ID = "METTI_QUI_IL_TUO_CHAT_ID"
+CHAT_ID = "492781714"
 
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
