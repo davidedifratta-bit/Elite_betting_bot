@@ -5,26 +5,23 @@ from telegram.ext import (
     ContextTypes
 )
 
-import os
 import random
+import os
 
 TOKEN = os.getenv("BOT_TOKEN")
 
-CHAT_ID = "492781714"
-
+matches = [
+    "⚽ Milan vs Roma",
+    "⚽ Arsenal vs Chelsea",
+    "⚽ Real Madrid vs Barcelona",
+    "⚽ Inter vs Juventus",
+    "⚽ PSG vs Marseille"
+]
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await update.message.reply_text("Bot online! 🔥")
-
+    await update.message.reply_text("🤖 Bot online!")
 
 async def signal(update: Update, context: ContextTypes.DEFAULT_TYPE):
-
-    matches = [
-        "⚽ Inter vs Milan",
-        "⚽ Arsenal vs Chelsea",
-        "⚽ Real Madrid vs Barcelona"
-    ]
-
     match = random.choice(matches)
 
     await update.message.reply_text(
@@ -34,35 +31,11 @@ async def signal(update: Update, context: ContextTypes.DEFAULT_TYPE):
         f"Confidence: 82%"
     )
 
-
-async def auto_signal(context: ContextTypes.DEFAULT_TYPE):
-
-    matches = [
-        "⚽ Inter vs Milan",
-        "⚽ Arsenal vs Chelsea",
-        "⚽ Real Madrid vs Barcelona"
-    ]
-
-    match = random.choice(matches)
-
-    await context.bot.send_message(
-        chat_id=CHAT_ID,
-        text=
-        f"🔥 AUTO SIGNAL\n\n"
-        f"{match}\n"
-        f"✅ BTTS YES @1.72\n"
-        f"Confidence: 79%"
-    )
-
-
 app = ApplicationBuilder().token(TOKEN).build()
 
 app.add_handler(CommandHandler("start", start))
 app.add_handler(CommandHandler("signal", signal))
 
-job_queue = app.job_queue
-job_queue.run_repeating(auto_signal, interval=86400, first=10)
-
-print("Bot avviato... 🔥")
+print("Bot avviato...")
 
 app.run_polling()
