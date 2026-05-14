@@ -25,7 +25,14 @@ btts_signals = [
 ]
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await update.message.reply_text("Bot online!")
+    await update.message.reply_text(
+        "🔥 ELITE BETTING LAB 🔥\n\n"
+        "Available Commands:\n\n"
+        "/signal - Daily Signal\n"
+        "/over - Over 2.5 Prediction\n"
+        "/btts - BTTS Prediction\n"
+        "/vip - VIP Access"
+    )
 
 async def signal(update: Update, context: ContextTypes.DEFAULT_TYPE):
     match = random.choice(matches)
