@@ -50,6 +50,14 @@ async def signal(update: Update, context: ContextTypes.DEFAULT_TYPE):
         f"✅ Over 2.5 Goals @1.85\n"
         f"Confidence: 82%"
     )
+    await context.bot.send_message(
+    chat_id=CHANNEL_ID,
+    text=
+        f"🔥 DAILY SIGNAL\n\n"
+        f"{match}\n"
+        f"✅ Over 2.5 Goals @1.85\n"
+        f"Confidence: 82%"
+)
 
 async def over(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
