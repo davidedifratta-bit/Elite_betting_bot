@@ -54,8 +54,8 @@ f"📈 Odds: 1.85\n"
 f"💰 Stake: 8/10\n"
 f"📊 Confidence: 82%\n\n"
 f"💎 Elite Betting Lab"
- )   
-    await context.bot.send_message(
+)   
+await context.bot.send_message(
     chat_id=CHANNEL_ID,
     text=
         
