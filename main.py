@@ -1,7 +1,7 @@
 from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
-import random
 import os
+import random
 
 TOKEN = os.getenv("BOT_TOKEN")
 
@@ -9,12 +9,11 @@ matches = [
     "⚽ Milan vs Roma",
     "⚽ Arsenal vs Chelsea",
     "⚽ Real Madrid vs Barcelona",
-    "⚽ Inter vs Juventus",
-    "⚽ PSG vs Marseille"
+    "⚽ Inter vs Juventus"
 ]
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await update.message.reply_text("🤖 Bot online!")
+    await update.message.reply_text("Bot online!")
 
 async def signal(update: Update, context: ContextTypes.DEFAULT_TYPE):
     match = random.choice(matches)
