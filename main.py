@@ -167,5 +167,5 @@ async def auto_signal(context: ContextTypes.DEFAULT_TYPE):
 
 job_queue = app.job_queue
 
-job_queue.run_repeating(auto_signal, interval=43200, first=10)
+
 app.run_polling()
