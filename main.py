@@ -1,5 +1,5 @@
-from telegram import Update , InlineKeyboardButton, InlineKeyboardMarkup
-from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
+from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
+from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes, CallbackQueryHandler
 import os
 import random
 
@@ -41,6 +41,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     )
 
 async def signal(update: Update, context: ContextTypes.DEFAULT_TYPE):
+
     match = random.choice(matches)
 
     await update.message.reply_text(
@@ -51,6 +52,7 @@ async def signal(update: Update, context: ContextTypes.DEFAULT_TYPE):
     )
 
 async def over(update: Update, context: ContextTypes.DEFAULT_TYPE):
+
     match = random.choice(over_signals)
 
     await update.message.reply_text(
@@ -61,6 +63,7 @@ async def over(update: Update, context: ContextTypes.DEFAULT_TYPE):
     )
 
 async def btts(update: Update, context: ContextTypes.DEFAULT_TYPE):
+
     match = random.choice(btts_signals)
 
     await update.message.reply_text(
@@ -71,6 +74,7 @@ async def btts(update: Update, context: ContextTypes.DEFAULT_TYPE):
     )
 
 async def vip(update: Update, context: ContextTypes.DEFAULT_TYPE):
+
     await update.message.reply_text(
         "💎 VIP ACCESS\n\n"
         "VIP Signals Daily\n"
@@ -79,6 +83,54 @@ async def vip(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "Contact admin: @TUOUSERNAME"
     )
 
+async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
+
+    query = update.callback_query
+    await query.answer()
+
+    if query.data == "signal":
+
+        match = random.choice(matches)
+
+        await query.message.reply_text(
+            f"🔥 DAILY SIGNAL\n\n"
+            f"{match}\n"
+            f"✅ Over 2.5 Goals @1.85\n"
+            f"Confidence: 82%"
+        )
+
+    elif query.data == "over":
+
+        match = random.choice(over_signals)
+
+        await query.message.reply_text(
+            f"🔥 OVER SIGNAL\n\n"
+            f"{match}\n"
+            f"✅ Over 2.5 Goals\n"
+            f"Odds: 1.80"
+        )
+
+    elif query.data == "btts":
+
+        match = random.choice(btts_signals)
+
+        await query.message.reply_text(
+            f"🔥 BTTS SIGNAL\n\n"
+            f"{match}\n"
+            f"✅ Both Teams To Score\n"
+            f"Odds: 1.75"
+        )
+
+    elif query.data == "vip":
+
+        await query.message.reply_text(
+            "💎 VIP ACCESS\n\n"
+            "VIP Signals Daily\n"
+            "High Odds Bets\n"
+            "Safe Predictions\n\n"
+            "Contact admin: @TUOUSERNAME"
+        )
+
 app = ApplicationBuilder().token(TOKEN).build()
 
 app.add_handler(CommandHandler("start", start))
@@ -86,6 +138,8 @@ app.add_handler(CommandHandler("signal", signal))
 app.add_handler(CommandHandler("over", over))
 app.add_handler(CommandHandler("btts", btts))
 app.add_handler(CommandHandler("vip", vip))
+
+app.add_handler(CallbackQueryHandler(buttons))
 
 print("Bot avviato...")
 
