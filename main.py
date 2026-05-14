@@ -17,3 +17,4 @@ app.add_handler(CommandHandler("start", start))
 print("Bot avviato...")
 
 app.run_polling()
+printprint("BOT AVVIATO")
