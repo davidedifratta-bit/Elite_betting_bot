@@ -46,7 +46,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
 async def signal(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     match = random.choice(matches)
-await update.message.reply_text(
+        await update.message.reply_text(
     f"🔥 ELITE DAILY PICK 🔥\n\n"
 f"⚽ Match: {match}\n"
 f"🎯 Market: Over 2.5 Goals\n"
@@ -55,7 +55,7 @@ f"💰 Stake: 8/10\n"
 f"📊 Confidence: 82%\n\n"
 f"💎 Elite Betting Lab"
 )   
-await context.bot.send_message(
+    await context.bot.send_message(
     chat_id=CHANNEL_ID,
     text=
         
