@@ -1,5 +1,5 @@
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
-from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes, CallbackQueryHandler
+from telegram.ext import ApplicationBuilder, CommandHandler, CallbackQueryHandler, ContextTypes, JobQueue 
 import os
 import randomi
 
@@ -212,7 +212,7 @@ app.add_handler(CommandHandler("vip", vip))
 app.add_handler(CallbackQueryHandler(buttons))
 
 print("Bot avviato!!")
-from telegram.ext import JobQueue
+
 
 async def auto_signal(context: ContextTypes.DEFAULT_TYPE):
 
