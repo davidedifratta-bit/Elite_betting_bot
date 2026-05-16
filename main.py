@@ -1,7 +1,7 @@
-mi from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
+ from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import ApplicationBuilder, CommandHandler, CallbackQueryHandler, ContextTypes, JobQueue 
 import os
-import randomi
+import random
 
 TOKEN = os.getenv("BOT_TOKEN")
 CHANNEL_ID = -1003961580601
