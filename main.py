@@ -20,7 +20,7 @@ matches = [
         "odds": "1.74",
         "stake": "7/10",
         "confidence": "79%",
-        "priority": "low"
+        "priority": "high"
     },
     {
         "match": "⚽ Inter vs Napoli",
