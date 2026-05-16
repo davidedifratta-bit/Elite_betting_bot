@@ -66,8 +66,8 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 async def signal(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
-    high_priority = [m for m in matches if m["priority"] == "high"]
-    match = random.choice(high_priority)
+        high_priority = [m for m in matches if m["priority"] == "high"]
+        match = random.choice(high_priority)
 
     await update.message.reply_text(
         f"🔥 ELITE DAILY PICK 🔥\n\n"
