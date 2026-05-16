@@ -231,5 +231,8 @@ f"📊 Confidence: {match['confidence']}"
 
 job_queue = app.job_queue
 
+job_queue.run_repeating(auto_signal, interval=3600, first=10)
+
+print("Bot avviato!")
 
 app.run_polling()
