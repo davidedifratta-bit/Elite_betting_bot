@@ -6,25 +6,41 @@ import random
 TOKEN = os.getenv("BOT_TOKEN")
 CHANNEL_ID = -1003961580601
 matches = [
-    "⚽ Manchester City vs Arsenal",
-    "⚽ Real Madrid vs Girona",
-    "⚽ Inter vs Napoli",
-    "⚽ PSG vs Monaco",
-    "⚽ Bayern Munich vs Dortmund",
-    "⚽ Liverpool vs Tottenham",
-    "⚽ Juventus vs Milan",
-    "⚽ Barcelona vs Atletico Madrid"
-]    
-over_signals = [
-    "⚽ Milan vs Roma",
-    "⚽ Arsenal vs Chelsea",
-    "⚽ Inter vs Juventus"
-]
-
-btts_signals = [
-    "⚽ Liverpool vs Tottenham",
-    "⚽ PSG vs Monaco",
-    "⚽ Napoli vs Atalanta"
+    {
+        "match": "⚽ Manchester City vs Arsenal",
+        "market": "Over 2.5 Goals",
+        "odds": "1.85",
+        "stake": "8/10",
+        "confidence": "82%"
+    },
+    {
+        "match": "⚽ Real Madrid vs Girona",
+        "market": "BTTS",
+        "odds": "1.74",
+        "stake": "7/10",
+        "confidence": "79%"
+    },
+    {
+        "match": "⚽ Inter vs Napoli",
+        "market": "Over 2.5 Goals",
+        "odds": "1.91",
+        "stake": "9/10",
+        "confidence": "86%"
+    },
+    {
+        "match": "⚽ PSG vs Monaco",
+        "market": "BTTS",
+        "odds": "1.68",
+        "stake": "6/10",
+        "confidence": "77%"
+    },
+    {
+        "match": "⚽ Bayern Munich vs Dortmund",
+        "market": "Over 3.5 Goals",
+        "odds": "2.05",
+        "stake": "8/10",
+        "confidence": "84%"
+    }
 ]
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -107,25 +123,29 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     if query.data == "signal":
 
-        match = random.choice(matches)
+       pick = random.choice(matches) 
 
-        await query.message.reply_text(
-            f"🔥 DAILY SIGNAL\n\n"
-            f"{match}\n"
-            f"✅ Over 2.5 Goals @1.85\n"
-            f"Confidence: 82%"
-        )
+       await update.message.reply_text(
+    f"🔥 ELITE DAILY PICK 🔥\n\n"
+    f"{pick['match']}\n"
+    f"🎯 Market: {pick['market']}\n"
+    f"📈 Odds: {pick['odds']}\n"
+    f"💰 Stake: {pick['stake']}\n"
+    f"📊 Confidence: {pick['confidence']}\n\n"
+    f"💎 Elite Betting Lab"
+)
 
-    elif query.data == "over":
-
-        match = random.choice(over_signals)
-
-        await query.message.reply_text(
-            f"🔥 OVER SIGNAL\n\n"
-            f"{match}\n"
-            f"✅ Over 2.5 Goals\n"
-            f"Odds: 1.80"
-        )
+await context.bot.send_message(
+    chat_id=CHANNEL_ID,
+    text=
+    f"🔥 ELITE DAILY PICK 🔥\n\n"
+    f"{pick['match']}\n"
+    f"🎯 Market: {pick['market']}\n"
+    f"📈 Odds: {pick['odds']}\n"
+    f"💰 Stake: {pick['stake']}\n"
+    f"📊 Confidence: {pick['confidence']}\n\n"
+    f"💎 Elite Betting Lab"
+) 
 
     elif query.data == "btts":
 
