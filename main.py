@@ -69,7 +69,7 @@ async def signal(update: Update, context: ContextTypes.DEFAULT_TYPE):
         high_priority = [m for m in matches if m["priority"] == "high"]
         match = random.choice(high_priority)
 
-    await update.message.reply_text(
+        await update.message.reply_text(
         f"🔥 ELITE DAILY PICK 🔥\n\n"
         f"⚽ Match: {match['match']}\n"
         f"🎯 Market: {match['market']}\n"
@@ -79,7 +79,7 @@ async def signal(update: Update, context: ContextTypes.DEFAULT_TYPE):
         f"💎 Elite Betting Lab"
     )
 
-    await context.bot.send_message(
+        await context.bot.send_message(
         chat_id=CHANNEL_ID,
         text=
         f"⚽ Match: {match['match']}\n"
