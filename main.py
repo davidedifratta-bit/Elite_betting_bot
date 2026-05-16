@@ -142,7 +142,8 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
 )
 elif query.data == "over":
 
-    pick = random.choice(matches)
+    high_priority = [m for m in matches if m["priority"] == "high"]
+    pick = random.choice(high_priority)
 
     await update.message.reply_text(
         f"🔥 OVER SIGNAL 🔥\n\n"
