@@ -95,7 +95,9 @@ async def over(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     await update.message.reply_text(
         f"🔥 OVER SIGNAL\n\n"
-        f"{match}\n"
+        f"⚽ Match: {match['match']}\n"
+        f"🎯 Market: {match['market']}\n"
+        f"📈 Odds: {match['odds']}\n"
         f"✅ Over 2.5 Goals\n"
         f"Odds: 1.80"
     )
