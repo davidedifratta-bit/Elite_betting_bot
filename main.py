@@ -141,13 +141,12 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
        f"💰 Stake: {pick['stake']}\n"
        f"📊 Confidence: {pick['confidence']}\n\n"
        f"💎 Elite Betting Lab"
-)
-elif query.data == "over":
+       )
+        elif query.data == "over":
+        high_priority = [m for m in matches if m["priority"] == "high"]
+        pick = random.choice(high_priority)
 
-    high_priority = [m for m in matches if m["priority"] == "high"]
-    pick = random.choice(high_priority)
-
-    await update.message.reply_text(
+        await update.message.reply_text(
         f"🔥 OVER SIGNAL 🔥\n\n"
         f"{pick['match']}\n"
         f"🎯 Market: Over 2.5 Goals\n"
@@ -157,11 +156,11 @@ elif query.data == "over":
         f"💎 Elite Betting Lab"
     )
 
-elif query.data == "btts":
+        elif query.data == "btts":
 
-    pick = random.choice(matches)
+        pick = random.choice(matches)
 
-    await update.message.reply_text(
+        await update.message.reply_text(
         f"⚽ BTTS SIGNAL ⚽\n\n"
         f"{pick['match']}\n"
         f"🎯 Market: BTTS YES\n"
@@ -170,30 +169,23 @@ elif query.data == "btts":
         f"📊 Confidence: {pick['confidence']}\n\n"
         f"💎 Elite Betting Lab"
     )
-await context.bot.send_message(
-    chat_id=CHANNEL_ID,
-    text=
-    f"🔥 ELITE DAILY PICK 🔥\n\n"
-    f"{pick['match']}\n"
-    f"🎯 Market: {pick['market']}\n"
-    f"📈 Odds: {pick['odds']}\n"
-    f"💰 Stake: {pick['stake']}\n"
-    f"📊 Confidence: {pick['confidence']}\n\n"
-    f"💎 Elite Betting Lab"
+        await context.bot.send_message(
+        chat_id=CHANNEL_ID,
+        text=
+        f"🔥 ELITE DAILY PICK 🔥\n\n"
+        f"{pick['match']}\n"
+        f"🎯 Market: {pick['market']}\n"
+        f"📈 Odds: {pick['odds']}\n"
+        f"💰 Stake: {pick['stake']}\n"
+        f"📊 Confidence: {pick['confidence']}\n\n"
+        f"💎 Elite Betting Lab"
 ) 
 
-    elif query.data == "btts":
+        elif query.data == "vip":
 
-        match = random.choice(btts_signals)
 
-        await query.message.reply_text(
-            f"🔥 BTTS SIGNAL\n\n"
-            f"{match}\n"
-            f"✅ Both Teams To Score\n"
-            f"Odds: 1.75"
-        )
 
-    elif query.data == "vip":
+    
 
         await query.message.reply_text(
             "💎 VIP ACCESS\n\n"
@@ -224,9 +216,9 @@ async def auto_signal(context: ContextTypes.DEFAULT_TYPE):
         chat_id=CHANNEL_ID,
         text=
         f"⚽ Match: {match['match']}\n"
-f"🎯 Market: {match['market']}\n"
-f"📈 Odds: {match['odds']}\n"
-f"📊 Confidence: {match['confidence']}"    
+        f"🎯 Market: {match['market']}\n"
+        f"📈 Odds: {match['odds']}\n"
+        f"📊 Confidence: {match['confidence']}"    
     )
 
 job_queue = app.job_queue
