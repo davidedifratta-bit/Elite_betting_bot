@@ -134,7 +134,33 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
     f"📊 Confidence: {pick['confidence']}\n\n"
     f"💎 Elite Betting Lab"
 )
+elif query.data == "over":
 
+    pick = random.choice(matches)
+
+    await update.message.reply_text(
+        f"🔥 OVER SIGNAL 🔥\n\n"
+        f"{pick['match']}\n"
+        f"🎯 Market: Over 2.5 Goals\n"
+        f"📈 Odds: {pick['odds']}\n"
+        f"💰 Stake: {pick['stake']}\n"
+        f"📊 Confidence: {pick['confidence']}\n\n"
+        f"💎 Elite Betting Lab"
+    )
+
+elif query.data == "btts":
+
+    pick = random.choice(matches)
+
+    await update.message.reply_text(
+        f"⚽ BTTS SIGNAL ⚽\n\n"
+        f"{pick['match']}\n"
+        f"🎯 Market: BTTS YES\n"
+        f"📈 Odds: {pick['odds']}\n"
+        f"💰 Stake: {pick['stake']}\n"
+        f"📊 Confidence: {pick['confidence']}\n\n"
+        f"💎 Elite Betting Lab"
+    )
 await context.bot.send_message(
     chat_id=CHANNEL_ID,
     text=
