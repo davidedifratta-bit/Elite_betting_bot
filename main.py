@@ -1,4 +1,4 @@
-from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
+mi from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import ApplicationBuilder, CommandHandler, CallbackQueryHandler, ContextTypes, JobQueue 
 import os
 import randomi
@@ -130,17 +130,17 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     if query.data == "signal":
 
-    high_priority = [m for m in matches if m["priority"] == "high"]
-    pick = random.choice(high_priority)    
+       high_priority = [m for m in matches if m["priority"] == "high"]
+       pick = random.choice(high_priority)    
 
        await update.message.reply_text(
-    f"🔥 ELITE DAILY PICK 🔥\n\n"
-    f"{pick['match']}\n"
-    f"🎯 Market: {pick['market']}\n"
-    f"📈 Odds: {pick['odds']}\n"
-    f"💰 Stake: {pick['stake']}\n"
-    f"📊 Confidence: {pick['confidence']}\n\n"
-    f"💎 Elite Betting Lab"
+       f"🔥 ELITE DAILY PICK 🔥\n\n"
+       f"{pick['match']}\n"
+       f"🎯 Market: {pick['market']}\n"
+       f"📈 Odds: {pick['odds']}\n"
+       f"💰 Stake: {pick['stake']}\n"
+       f"📊 Confidence: {pick['confidence']}\n\n"
+       f"💎 Elite Betting Lab"
 )
 elif query.data == "over":
 
