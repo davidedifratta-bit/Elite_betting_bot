@@ -11,35 +11,40 @@ matches = [
         "market": "Over 2.5 Goals",
         "odds": "1.85",
         "stake": "8/10",
-        "confidence": "82%"
+        "confidence": "82%",
+        "priority": "high"
     },
     {
         "match": "⚽ Real Madrid vs Girona",
         "market": "BTTS",
         "odds": "1.74",
         "stake": "7/10",
-        "confidence": "79%"
+        "confidence": "79%",
+        "priority": "low"
     },
     {
         "match": "⚽ Inter vs Napoli",
         "market": "Over 2.5 Goals",
         "odds": "1.91",
         "stake": "9/10",
-        "confidence": "86%"
+        "confidence": "86%",
+        "priority": "high"
     },
     {
         "match": "⚽ PSG vs Monaco",
         "market": "BTTS",
         "odds": "1.68",
         "stake": "6/10",
-        "confidence": "77%"
+        "confidence": "77%",
+        "priority": "high"
     },
     {
         "match": "⚽ Bayern Munich vs Dortmund",
         "market": "Over 3.5 Goals",
         "odds": "2.05",
         "stake": "8/10",
-        "confidence": "84%"
+        "confidence": "84%",
+        "priority": "high"
     }
 ]
 
@@ -123,7 +128,8 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     if query.data == "signal":
 
-       pick = random.choice(matches) 
+    high_priority = [m for m in matches if m["priority"] == "high"]
+    pick = random.choice(high_priority)    
 
        await update.message.reply_text(
     f"🔥 ELITE DAILY PICK 🔥\n\n"
