@@ -228,8 +228,7 @@ async def auto_signal(context: ContextTypes.DEFAULT_TYPE):
         f"⚽ Match: {match['match']}\n"
         f"🎯 Market: {match['market']}\n"
         f"📈 Odds: {match['odds']}\n"
-        f"📊 Confidence: {match['confidence']}"    
-    )
+        f"📊 Confidence: {match['
 
 job_queue = app.job_queue
 
