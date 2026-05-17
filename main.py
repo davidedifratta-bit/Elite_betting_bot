@@ -182,7 +182,17 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
 ) 
 
         elif query.data == "vip":
+        pick = random.choice(matches)
 
+        await update.message.reply_text(
+            f"💎 VIP SIGNAL 💎\n\n"
+            f"{pick['match']}\n"
+            f"🎯 Market: {pick['market']}\n"
+            f"📈 Odds: {pick['odds']}\n"
+            f"💰 Stake: {pick['stake']}\n"
+            f"📊 Confidence: {pick['confidence']}\n"
+            f"💎 Elite Betting Lab"
+            )
 
 
     
