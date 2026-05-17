@@ -156,7 +156,7 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
         f"💎 Elite Betting Lab"
       )
 
-    elif query.data == ''btts'':
+    elif query.data ==  "btts":
 
         pick = random.choice(matches)
 
