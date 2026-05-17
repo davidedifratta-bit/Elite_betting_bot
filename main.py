@@ -142,7 +142,7 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
        f"📊 Confidence: {pick['confidence']}\n\n"
        f"💎 Elite Betting Lab"
         )
-        elif query.data == "over":
+    elif query.data == "over":
         high_priority = [m for m in matches if m["priority"] == "high"]
         pick = random.choice(high_priority)
 
