@@ -154,7 +154,7 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
         f"💰 Stake: {pick['stake']}\n"
         f"📊 Confidence: {pick['confidence']}\n\n"
         f"💎 Elite Betting Lab"
-            )
+      )
 
         elif query.data == "btts":
 
