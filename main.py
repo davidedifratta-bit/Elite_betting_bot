@@ -47,7 +47,7 @@ matches = [
         "priority": "high"
     }
 ]
- ]
+]
  
 vip_matches = [
     {
