@@ -169,18 +169,7 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
         f"📊 Confidence: {pick['confidence']}\n\n"
         f"💎 Elite Betting Lab"
         )
-        elif query.data == "daily":
-            await context.bot.send_message(
-                chat_id=CHANNEL_ID,
-                text=
-                f"🔥 ELITE DAILY PICK 🔥\n\n"
-                f"{pick['match']}\n"
-                f"🎯 Market: {pick['market']}\n"
-                f"📈 Odds: {pick['odds']}\n"
-                f"💰 Stake: {pick['stake']}\n"
-                f"📊 Confidence: {pick['confidence']}\n\n"
-                f"💎 Elite Betting Lab"
-            ) 
+        
 
         elif query.data == "vip":
         pick = random.choice(matches)
