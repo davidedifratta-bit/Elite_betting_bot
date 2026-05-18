@@ -174,7 +174,7 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
         )
         
 
-        elif query.data == "vip":
+    elif query.data == "vip":
             pick = random.choice(matches)
 
             await query.edit_message_text(
