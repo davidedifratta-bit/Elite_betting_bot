@@ -227,4 +227,7 @@ job_queue.run_repeating(auto_signal, interval=3600, first=10)
 
 print("Bot avviato!")
 
-app.run_polling(drop_pending_updates=True)
+app.run_polling(
+    allowed_updates=Update.ALL_TYPES,
+    drop_pending_updates=True
+)
