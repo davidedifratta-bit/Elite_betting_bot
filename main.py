@@ -234,6 +234,7 @@ job_queue = app.job_queue
 
 job_queue.run_repeating(auto_signal, interval=3600, first=10)
 
-print("Bot avviato!")
 
+print("Bot avviato!")
+app.bot.delete_webhook(drop_pending_updates=True)
 app.run_polling()
