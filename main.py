@@ -66,7 +66,7 @@ vip_matches = [
         "confidence": "87%"
     }
 ]
-
+used_vip_matches = []
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
