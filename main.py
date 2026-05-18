@@ -92,16 +92,16 @@ async def signal(update: Update, context: ContextTypes.DEFAULT_TYPE):
 async def over(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     match = random.choice(over_signals)
-
     await update.message.reply_text(
-        f"🔥 OVER SIGNAL\n\n"
-        f"⚽ Match: {match['match']}\n"
-        f"🎯 Market: {match['market']}\n"
+        f"🔥 OVER 2.5 SIGNAL 🔥\n\n"
+        f"⚽ {match['match']}\n"
+        f"🎯 Market: Over 2.5 Goals\n"
         f"📈 Odds: {match['odds']}\n"
-        f"✅ Over 2.5 Goals\n"
-        f"Odds: 1.80"
+        f"💰 Stake: {match['stake']}\n"
+        f"🧠 AI Confidence: {match['confidence']}\n\n"
+        f"━━━━━━━━━━━━\n"
+        f"💎 Elite Betting Lab"
     )
-
 async def btts(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     match = random.choice(btts_signals)
