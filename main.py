@@ -195,7 +195,7 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
         
 
     elif query.data == "vip":
-            pick = random.choice(matches)
+            pick = random.choice(vip_matches)
 
             await query.edit_message_text(
             f"💎 VIP SIGNAL 💎\n\n"
