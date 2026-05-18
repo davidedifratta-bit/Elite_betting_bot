@@ -237,5 +237,7 @@ job_queue.run_repeating(auto_signal, interval=3600, first=10)
 
 
 print("Bot avviato!")
-app.bot.delete_webhook(drop_pending_updates=True)
-app.run_polling()
+import asyncio
+
+asyncio.run(app.bot.delete_webhook(drop_pending_updates=True))
+app.run_polling(close_loop=False)
