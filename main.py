@@ -204,7 +204,7 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
         pick = random.choice(available_vip)
         used_vip_matches.append(pick)
 
-            await query.edit_message_text(
+        await query.edit_message_text(
             f"💎 VIP SIGNAL 💎\n\n"
             f"{pick['match']}\n"
             f"🎯 Market: {pick['market']}\n"
