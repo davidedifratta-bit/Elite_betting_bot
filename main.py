@@ -47,6 +47,26 @@ matches = [
         "priority": "high"
     }
 ]
+ ]
+ 
+vip_matches = [
+    {
+        "match": "⚽ Manchester City vs Arsenal",
+        "market": "Over 2.5 Goals",
+        "odds": "1.85",
+        "stake": "8/10",
+        "confidence": "82%"
+    },
+
+    {
+        "match": "⚽ Real Madrid vs Barcelona",
+        "market": "BTTS YES",
+        "odds": "1.72",
+        "stake": "9/10",
+        "confidence": "87%"
+    }
+]
+
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
