@@ -172,9 +172,9 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
         
 
         if query.data == "vip":
-        pick = random.choice(matches)
+            pick = random.choice(matches)
 
-        await update.message.reply_text(
+            await update.message.reply_text(
             f"💎 VIP SIGNAL 💎\n\n"
             f"{pick['match']}\n"
             f"🎯 Market: {pick['market']}\n"
@@ -187,13 +187,7 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     
 
-        await query.message.reply_text(
-            "💎 VIP ACCESS\n\n"
-            "VIP Signals Daily\n"
-            "High Odds Bets\n"
-            "Safe Predictions\n\n"
-            "Contact admin: @TUOUSERNAME"
-        )
+        
 
 app = ApplicationBuilder().token(TOKEN).build()
 
