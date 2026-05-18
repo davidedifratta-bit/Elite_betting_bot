@@ -207,8 +207,8 @@ async def auto_signal(context: ContextTypes.DEFAULT_TYPE):
     available_matches = [m for m in matches if m not in used_matches]
 
     if not available_matches:
-    used_matches.clear()
-    available_matches = matches
+        used_matches.clear()
+        available_matches = matches
 
     match = random.choice(available_matches)
     used_matches.append(match)
