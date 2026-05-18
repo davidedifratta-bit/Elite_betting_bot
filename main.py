@@ -115,13 +115,16 @@ async def btts(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 async def vip(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
-    await update.message.reply_text(
-        "💎 VIP ACCESS\n\n"
-        "VIP Signals Daily\n"
-        "High Odds Bets\n"
-        "Safe Predictions\n\n"
-        "Contact admin: @TUOUSERNAME"
-    )
+       await update.message.reply_text(
+        "💎 VIP ACCESS 💎\n\n"
+        "🔥 Daily VIP Signals\n"
+        "📈 High Odds Bets\n"
+        "🧠 AI Premium Predictions\n"
+        "💰 High Confidence Picks\n\n"
+        "📩 Contact admin: @TUOUSERNAME\n\n"
+        "💎 Elite Betting Lab"
+    
+       )
 
 async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
