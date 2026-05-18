@@ -2,9 +2,11 @@ from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import ApplicationBuilder, CommandHandler, CallbackQueryHandler, ContextTypes, JobQueue 
 import os
 import random
-
+import requests
 TOKEN = os.getenv("BOT_TOKEN")
 CHANNEL_ID = -1003961580601
+FOOTYSTATS_API_KEY = os.getenv("FOOTYSTATS_API_KEY")
+used_matches = []
 matches = [
     {
         "match": "⚽ Manchester City vs Arsenal",
