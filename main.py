@@ -228,8 +228,8 @@ async def auto_signal(context: ContextTypes.DEFAULT_TYPE):
         f"⚽ Match: {match['match']}\n"
         f"🎯 Market: {match['market']}\n"
         f"📈 Odds: {match['odds']}\n"
-        f"📊 Confidence: {match['
-
+        f"📊 Confidence: {match['confidence']}\n\n"
+        )
 job_queue = app.job_queue
 
 job_queue.run_repeating(auto_signal, interval=3600, first=10)
