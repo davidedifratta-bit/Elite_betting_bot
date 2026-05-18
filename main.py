@@ -133,7 +133,7 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
        high_priority = [m for m in matches if m["priority"] == "high"]
        pick = random.choice(high_priority)    
 
-       await update.message.reply_text(
+       await query.message.reply_text(
        f"🔥 ELITE DAILY PICK 🔥\n\n"
        f"{pick['match']}\n"
        f"🎯 Market: {pick['market']}\n"
@@ -146,7 +146,7 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
         high_priority = [m for m in matches if m["priority"] == "high"]
         pick = random.choice(high_priority)
 
-        await update.message.reply_text(
+        await query.message.reply_text(
         f"🔥 OVER SIGNAL 🔥\n\n"
         f"{pick['match']}\n"
         f"🎯 Market: Over 2.5 Goals\n"
@@ -160,7 +160,7 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
         pick = random.choice(matches)
 
-        await update.message.reply_text(
+        await query.message.reply_text(
         f"⚽ BTTS SIGNAL ⚽\n\n"
         f"{pick['match']}\n"
         f"🎯 Market: BTTS YES\n"
@@ -174,7 +174,7 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
         if query.data == "vip":
             pick = random.choice(matches)
 
-            await update.message.reply_text(
+            await query.message.reply_text(
             f"💎 VIP SIGNAL 💎\n\n"
             f"{pick['match']}\n"
             f"🎯 Market: {pick['market']}\n"
