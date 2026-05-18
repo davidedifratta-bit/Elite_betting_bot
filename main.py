@@ -177,7 +177,7 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
         elif query.data == "vip":
             pick = random.choice(matches)
 
-            await query.message.reply_text(
+            await query.edit_message_text(
             f"💎 VIP SIGNAL 💎\n\n"
             f"{pick['match']}\n"
             f"🎯 Market: {pick['market']}\n"
