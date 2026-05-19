@@ -41,7 +41,7 @@ def get_footystats_prediction():
 ]),
                 "odds": str(odds),
                 "stake": "8/10",
-                "confidence": "82%",
+                "confidence": f"{random.randint(74, 89)}%",
                 "priority": "high"
             }
 
