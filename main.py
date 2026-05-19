@@ -26,7 +26,12 @@ def get_footystats_prediction():
         odds = match.get("odds_over25_ft", 0)
 
         if odds and 1.80 <= float(odds) <= 2.00:
+            match_name = f"{home_team} vs {away_team}"
 
+            if match_name in used_matches:
+                continue
+
+            used_matches.append(match_name)
             prediction = {
                 "match": f"⚽ {home_team} vs {away_team}",
                 "market": "Over 2.5 Goals",
