@@ -2,6 +2,7 @@ from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import ApplicationBuilder, CommandHandler, CallbackQueryHandler, ContextTypes, JobQueue 
 import os
 import random
+from datetime import datetime
 import requests
 TOKEN = os.getenv("BOT_TOKEN")
 CHANNEL_ID = -1003961580601
@@ -19,7 +20,7 @@ def get_footystats_prediction():
 
     for match in data.get("data", []):
         league = match.get("competition_name", "")
-
+        match_time = match.get("date_unix", "")
         top_leagues = [
             "Premier League",
             "Serie A",
@@ -39,7 +40,7 @@ def get_footystats_prediction():
         if league not in top_leagues:
             continue
         home_team = match.get("home_name", "Home")
-
+        formatted_time = datetime.fromtimestamp(int(match_time)).strftime("%H:%M") if match_time else "TBD"
         away_team = match.get("away_name", "Away")
 
         odds = match.get("odds_over25_ft", 0)
@@ -54,6 +55,7 @@ def get_footystats_prediction():
             prediction = {
                 "match": f"⚽ {home_team} vs {away_team}",
                 "league": league,
+                "time": formatted_time,
                 "market": random.choice([
                 "Over 2.5 Goals",
                 "BTTS",
@@ -270,6 +272,7 @@ async def auto_signal(context: ContextTypes.DEFAULT_TYPE):
         text=
             f"🔥 ELITE BETTING LAB 🔥\n\n"
             f"🏆 League: {match['league']}\n"
+            f"⏰ Time: {match['time']}\n"
             f"⚽ Match: {match['match']}\n"
             f"🎯 Market: {match['market']}\n"
             f"📈 Odds: {match['odds']}\n"
