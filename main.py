@@ -7,6 +7,16 @@ TOKEN = os.getenv("BOT_TOKEN")
 CHANNEL_ID = -1003961580601
 FOOTYSTATS_API_KEY = os.getenv("FOOTYSTATS_API_KEY")
 used_matches = []
+def get_footystats_prediction():
+
+    url = f"https://api.footystats.org/todays-matches?key={FOOTYSTATS_API_KEY}"
+
+    response = requests.get(url)
+
+    data = response.json()
+
+    return data
+    
 matches = [
     {
         "match": "⚽ Manchester City vs Arsenal",
