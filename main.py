@@ -25,8 +25,16 @@ def get_footystats_prediction():
             "Serie A",
             "Bundesliga",
             "La Liga",
-            "Ligue 1"
-        ]
+            "Ligue 1",
+            "Eredivisie",
+            "Primeira Liga",
+            "Championship",
+            "MLS",
+            "Super Lig",
+            "Belgian Pro League",
+            "Swiss Super League",
+            "Austrian Bundesliga"
+]
 
         if league not in top_leagues:
             continue
