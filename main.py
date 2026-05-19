@@ -53,6 +53,7 @@ def get_footystats_prediction():
             used_matches.append(match_name)
             prediction = {
                 "match": f"⚽ {home_team} vs {away_team}",
+                "league": league,
                 "market": random.choice([
                 "Over 2.5 Goals",
                 "BTTS",
@@ -268,6 +269,7 @@ async def auto_signal(context: ContextTypes.DEFAULT_TYPE):
         chat_id=CHANNEL_ID,
         text=
             f"🔥 ELITE BETTING LAB 🔥\n\n"
+            f"🏆 League: {match['league']}\n"
             f"⚽ Match: {match['match']}\n"
             f"🎯 Market: {match['market']}\n"
             f"📈 Odds: {match['odds']}\n"
