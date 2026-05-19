@@ -18,7 +18,18 @@ def get_footystats_prediction():
     matches = []
 
     for match in data.get("data", []):
+        league = match.get("competition_name", "")
 
+        top_leagues = [
+            "Premier League",
+            "Serie A",
+            "Bundesliga",
+            "La Liga",
+            "Ligue 1"
+        ]
+
+        if league not in top_leagues:
+            continue
         home_team = match.get("home_name", "Home")
 
         away_team = match.get("away_name", "Away")
