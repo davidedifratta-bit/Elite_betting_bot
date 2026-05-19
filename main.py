@@ -34,7 +34,11 @@ def get_footystats_prediction():
             used_matches.append(match_name)
             prediction = {
                 "match": f"⚽ {home_team} vs {away_team}",
-                "market": "Over 2.5 Goals",
+                "market": random.choice([
+                "Over 2.5 Goals",
+                "BTTS",
+                "Under 2.5 Goals"
+]),
                 "odds": str(odds),
                 "stake": "8/10",
                 "confidence": "82%",
