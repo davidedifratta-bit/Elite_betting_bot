@@ -15,51 +15,32 @@ def get_footystats_prediction():
 
     data = response.json()
 
-    return data
-    
-matches = [
-    {
-        "match": "⚽ Manchester City vs Arsenal",
-        "market": "Over 2.5 Goals",
-        "odds": "1.85",
-        "stake": "8/10",
-        "confidence": "82%",
-        "priority": "high"
-    },
-    {
-        "match": "⚽ Real Madrid vs Girona",
-        "market": "BTTS",
-        "odds": "1.74",
-        "stake": "7/10",
-        "confidence": "79%",
-        "priority": "high"
-    },
-    {
-        "match": "⚽ Inter vs Napoli",
-        "market": "Over 2.5 Goals",
-        "odds": "1.91",
-        "stake": "9/10",
-        "confidence": "86%",
-        "priority": "high"
-    },
-    {
-        "match": "⚽ PSG vs Monaco",
-        "market": "BTTS",
-        "odds": "1.68",
-        "stake": "6/10",
-        "confidence": "77%",
-        "priority": "high"
-    },
-    {
-        "match": "⚽ Bayern Munich vs Dortmund",
-        "market": "Over 3.5 Goals",
-        "odds": "2.05",
-        "stake": "8/10",
-        "confidence": "84%",
-        "priority": "high"
-    }
-]
+    matches = []
 
+    for match in data.get("data", []):
+
+        home_team = match.get("home_name", "Home")
+
+        away_team = match.get("away_name", "Away")
+
+        odds = match.get("odds_over25_ft", 0)
+
+        if odds and 1.80 <= float(odds) <= 2.00:
+
+            prediction = {
+                "match": f"⚽ {home_team} vs {away_team}",
+                "market": "Over 2.5 Goals",
+                "odds": str(odds),
+                "stake": "8/10",
+                "confidence": "82%",
+                "priority": "high"
+            }
+
+            matches.append(prediction)
+
+    return matches[:2]
+    
+matches = get_footystats_prediction()
  
 vip_matches = [
     {
