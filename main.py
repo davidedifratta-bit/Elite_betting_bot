@@ -264,7 +264,7 @@ async def auto_signal(context: ContextTypes.DEFAULT_TYPE):
     if not available_matches:
         used_matches.clear()
         available_matches = matches
-
+    print(available_matches)
     match = random.choice(available_matches)
     used_matches.append(match)
 
