@@ -267,10 +267,12 @@ async def auto_signal(context: ContextTypes.DEFAULT_TYPE):
     await context.bot.send_message(
         chat_id=CHANNEL_ID,
         text=
-        f"⚽ Match: {match['match']}\n"
-        f"🎯 Market: {match['market']}\n"
-        f"📈 Odds: {match['odds']}\n"
-        f"📊 Confidence: {match['confidence']}\n\n"
+            f"🔥 ELITE BETTING LAB 🔥\n\n"
+            f"⚽ Match: {match['match']}\n"
+            f"🎯 Market: {match['market']}\n"
+            f"📈 Odds: {match['odds']}\n"
+            f"📊 Confidence: {match['confidence']}\n\n"
+            f"💎 Premium AI Pick"
         )
 job_queue = app.job_queue
 
