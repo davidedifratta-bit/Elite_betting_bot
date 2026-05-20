@@ -44,7 +44,7 @@ def get_footystats_prediction():
         formatted_time = datetime.fromtimestamp(int(match_time)).strftime("%H:%M") if match_time else "TBD"
         away_team = match.get("away_name", "Away")
 
-        odds = match.get("odds_over25_ft", 0)
+        odds = 1.85
 
         if odds:
             match_name = f"{home_team} vs {away_team}"
