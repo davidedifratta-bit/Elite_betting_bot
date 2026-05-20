@@ -201,7 +201,8 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
       )
 
     elif query.data ==  "btts":
-
+        if not matches:
+            return
         pick = random.choice(matches)
 
         await query.message.reply_text(
