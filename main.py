@@ -260,10 +260,10 @@ print("Bot avviato!!")
 
  async def auto_signal(context: ContextTypes.DEFAULT_TYPE):
 
-    available_matches = matches
+     available_matches = matches
 
-    if not available_matches:
-        return
+     if not available_matches:
+         return
 
     match = random.choice(available_matches)   
     
