@@ -15,7 +15,7 @@ def get_footystats_prediction():
     response = requests.get(url)
 
     data = response.json()
-
+    print(response.text)
     matches = []
 
     for match in data.get("data", []):
