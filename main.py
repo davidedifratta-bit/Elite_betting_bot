@@ -182,7 +182,7 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
        f"💎 Elite Betting Lab"
         )
     elif query.data == "over":
-         high_priority = [m for m in matches if ...]
+         high_priority = [m for m in matches if m["prediction"] == "OVER"]
 
          if not high_priority:
              return
