@@ -257,15 +257,17 @@ app.add_handler(CallbackQueryHandler(buttons))
 print("Bot avviato!!")
 
 
-async def auto_signal(context: ContextTypes.DEFAULT_TYPE):
 
-    available_matches = [m for m in matches if m not in used_matches]
+
+ async def auto_signal(context: ContextTypes.DEFAULT_TYPE):
+
+    available_matches = matches
 
     if not available_matches:
-        used_matches.clear()
-        available_matches = matches
-    print(available_matches)
-    match = random.choice(available_matches)
+        return
+
+    match = random.choice(available_matches)   
+    
     used_matches.append(match)
 
     await context.bot.send_message(
