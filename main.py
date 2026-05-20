@@ -255,10 +255,7 @@ app.add_handler(CallbackQueryHandler(buttons))
 
 print("Bot avviato!!")
 
-
-
-
- async def auto_signal(context: ContextTypes.DEFAULT_TYPE):
+async def auto_signal(context: ContextTypes.DEFAULT_TYPE):
 
      available_matches = matches
 
