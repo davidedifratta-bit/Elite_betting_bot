@@ -22,24 +22,14 @@ def get_footystats_prediction():
         league = match.get("competition_name", "")
         match_time = match.get("date_unix", "")
         formatted_time = datetime.fromtimestamp(int(match_time)).strftime("%H:%M")
-        top_leagues = [
-            "Premier League",
-            "Serie A",
-            "Bundesliga",
-            "La Liga",
-            "Ligue 1",
-            "Eredivisie",
-            "Primeira Liga",
-            "Championship",
-            "MLS",
-            "Super Lig",
-            "Belgian Pro League",
-            "Swiss Super League",
-            "Austrian Bundesliga"
-]
+        
+        # top_leagues = [
+#     "Premier League",
+#     ...
+# ]
 
-       # if league not in top_leagues:
-       #     continue
+# if league not in top_leagues:
+#     continue    
         home_team = match.get("home_name", "Home")
         formatted_time = datetime.fromtimestamp(int(match_time)).strftime("%H:%M") if match_time else "TBD"
         away_team = match.get("away_name", "Away")
