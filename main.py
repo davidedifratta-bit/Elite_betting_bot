@@ -10,18 +10,17 @@ FOOTYSTATS_API_KEY = os.getenv("FOOTYSTATS_API_KEY")
 used_matches = []
 def get_footystats_prediction():
 
-    url = f"https://api.footystats.org/fixtures-data?key={FOOTYSTATS_API_KEY}"
+    url = f"https://api.footystats.org/todays-matches?key={FOOTYSTATS_API_KEY}"
 
     response = requests.get(url)
-    print(response.status_code)
-    print(response.text)
+    
     data = response.json()
     
     matches = []
 
     print(data)
 
-    print(data.keys())
+    
 
     for match in data.get("data", []):
         
