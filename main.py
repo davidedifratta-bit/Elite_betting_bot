@@ -169,6 +169,10 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     if query.data == "signal":
 
+       if not matches:
+           await query.message.reply_text("Nessun match disponibile.")
+           return
+
        pick = random.choice(matches)
         
        
