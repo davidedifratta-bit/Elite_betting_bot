@@ -216,19 +216,20 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
         f"💎 Elite Betting Lab"
       )
 
-    elif query.data ==  "btts":
-        if not matches:
+    elif query.data ==  "btts": 
+        btts_matches = [m for m in matches if "BTTS" in m["market"]]
+        if not btts_matches:
             return
         pick = random.choice(matches)
 
         await query.message.reply_text(
-        f"⚽ BTTS SIGNAL ⚽\n\n"
-        f"{pick['match']}\n"
-        f"🎯 Market: BTTS YES\n"
-        f"📈 Odds: {pick['odds']}\n"
-        f"💰 Stake: {pick['stake']}\n"
-        f"📊 Confidence: {pick['confidence']}\n\n"
-        f"💎 Elite Betting Lab"
+            f"⚽ BTTS SIGNAL ⚽\n\n"
+            f"{pick['match']}\n"
+            f"🎯 Market: BTTS YES\n"
+            f"📈 Odds: {pick['odds']}\n"
+            f"💰 Stake: {pick['stake']}\n"
+            f"📊 Confidence: {pick['confidence']}\n\n"
+            f"💎 Elite Betting Lab"
         )
         
 
