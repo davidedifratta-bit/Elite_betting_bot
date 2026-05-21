@@ -184,19 +184,7 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
            f"📊 Confidence: {pick['confidence']}\n\n"
            f"💎 Elite Betting Lab"
        )
-    elif query.data == "vip":
-
-        pick = random.choice(vip_matches)
-
-        await query.message.reply_text(
-            f"💎 VIP SIGNAL 💎\n\n"
-            f"{pick['match']}\n"
-            f"🎯 Market: {pick['market']}\n"
-            f"📈 Odds: {pick['odds']}\n"
-            f"💰 Stake: {pick['stake']}\n"
-            f"📊 Confidence: {pick['confidence']}\n\n"
-            f"💎 Elite Betting Lab"
-        )
+    
 
     elif query.data == "over":
         
@@ -220,7 +208,7 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
         btts_matches = [m for m in matches if "BTTS" in m["market"]]
         if not btts_matches:
             return
-        pick = random.choice(matches)
+        pick = random.choice(btts_matches)
 
         await query.message.reply_text(
             f"⚽ BTTS SIGNAL ⚽\n\n"
