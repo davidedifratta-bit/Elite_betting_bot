@@ -188,7 +188,7 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     elif query.data == "over":
         
-        high_priority = [m for m in matches if m["prediction"] == "OVER"]
+    high_priority = [m for m in matches if "Over" in m["market"]]    
 
         if not high_priority:
             return
