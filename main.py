@@ -64,7 +64,7 @@ def get_footystats_prediction():
     return matches[:2]
     
 matches = get_footystats_prediction()
- 
+print(matches) 
 vip_matches = [
     {
         "match": "⚽ Manchester City vs Arsenal",
