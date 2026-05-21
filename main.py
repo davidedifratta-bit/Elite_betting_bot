@@ -169,11 +169,10 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     if query.data == "signal":
 
-       high_priority = [m for m in matches if m["priority"] == "high"]
+       pick = random.choice(matches)
         
-       if not high_priority:
-           return
-       pick = random.choice(high_priority)    
+       
+           
 
        await query.edit_message_text(
            f"🔥 ELITE DAILY PICK 🔥\n\n"
