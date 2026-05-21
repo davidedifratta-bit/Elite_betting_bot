@@ -262,12 +262,12 @@ async def auto_signal(context: ContextTypes.DEFAULT_TYPE):
      if not available_matches:
          return
 
-    match = random.choice(available_matches)   
+     match = random.choice(available_matches)   
     
-    used_matches.append(match)
+     used_matches.append(match)
 
-    await context.bot.send_message(
-        chat_id=CHANNEL_ID,
+     await context.bot.send_message(
+         chat_id=CHANNEL_ID,
         text=
             f"🔥 ELITE BETTING LAB 🔥\n\n"
             f"🏆 League: {match['league']}\n"
