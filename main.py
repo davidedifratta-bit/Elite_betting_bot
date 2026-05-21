@@ -28,16 +28,34 @@ def get_footystats_prediction():
         match_time = match.get("date_unix", "")
         formatted_time = datetime.fromtimestamp(int(match_time)).strftime("%H:%M")
         
-        # top_leagues = [
-#     "Premier League",
-#     ...
-# ]
+        top_leagues = [
+    "Premier League",
+    "Serie A",
+    "La Liga",
+    "Bundesliga",
+    "Ligue 1",
+    "Champions League",
+    "Europa League",
+    "Conference League",
+    "Eredivisie",
+    "Primeira Liga",
+    "Championship",
+    "Turkish Super Lig",
+    "Belgian Pro League",
+    "Scottish Premiership",
+    "Super League",
+    "Brasileirão",
+    "MLS",
+    "Liga MX",
+    "Saudi Pro League",
+    "J1 League"
+]
 
-# if league not in top_leagues:
-#     continue    
-        home_team = match.get("home_name", "Home")
-        formatted_time = datetime.fromtimestamp(int(match_time)).strftime("%H:%M") if match_time else "TBD"
-        away_team = match.get("away_name", "Away")
+  if league not in top_leagues:
+      continue    
+  home_team = match.get("home_name", "Home")
+  formatted_time = datetime.fromtimestamp(int(match_time)).strftime("%H:%M") if match_time else "TBD"
+  away_team = match.get("away_name", "Away")
 
         odds = 1.85
 
