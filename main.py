@@ -175,7 +175,7 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
            return
        pick = random.choice(high_priority)    
 
-       await query.message.reply_text(
+       await query.edit_message_text(
            f"🔥 ELITE DAILY PICK 🔥\n\n"
            f"{pick['match']}\n"
            f"🎯 Market: {pick['market']}\n"
@@ -190,7 +190,7 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
         
         pick = random.choice(matches)
 
-        await query.message.reply_text(
+        await query.edit_message_text(
         f"🔥 OVER SIGNAL 🔥\n\n"
         f"{pick['match']}\n"
         f"🎯 Market: Over 2.5 Goals\n"
@@ -203,7 +203,7 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
     elif query.data ==  "btts": 
         
         pick = random.choice(matches)
-        await query.message.reply_text(
+        await query.edit_message_text(
             f"⚽ BTTS SIGNAL ⚽\n\n"
             f"{pick['match']}\n"
             f"🎯 Market: BTTS YES\n"
