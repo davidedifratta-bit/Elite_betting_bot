@@ -188,11 +188,7 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     elif query.data == "over":
         
-        high_priority = [m for m in matches if "Over" in m["market"]]    
-
-        if not high_priority:
-            return
-        pick = random.choice(high_priority)
+        pick = random.choice(matches)
 
         await query.message.reply_text(
         f"🔥 OVER SIGNAL 🔥\n\n"
@@ -205,11 +201,8 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
       )
 
     elif query.data ==  "btts": 
-        btts_matches = [m for m in matches if "BTTS" in m["market"]]
-        if not btts_matches:
-            return
-        pick = random.choice(btts_matches)
-
+        
+        pick = random.choice(matches)
         await query.message.reply_text(
             f"⚽ BTTS SIGNAL ⚽\n\n"
             f"{pick['match']}\n"
