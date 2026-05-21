@@ -51,19 +51,20 @@ def get_footystats_prediction():
     "J1 League"
 ]
 
-     if league not in top_leagues:
-         continue
+             if league not in top_leagues:
+            continue
 
-     home_team = match.get("home_name", "")
-     formatted_time = datetime.fromtimestamp(match_time).strftime("%H:%M")
-     away_team = match.get("away_name", "")
-     odds = 1.85
+        home_team = match.get("home_name", "")
+        formatted_time = datetime.fromtimestamp(match_time).strftime("%H:%M")
+        away_team = match.get("away_name", "")
 
-     if odds:
-         match_name = f"{home_team} vs {away_team}"
+        odds = 1.85
 
-         if match_name in used_matches:
-             continue
+        if odds:
+            match_name = f"{home_team} vs {away_team}"
+
+            if match_name in used_matches:
+                continue
 
             used_matches.append(match_name)
             prediction = {
