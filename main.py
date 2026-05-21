@@ -23,7 +23,7 @@ def get_footystats_prediction():
 
     print(data.keys())
 
-    for match in data:
+    for match in data.get("data", []):
         
         league = match.get("competition_name", "")
         match_time = match.get("date_unix", "")
