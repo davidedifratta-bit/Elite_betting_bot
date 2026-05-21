@@ -277,7 +277,7 @@ async def auto_signal(context: ContextTypes.DEFAULT_TYPE):
             f"📈 Odds: {match['odds']}\n"
             f"📊 Confidence: {match['confidence']}\n\n"
             f"💎 Premium AI Pick"
-   
+     )
 job_queue = app.job_queue
     
 
