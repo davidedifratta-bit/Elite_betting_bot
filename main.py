@@ -62,7 +62,7 @@ def get_footystats_prediction():
             }
 
             matches.append(prediction)
-        return matches[:2]
+    return matches[:2]
             
     
 matches = get_footystats_prediction()
