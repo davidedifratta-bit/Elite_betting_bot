@@ -188,7 +188,13 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     elif query.data == "over":
         
-        pick = random.choice(matches)
+        high_priority = [m for m in matches if "OVER" in m["market"].upper()]
+
+        if not high_priority:
+            await query.message.reply_text("Nessun match OVER trovato.")
+            return
+
+        pick = random.choice(high_priority)
 
         await query.edit_message_text(
         f"🔥 OVER SIGNAL 🔥\n\n"
@@ -202,7 +208,13 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     elif query.data ==  "btts": 
         
-        pick = random.choice(matches)
+        btts_matches = [m for m in matches if "BTTS" in m["market"].upper()]
+
+        if not btts_matches:
+            await query.message.reply_text("Nessun match BTTS trovato.")
+            return
+
+        pick = random.choice(btts_matches)
         await query.edit_message_text(
             f"⚽ BTTS SIGNAL ⚽\n\n"
             f"{pick['match']}\n"
