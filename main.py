@@ -188,15 +188,15 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
         pick = random.choice(vip_matches)
 
-    await query.message.reply_text(
-        f"💎 VIP SIGNAL 💎\n\n"
-        f"{pick['match']}\n"
-        f"🎯 Market: {pick['market']}\n"
-        f"📈 Odds: {pick['odds']}\n"
-        f"💰 Stake: {pick['stake']}\n"
-        f"📊 Confidence: {pick['confidence']}\n\n"
-        f"💎 Elite Betting Lab"
-    )
+        await query.message.reply_text(
+            f"💎 VIP SIGNAL 💎\n\n"
+            f"{pick['match']}\n"
+            f"🎯 Market: {pick['market']}\n"
+            f"📈 Odds: {pick['odds']}\n"
+            f"💰 Stake: {pick['stake']}\n"
+            f"📊 Confidence: {pick['confidence']}\n\n"
+            f"💎 Elite Betting Lab"
+        )
 
 elif query.data == "over":
         
