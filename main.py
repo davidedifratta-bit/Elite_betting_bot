@@ -15,12 +15,11 @@ def get_footystats_prediction():
     response = requests.get(url)
 
     data = response.json()
-    print(data.keys())
-    print(response.text)
+    
     matches = []
 
-    for match in data:
-        print(data)
+    for match in data.get("data", []):
+        
         league = match.get("competition_name", "")
         match_time = match.get("date_unix", "")
         formatted_time = datetime.fromtimestamp(int(match_time)).strftime("%H:%M")
