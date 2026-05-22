@@ -32,7 +32,7 @@ def get_footystats_prediction():
 
              
 
-   top_leagues = [
+top_leagues = [
     "Premier League",
     "Serie A",
     "La Liga",
