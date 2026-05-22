@@ -57,12 +57,10 @@ def get_footystats_prediction():
              home_team = match.get("home_name", "")
              formatted_time = datetime.fromtimestamp(match.get("date_unix", 0))
              away_team = match.get("away_name", "")
-
              odds = 1.85
-
              if odds:
                  match_name = f"{home_team} vs {away_team}"
-
+                 
                  if match_name in used_matches:
                      continue
 
