@@ -51,8 +51,8 @@ def get_footystats_prediction():
     "J1 League"
 ]
 
-             if league not in top_leagues:
-                 continue
+             # if league not in top_leagues:
+             #     continue
 
              home_team = match.get("home_name", "")
              formatted_time = datetime.fromtimestamp(match.get("date_unix", 0))
