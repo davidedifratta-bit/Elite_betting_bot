@@ -28,7 +28,11 @@ def get_footystats_prediction():
         match_time = match.get("date_unix", "")
         formatted_time = datetime.fromtimestamp(int(match_time)).strftime("%H:%M")
         
-        top_leagues = [
+                
+
+             
+
+   top_leagues = [
     "Premier League",
     "Serie A",
     "La Liga",
@@ -51,7 +55,7 @@ def get_footystats_prediction():
     "J1 League"
 ]
 
-  for match in data.get("data", []):
+for match in data.get("data", []):
 
     league = match.get("competition_name", "")
 
@@ -72,15 +76,11 @@ def get_footystats_prediction():
 
         used_matches.append(match_name)
 
-        prediction = {        
-
-             
-
-             
+        prediction = {          
                  
                  
 
-                 prediction = {
+                 
                 "match": f"⚽ {home_team} vs {away_team}",
                 "league": league,
                 "time": formatted_time,
