@@ -52,22 +52,23 @@ def get_footystats_prediction():
 ]
 
              if league not in top_leagues:
-            continue
+                 continue
 
-        home_team = match.get("home_name", "")
-        formatted_time = datetime.fromtimestamp(match_time).strftime("%H:%M")
-        away_team = match.get("away_name", "")
+             home_team = match.get("home_name", "")
+             formatted_time = datetime.fromtimestamp(match.get("date_unix", 0))
+             away_team = match.get("away_name", "")
 
-        odds = 1.85
+             odds = 1.85
 
-        if odds:
-            match_name = f"{home_team} vs {away_team}"
+             if odds:
+                 match_name = f"{home_team} vs {away_team}"
 
-            if match_name in used_matches:
-                continue
+                 if match_name in used_matches:
+                     continue
 
-            used_matches.append(match_name)
-            prediction = {
+                 used_matches.append(match_name)
+
+                 prediction = {
                 "match": f"⚽ {home_team} vs {away_team}",
                 "league": league,
                 "time": formatted_time,
