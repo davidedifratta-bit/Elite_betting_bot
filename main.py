@@ -75,7 +75,7 @@ for match in data.get("data", []):
             continue
 
         used_matches.append(match_name)
-            prediction = {          
+        prediction = {          
             "match": f"⚽ {home_team} vs {away_team}",
             "league": league,
             "time": formatted_time,
@@ -88,10 +88,10 @@ for match in data.get("data", []):
                 "stake": "8/10",
                 "confidence": f"{random.randint(74, 89)}%",
                 "priority": "high"
-            }
+        } 
 
-            matches.append(prediction)
-        return matches[:2]
+        matches.append(prediction)
+    return matches[:2]
             
     
 matches = get_footystats_prediction()
