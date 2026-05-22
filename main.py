@@ -75,28 +75,23 @@ for match in data.get("data", []):
             continue
 
         used_matches.append(match_name)
-
-        prediction = {          
-                 
-                 
-
-                 
-                "match": f"⚽ {home_team} vs {away_team}",
-                "league": league,
-                "time": formatted_time,
-                "market": random.choice([
+            prediction = {          
+            "match": f"⚽ {home_team} vs {away_team}",
+            "league": league,
+            "time": formatted_time,
+            "market": random.choice([
                 "Over 2.5 Goals",
                 "BTTS",
                 "Under 2.5 Goals"
-]),
-                "odds": str(odds),
+            ]),
+            "odds": str(odds),
                 "stake": "8/10",
                 "confidence": f"{random.randint(74, 89)}%",
                 "priority": "high"
             }
 
             matches.append(prediction)
-    return matches[:2]
+        return matches[:2]
             
     
 matches = get_footystats_prediction()
