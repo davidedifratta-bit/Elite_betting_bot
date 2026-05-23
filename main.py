@@ -32,32 +32,32 @@ def get_footystats_prediction():
 
              
 
-top_leagues = [
-    "Premier League",
-    "Serie A",
-    "La Liga",
-    "Bundesliga",
-    "Ligue 1",
-    "Champions League",
-    "Europa League",
-    "Conference League",
-    "Eredivisie",
-    "Primeira Liga",
-    "Championship",
-    "Turkish Super Lig",
-    "Belgian Pro League",
-    "Scottish Premiership",
-    "Super League",
-    "Brasileirão",
-    "MLS",
-    "Liga MX",
-    "Saudi Pro League",
-    "J1 League"
+    top_leagues = [
+        "Premier League",
+        "Serie A",
+        "La Liga",
+        "Bundesliga",
+        "Ligue 1",
+        "Champions League",
+        "Europa League",
+        "Conference League",
+        "Eredivisie",
+        "Primeira Liga",
+        "Championship",
+        "Turkish Super Lig",
+        "Belgian Pro League",
+        "Scottish Premiership",
+        "Super League",
+        "Brasileirão",
+        "MLS",
+        "Liga MX",
+        "Saudi Pro League",
+        "J1 League"
 ]
 
-for match in data.get("data", []):
+     for match in data.get("data", []):
 
-    league = match.get("competition_name", "")
+         league = match.get("competition_name", "")
 
     # if league not in top_leagues:
     #     continue
@@ -91,7 +91,7 @@ for match in data.get("data", []):
         } 
 
         matches.append(prediction)
-            return matches[:2]
+        return matches[:2]
             
     
 matches = get_footystats_prediction()
