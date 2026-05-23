@@ -55,7 +55,7 @@ def get_footystats_prediction():
         "J1 League"
 ]
 
-     for match in data.get("data", []):
+    for match in data.get("data", []):
          league = match.get("competition_name", "")
 
     # if league not in top_leagues:
