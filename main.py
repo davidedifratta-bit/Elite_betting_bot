@@ -343,4 +343,6 @@ print("Bot avviato!")
 
 print("BOT ONLINE...")
 
-app.run_polling()
+app.run_polling(
+    drop_pending_updates=True
+)
