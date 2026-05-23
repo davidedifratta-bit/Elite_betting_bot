@@ -80,9 +80,9 @@ def get_footystats_prediction():
         
         used_matches.append(match_name)
         market = random.choice([
-    "Over 2.5 Goals",
+    "Over 2.5 Goals"
     "BTTS YES",
-    "Under 2.5 Goals"
+    "Over 1.5 Goals"
 ])
 
 prediction = {
