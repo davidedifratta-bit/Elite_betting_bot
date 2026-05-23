@@ -180,9 +180,9 @@ async def over(update: Update, context: ContextTypes.DEFAULT_TYPE):
     )
 async def btts(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
-if len(btts_signals) == 0:
-    await update.message.reply_text("Nessun match BTTS trovato.")
-    return    
+    if len(btts_signals) == 0:
+        await update.message.reply_text("Nessun match BTTS trovato.")
+        return    
     
     match = random.choice(btts_signals)
 
