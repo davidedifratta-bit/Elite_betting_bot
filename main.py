@@ -98,10 +98,10 @@ def get_footystats_prediction():
 
     matches.append(prediction)
 
-    if market == "Over 2.5 Goals":
+    if "Over" in market:
         over_signals.append(prediction)
 
-    elif market == "BTTS YES":
+    elif "BTTS" in market:
         btts_signals.append(prediction)
             
     return matches[:2]
