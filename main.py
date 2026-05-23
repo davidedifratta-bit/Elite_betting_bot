@@ -295,7 +295,7 @@ app.add_handler(CommandHandler("vip", vip))
 app.add_handler(CallbackQueryHandler(buttons))
 
 print("Bot avviato!!")
-
+app.run_polling()
 async def auto_signal(context: ContextTypes.DEFAULT_TYPE):
 
      available_matches = matches
