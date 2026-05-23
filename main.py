@@ -162,7 +162,12 @@ async def signal(update: Update, context: ContextTypes.DEFAULT_TYPE):
     )
 async def over(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
+    if len(over_signals) == 0:
+        await update.message.reply_text("Nessun match OVER trovato.")
+        return
+        
     match = random.choice(over_signals)
+    
     await update.message.reply_text(
         f"🔥 OVER 2.5 SIGNAL 🔥\n\n"
         f"⚽ {match['match']}\n"
@@ -175,6 +180,10 @@ async def over(update: Update, context: ContextTypes.DEFAULT_TYPE):
     )
 async def btts(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
+if len(btts_signals) == 0:
+    await update.message.reply_text("Nessun match BTTS trovato.")
+    return    
+    
     match = random.choice(btts_signals)
 
     await update.message.reply_text(
