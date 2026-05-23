@@ -56,7 +56,6 @@ def get_footystats_prediction():
 ]
 
      for match in data.get("data", []):
-
          league = match.get("competition_name", "")
 
     # if league not in top_leagues:
