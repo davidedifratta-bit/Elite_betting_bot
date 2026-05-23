@@ -11,7 +11,8 @@ used_matches = []
 over_signals = []
 btts_signals = []
 def get_footystats_prediction():
-
+    global over_signals, btts_signals
+    
     url = f"https://api.footystats.org/todays-matches?key={FOOTYSTATS_API_KEY}"
     
     response = requests.get(url)
