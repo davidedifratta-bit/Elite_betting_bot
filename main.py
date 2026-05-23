@@ -85,26 +85,26 @@ def get_footystats_prediction():
     "Over 1.5 Goals"
 ])
 
-prediction = {
-    "match": f"⚽ {home_team} vs {away_team}",
-    "league": league,
-    "time": formatted_time,
-    "market": market,
-    "odds": round(random.uniform(1.70, 2.20), 2),
-    "stake": f"{random.randint(7,10)}/10",
-    "confidence": f"{random.randint(78,92)}%",
-    "priority": "high"
-} 
+    prediction = {
+        "match": f"⚽ {home_team} vs {away_team}",
+        "league": league,
+        "time": formatted_time,
+        "market": market,
+        "odds": round(random.uniform(1.70, 2.20), 2),
+        "stake": f"{random.randint(7,10)}/10",
+        "confidence": f"{random.randint(78,92)}%",
+        "priority": "high"
+    } 
 
-        matches.append(prediction)
+    matches.append(prediction)
 
-        if market == "Over 2.5 Goals":
-            over_signals.append(prediction)
+    if market == "Over 2.5 Goals":
+        over_signals.append(prediction)
 
-        elif market == "BTTS YES":
-            btts_signals.append(prediction)
+    elif market == "BTTS YES":
+        btts_signals.append(prediction)
             
-            return matches[:2]
+    return matches[:2]
             
     
 matches = get_footystats_prediction()
