@@ -79,23 +79,32 @@ def get_footystats_prediction():
 
         
         used_matches.append(match_name)
-        prediction = {          
-            "match": f"⚽ {home_team} vs {away_team}",
-            "league": league,
-            "time": formatted_time,
-            "market": random.choice([
-                "Over 2.5 Goals",
-                "BTTS",
-                "Under 2.5 Goals"
-            ]),
-            "odds": str(odds),
-                "stake": "8/10",
-                "confidence": f"{random.randint(74, 89)}%",
-                "priority": "high"
-        } 
+        market = random.choice([
+    "Over 2.5 Goals",
+    "BTTS YES",
+    "Under 2.5 Goals"
+])
+
+prediction = {
+    "match": f"⚽ {home_team} vs {away_team}",
+    "league": league,
+    "time": formatted_time,
+    "market": market,
+    "odds": round(random.uniform(1.70, 2.20), 2),
+    "stake": f"{random.randint(7,10)}/10",
+    "confidence": f"{random.randint(78,92)}%",
+    "priority": "high"
+} 
 
         matches.append(prediction)
-        return matches[:2]
+
+        if market == "Over 2.5 Goals":
+            over_signals.append(prediction)
+
+        elif market == "BTTS YES":
+            btts_signals.append(prediction)
+            
+            return matches[:2]
             
     
 matches = get_footystats_prediction()
