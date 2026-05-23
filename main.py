@@ -8,6 +8,8 @@ TOKEN = os.getenv("BOT_TOKEN")
 CHANNEL_ID = -1003961580601
 FOOTYSTATS_API_KEY = os.getenv("FOOTYSTATS_API_KEY")
 used_matches = []
+over_signals = []
+btts_signals = []
 def get_footystats_prediction():
 
     url = f"https://api.footystats.org/todays-matches?key={FOOTYSTATS_API_KEY}"
@@ -74,22 +76,13 @@ def get_footystats_prediction():
     if odds:
         match_name = f"{home_team} vs {away_team}"
 
-
-        
-
-        
         used_matches.append(match_name)
-        market = random.choice([
-    "Over 2.5 Goals"
-    "BTTS YES",
-    "Over 1.5 Goals"
-])
 
-    market = random.choice([
-    "Over 1.5 Goals",
-    "Over 2.5 Goals",
-    "BTTS YES",
-    "Under 2.5 Goals"
+        market = random.choice([
+        "Over 1.5 Goals",
+        "Over 2.5 Goals",
+        "BTTS YES",
+        "Under 2.5 Goals"
 ])
     prediction = {
         "match": f"⚽ {home_team} vs {away_team}",
