@@ -85,6 +85,12 @@ def get_footystats_prediction():
     "Over 1.5 Goals"
 ])
 
+    market = random.choice([
+    "Over 1.5 Goals",
+    "Over 2.5 Goals",
+    "BTTS YES",
+    "Under 2.5 Goals"
+])
     prediction = {
         "match": f"⚽ {home_team} vs {away_team}",
         "league": league,
