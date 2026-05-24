@@ -106,7 +106,7 @@ def get_footystats_prediction():
     if "BTTS" in market:
         btts_signals.append(prediction)
             
-    return matches[:2]
+    return matches[:5]
             
     
 matches = get_footystats_prediction()
