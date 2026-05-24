@@ -77,7 +77,10 @@ def get_footystats_prediction():
     if odds:
         match_name = f"{home_team} vs {away_team}"
 
-        used_matches.append(match_name)
+    if match_name in used_matches:
+        continue
+
+    used_matches.append(match_name)
 
         home_goals = int(match.get("homeGoalCount", 0) or 0)
         away_goals = int(match.get("awayGoalCount", 0) or 0)
