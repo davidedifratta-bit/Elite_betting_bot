@@ -88,7 +88,7 @@ def get_footystats_prediction():
         elif home_goals + away_goals >= 3:
             market = "Over 2.5 Goals"
 
-        elif home_goals + away_goals >= 2:
+        else:
             market = "Over 1.5 Goals"
 
         prediction = {
