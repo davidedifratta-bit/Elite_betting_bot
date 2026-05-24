@@ -92,7 +92,7 @@ def get_footystats_prediction():
         "league": league,
         "time": formatted_time,
         "market": market,
-        "odds": round(random.uniform(1.70, 2.20), 2),
+        "odds": round(random.uniform(1.80, 1.90), 2),
         "stake": f"{random.randint(7,10)}/10",
         "confidence": f"{random.randint(78,92)}%",
         "priority": "high"
@@ -106,7 +106,7 @@ def get_footystats_prediction():
     if "BTTS" in market:
         btts_signals.append(prediction)
             
-    return matches[:5]
+    return matches[:2]
             
     
 matches = get_footystats_prediction()
