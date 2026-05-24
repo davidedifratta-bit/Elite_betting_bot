@@ -91,9 +91,7 @@ def get_footystats_prediction():
         elif home_goals + away_goals >= 2:
             market = "Over 1.5 Goals"
 
-        else:
-            continue
-    prediction = {
+        prediction = {
         "match": f"⚽ {home_team} vs {away_team}",
         "league": league,
         "time": formatted_time,
