@@ -82,22 +82,22 @@ def get_footystats_prediction():
 
     used_matches.append(match_name)
 
-        home_goals = int(match.get("homeGoalCount", 0) or 0)
-        away_goals = int(match.get("awayGoalCount", 0) or 0)
+    home_goals = int(match.get("homeGoalCount", 0) or 0)
+    away_goals = int(match.get("awayGoalCount", 0) or 0)
 
-        xg = float(match.get("total_xg_prematch", 0) or 0)
+    xg = float(match.get("total_xg_prematch", 0) or 0)
         
-        if xg < 2.5:
-           continue
+    if xg < 2.5:
+        continue
             
-        if home_goals >= 2 and away_goals >= 1:
-            market = "BTTS YES"
+    if home_goals >= 2 and away_goals >= 1:
+        market = "BTTS YES"
 
-        elif home_goals + away_goals >= 3:
-            market = "Over 2.5 Goals"
+    elif home_goals + away_goals >= 3:
+        market = "Over 2.5 Goals"
 
-        else:
-            market = "Over 1.5 Goals"
+    else:
+        market = "Over 1.5 Goals"
 
         prediction = {
         "match": f"⚽ {home_team} vs {away_team}",
