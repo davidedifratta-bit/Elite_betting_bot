@@ -99,7 +99,7 @@ def get_footystats_prediction():
             else:
                     market = "Over 1.5 Goals"
 
-        prediction = {
+            prediction = {
         "match": f"⚽ {home_team} vs {away_team}",
         "league": league,
         "time": formatted_time,
@@ -110,15 +110,15 @@ def get_footystats_prediction():
         "priority": "high"
     } 
 
-    matches.append(prediction)
+            matches.append(prediction)
 
-    if "Over" in market:
-        over_signals.append(prediction)
+            if "Over" in market:
+                over_signals.append(prediction)
 
-    if "BTTS" in market:
-        btts_signals.append(prediction)
+            if "BTTS" in market:
+                btts_signals.append(prediction)
             
-    return matches[:2]
+            return matches[:2]
             
     
 matches = get_footystats_prediction()
