@@ -79,8 +79,8 @@ def get_footystats_prediction():
 
         used_matches.append(match_name)
 
-        home_goals = match.get("homeGoals", 0)
-        away_goals = match.get("awayGoals", 0)
+        home_goals = int(match.get("homeGoals", 0) or 0)
+        away_goals = int(match.get("awayGoals", 0) or 0)
 
         if home_goals >= 2 and away_goals >= 1:
             market = "BTTS YES"
