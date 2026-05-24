@@ -79,14 +79,20 @@ def get_footystats_prediction():
 
         used_matches.append(match_name)
 
-        market = random.choice([
-            "Over 1.5 Goals",
-            "Over 2.5 Goals",
-            "BTTS YES",
-            "BTTS YES",
-            "BTTS YES",
-            "Over 3.5 Goals"
-])
+        home_goals = match.get("homeGoals", 0)
+        away_goals = match.get("awayGoals", 0)
+
+        if home_goals >= 2 and away_goals >= 1:
+            market = "BTTS YES"
+
+        elif home_goals + away_goals >= 3:
+            market = "Over 2.5 Goals"
+
+        elif home_goals + away_goals >= 2:
+            market = "Over 1.5 Goals"
+
+        else:
+            continue
     prediction = {
         "match": f"⚽ {home_team} vs {away_team}",
         "league": league,
