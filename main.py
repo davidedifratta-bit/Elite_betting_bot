@@ -69,56 +69,56 @@ def get_footystats_prediction():
     #     continue
 
     home_team = match.get("home_name", "")
-    formatted_time = datetime.fromtimestamp(match.get("date_unix", 0))
+    formatted_time = datetime.fromtimestamp(match.get("date_unix")).strftime("%H:%M")
     away_team = match.get("away_name", "")
 
     odds = 1.85
 
     if odds:
-            match_name = f"{home_team} vs {away_team}"
+        match_name = f"{home_team} vs {away_team}"
 
-            if match_name in used_matches:
-                continue
+        if match_name in used_matches:
+            continue
 
-            used_matches.append(match_name)
+        used_matches.append(match_name)
 
-            home_goals = int(match.get("homeGoalCount", 0) or 0)
-            away_goals = int(match.get("awayGoalCount", 0) or 0)
+        home_goals = int(match.get("homeGoalCount", 0) or 0)
+        away_goals = int(match.get("awayGoalCount", 0) or 0)
 
-            xg = float(match.get("total_xg_prematch", 0) or 0)
+        xg = float(match.get("total_xg_prematch", 0) or 0)
 
-            if xg < 2.5:
-                continue
+        if xg < 2.5:
+            continue
 
-            if home_goals >= 2 and away_goals >= 1:
-                    market = "BTTS YES"
+        if home_goals >= 2 and away_goals >= 1:
+            market = "BTTS YES"
 
-            elif home_goals + away_goals >= 3:
-                    market = "Over 2.5 Goals"
+        elif home_goals + away_goals >= 3:
+            market = "Over 2.5 Goals"
 
-            else:
-                    market = "Over 1.5 Goals"
+        else:
+            market = "Over 1.5 Goals"
 
-            prediction = {
-        "match": f"⚽ {home_team} vs {away_team}",
-        "league": league,
-        "time": formatted_time,
-        "market": market,
-        "odds": round(random.uniform(1.80, 1.90), 2),
-        "stake": f"{random.randint(7,10)}/10",
-        "confidence": f"{random.randint(78,92)}%",
-        "priority": "high"
-    } 
+        prediction = {
+            "match": f"⚽ {home_team} vs {away_team}",
+            "league": league,
+            "time": formatted_time,
+            "market": market,
+            "odds": round(random.uniform(1.80, 1.90), 2),
+            "stake": f"{random.randint(7,10)}/10",
+            "confidence": f"{random.randint(78,92)}%",
+            "priority": "high"
+        }
 
-            matches.append(prediction)
+        matches.append(prediction)
 
-            if "Over" in market:
-                over_signals.append(prediction)
+        if "Over" in market:
+            over_signals.append(prediction)
 
-            if "BTTS" in market:
-                btts_signals.append(prediction)
-            
-            return matches[:2]
+        if "BTTS" in market:
+            btts_signals.append(prediction)
+
+    return matches[:2]
             
     
 matches = get_footystats_prediction()
