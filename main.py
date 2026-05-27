@@ -110,13 +110,13 @@ for match in data.get("data", []):
 
             matches.append(prediction)
 
-        if "Over" in market:
-            over_signals.append(prediction)
+    if "Over" in market:
+        over_signals.append(prediction)
 
-        if "BTTS" in market:
-            btts_signals.append(prediction)
+    if "BTTS" in market:
+        btts_signals.append(prediction)
 
-        return matches[:2]
+    return matches[:2]
             
     
 matches = get_footystats_prediction()
