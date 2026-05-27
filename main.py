@@ -108,7 +108,7 @@ for match in data.get("data", []):
             "priority": "high"
         }
 
-            matches.append(prediction)
+   matches.append(prediction)
 
     if "Over" in market:
         over_signals.append(prediction)
