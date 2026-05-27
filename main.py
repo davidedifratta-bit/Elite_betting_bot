@@ -117,10 +117,8 @@ for match in data.get("data", []):
     if "BTTS" in market:
         btts_signals.append(prediction)
 
-return matches[:2]
+    return matches[:2]
 
-            
-    
 matches = get_footystats_prediction()
 print(matches) 
 vip_matches = [
