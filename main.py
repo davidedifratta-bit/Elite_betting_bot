@@ -61,27 +61,27 @@ def get_footystats_prediction():
         "Saudi Pro League",
         "J1 League"
 ]
+for match in data.get("data", []):
 
-    for match in data.get("data", []):
-         league = match.get("competition_name", "")
-
-    # if league not in top_leagues:
-    #     continue
+    league = match.get("competition_name", "")
 
     home_team = match.get("home_name", "")
-    formatted_time = datetime.fromtimestamp(match.get("date_unix")).strftime("%H:%M")
+    formatted_time = datetime.fromtimestamp(...)
     away_team = match.get("away_name", "")
 
     odds = 1.85
+
     if odds:
         match_name = f"{home_team} vs {away_team}"
+
         if match_name in used_matches:
             continue
 
         used_matches.append(match_name)
 
-        home_goals = int(match.get("homeGoalCount", 0) or 0)
-        away_goals = int(match.get("awayGoalCount", 0) or 0)
+        home_goals = int(match.get("homeGoalCount", 0))
+        away_goals = int(match.get("awayGoalCount", 0))
+    
 
         xg = float(match.get("total_xg_prematch", 0) or 0)
 
