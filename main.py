@@ -107,7 +107,6 @@ for match in data.get("data", []):
             "confidence": f"{random.randint(78,92)}%",
             "priority": "high"
             }            
-
 matches.append(prediction)
 
 if "Over" in market:
