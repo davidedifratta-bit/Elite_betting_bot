@@ -159,7 +159,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
 async def signal(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text("🔥 Elite Betting Bot Online!")
     high_priority = [m for m in matches if ...]
-        match = random.choice(high_priority)
+    match = random.choice(high_priority)
 
         await update.message.reply_text(
         f"🔥 ELITE DAILY PICK 🔥\n\n"
