@@ -106,7 +106,7 @@ for match in data.get("data", []):
             "stake": f"{random.randint(7,10)}/10",
             "confidence": f"{random.randint(78,92)}%",
             "priority": "high"
-            
+            }            
 
 matches.append(prediction)
 
