@@ -157,7 +157,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     )
 
 async def signal(update: Update, context: ContextTypes.DEFAULT_TYPE):
-
+    await update.message.reply_text("🔥 Elite Betting Bot Online!")
         high_priority = [m for m in matches if m["priority"] == "high"]
         match = random.choice(high_priority)
 
@@ -354,9 +354,10 @@ async def auto_signal(context: ContextTypes.DEFAULT_TYPE):
             f"📊 Confidence: {match['confidence']}\n\n"
             f"💎 Premium AI Pick"
      )
+app = ApplicationBuilder().token(TOKEN).build()
+
 job_queue = app.job_queue
     
-
 job_queue.run_repeating(auto_signal, interval=60, first=5)
 
 app.add_handler(CommandHandler("start", start))
