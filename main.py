@@ -10,6 +10,8 @@ FOOTYSTATS_API_KEY = os.getenv("FOOTYSTATS_API_KEY")
 used_matches = []
 over_signals = []
 btts_signals = []
+async def start(update: Update, context):
+    await update.message.reply_text("🔥 Elite Betting Bot Online 🔥")
 def get_footystats_prediction():
     global over_signals, btts_signals
     
@@ -359,9 +361,9 @@ job_queue = app.job_queue
 
 job_queue.run_repeating(auto_signal, interval=60, first=5)
 
+app.add_handler(CommandHandler("start", start))
 
 print("Bot avviato!")
-
 print("BOT ONLINE...")
 
 app.run_polling(
