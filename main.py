@@ -107,13 +107,13 @@ for match in data.get("data", []):
             "confidence": f"{random.randint(78,92)}%",
             "priority": "high"
             }            
-matches.append(prediction)
+    matches.append(prediction)
 
-if "Over" in market:
-    over_signals.append(prediction)
+    if "Over" in market:
+        over_signals.append(prediction)
 
-if "BTTS" in market:
-    btts_signals.append(prediction)
+    if "BTTS" in market:
+        btts_signals.append(prediction)
 
 return matches[:2]
 
