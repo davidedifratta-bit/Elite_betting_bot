@@ -360,6 +360,11 @@ job_queue = app.job_queue
     
 job_queue.run_repeating(auto_signal, interval=60, first=5)
 
+async def ping(update, context):
+    await update.message.reply_text("BOT ONLINE")
+
+app.add_handler(CommandHandler("ping", ping))
+
 app.add_handler(CommandHandler("start", start))
 
 print("Bot avviato!")
