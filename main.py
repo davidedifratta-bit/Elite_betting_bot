@@ -161,7 +161,7 @@ async def signal(update: Update, context: ContextTypes.DEFAULT_TYPE):
     high_priority = [m for m in matches if ...]
     match = random.choice(high_priority)
 
-        await update.message.reply_text(
+    await update.message.reply_text(
         f"🔥 ELITE DAILY PICK 🔥\n\n"
         f"⚽ Match: {match['match']}\n"
         f"🎯 Market: {match['market']}\n"
