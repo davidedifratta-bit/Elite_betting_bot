@@ -170,16 +170,7 @@ async def signal(update: Update, context: ContextTypes.DEFAULT_TYPE):
         f"💎 Elite Betting Lab"
     )
 
-        await context.bot.send_message(
-        chat_id=CHANNEL_ID,
-        text=
-        f"⚽ Match: {match['match']}\n"
-        f"🎯 Market: {match['market']}\n"
-        f"📈 Odds: {match['odds']}\n"
-        f"💰 Stake: {match['stake']}\n"
-        f"📊 Confidence: {match['confidence']}\n\n"
-        f"💎 Elite Betting Lab"
-    )
+
 async def over(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     if len(over_signals) == 0:
