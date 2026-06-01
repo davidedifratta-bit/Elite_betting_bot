@@ -36,7 +36,7 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
     elif query.data == "over":
         await query.edit_message_text(
             "🔥 OVER 2.5 SIGNAL\n\n"
-            "⚽ Match Reale API
+            "⚽ Match Reale API\n"
             "📈 Odds: 1.90\n"
             "💰 Stake: 7/10\n"
             "📊 Confidence: 80%"
