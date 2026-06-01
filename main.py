@@ -31,11 +31,7 @@ def get_footystats_prediction():
 
     
 
-    for match in data.get("data", []):
-        
-        league = match.get("competition_name", "")
-        match_time = match.get("date_unix", "")
-        formatted_time = datetime.fromtimestamp(int(match_time)).strftime("%H:%M")
+    
         
                 
 
