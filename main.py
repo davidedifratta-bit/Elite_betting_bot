@@ -50,15 +50,14 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
             "💰 Stake: 9/10\n"
             "📊 Confidence: 87%"
         )
-
     elif query.data == "vip":
         await query.edit_message_text(
-            "💎 VIP SIGNAL 💎\n\n"
-            "⚽ Inter vs Juventus\n"
-            "🎯 BTTS YES\n"
-            "📈 Odds: 2.05\n"
-            "💰 Stake: 10/10\n"
-            "📊 Confidence: 91%"
+        "💎 VIP SIGNAL 💎\n\n"
+        "⚽ Match API in arrivo\n"
+        "🎯 Market: BTTS YES\n"
+        "📈 Odds: 2.05\n"
+        "💰 Stake: 10/10\n"
+        "📊 Confidence: 91%"
         )
 
 app = ApplicationBuilder().token(TOKEN).build()
