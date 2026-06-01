@@ -11,8 +11,8 @@ used_matches = []
 over_signals = []
 btts_signals = []
 async def start(update: Update, context):
-    await update.message.reply_text("🔥 Elite Betting Bot Online 🔥")
-def get_footystats_prediction():
+    await update.message.reply_text("🔥 Elite Betting Bot Online 🔥")    
+    def get_footystats_prediction():
     global over_signals, btts_signals
     
     url = f"https://api.footystats.org/todays-matches?key={FOOTYSTATS_API_KEY}"
@@ -112,7 +112,7 @@ for match in data.get("data", []):
 
     if "BTTS" in market:
         btts_signals.append(prediction) 
-        return matches[:2]
+        
 
 matches = get_footystats_prediction()
 print(matches) 
