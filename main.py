@@ -26,6 +26,9 @@ if data["success"] and len(data["data"]) > 0:
 
     match = best_match
 
+    print("BEST SCORE:", best_score)
+    print("BEST MATCH:", match["home_name"], "vs", match["away_name"])
+
     print("HOME PPG:", match.get("home_ppg"))
     print("AWAY PPG:", match.get("away_ppg"))
     print("O35:", match.get("o35_potential"))
