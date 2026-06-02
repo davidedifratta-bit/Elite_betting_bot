@@ -77,7 +77,7 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
         )
 
     elif query.data == "over":
-    await query.edit_message_text(OVER_SIGNAL)
+        await query.edit_message_text(OVER_SIGNAL)
 
     elif query.data == "btts":
         await query.edit_message_text(
