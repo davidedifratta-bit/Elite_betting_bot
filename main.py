@@ -38,6 +38,15 @@ if data["success"] and len(data["data"]) > 0:
         print("Over25:", match.get("o25_potential"))
         print("Home Goals:", match.get("team_a_xg_prematch"))
         print("Away Goals:", match.get("team_b_xg_prematch"))
+OVER_SIGNAL = f"""
+🔥 OVER 2.5 SIGNAL 🔥
+
+{match["home_name"]} vs {match["away_name"]}
+
+Over25: {match.get("o25_potential")}
+Home Goals: {match.get("team_a_xg_prematch")}
+Away Goals: {match.get("team_b_xg_prematch")}
+"""    
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     keyboard = [
