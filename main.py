@@ -23,6 +23,13 @@ if data["success"] and len(data["data"]) > 0:
 
         if int(m.get("btts_potential", 0)) < 50:
             continue
+
+        if float(m.get("team_a_xg_prematch", 0)) < 1.2:
+            continue
+
+        if float(m.get("team_b_xg_prematch", 0)) < 1.0:
+            continue
+            
         score = (
             int(m.get("o25_potential", 0))
             + int(m.get("btts_potential", 0))
