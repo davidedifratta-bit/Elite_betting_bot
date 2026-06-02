@@ -60,7 +60,7 @@ if data["success"] and len(data["data"]) > 0:
             best_match = m
 
     match = best_match
-    if best_score < 100:
+    if best_score < 50:
         print("NO VALUE TODAY")
         exit()
         
