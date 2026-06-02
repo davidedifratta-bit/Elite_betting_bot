@@ -18,9 +18,21 @@ if data["success"] and len(data["data"]) > 0:
     best_score = 0
 
     for m in data["data"]:
-        score = int(m.get("o25_potential", 0))
+        score = (
+            int(m.get("o25_potential", 0))
+            + int(float(m.get("team_a_xg_prematch", 0)) * 10)
+            + int(float(m.get("team_b_xg_prematch", 0)) * 10)
+)
 
         if score > best_score:
+            print(
+                "NEW BEST:",
+                m.get("home_name"),
+                "vs",
+                m.get("away_name"),
+                "SCORE:",
+                score
+)
             best_score = score
             best_match = m
 
