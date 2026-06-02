@@ -65,6 +65,9 @@ if data["success"] and len(data["data"]) > 0:
         exit()
         
     print("BEST SCORE:", best_score)
+    print("CORNER BONUS:", int(float(match.get("corners_potential", 0)) * 5))
+    print("XG HOME BONUS:", int(float(match.get("team_a_xg_prematch", 0)) * 10))
+    print("XG AWAY BONUS:", int(float(match.get("team_b_xg_prematch", 0)) * 10))
     print("BEST MATCH:", match["home_name"], "vs", match["away_name"])
 
     print("HOME PPG:", match.get("home_ppg"))
