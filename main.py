@@ -6,6 +6,13 @@ TOKEN = os.getenv("BOT_TOKEN")
 FOOTYSTATS_API_KEY = os.getenv("FOOTYSTATS_API_KEY")
 
 print("API KEY:", FOOTYSTATS_API_KEY)
+
+url = f"https://api.football-data-api.com/todays-matches?key={FOOTYSTATS_API_KEY}"
+
+response = requests.get(url)
+
+print("STATUS:", response.status_code)
+print("RESPONSE:", response.text[:500])
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     keyboard = [
