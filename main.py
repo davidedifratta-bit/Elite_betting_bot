@@ -141,13 +141,15 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await query.edit_message_text(BTTS_SIGNAL)
     elif query.data == "vip":
         await query.edit_message_text(
-        "💎 VIP SIGNAL 💎\n\n"
-        "⚽ Match API in arrivo\n"
-        "🎯 Market: BTTS YES\n"
-        "📈 Odds: 2.05\n"
-        "💰 Stake: 10/10\n"
-        "📊 Confidence: 91%"
-        )
+            f"💎 VIP SIGNAL 💎\n\n"
+            f"⚽ {match['home_name']} vs {match['away_name']}\n\n"
+            f"📊 Smart Score: {best_score}\n"
+            f"⚽ BTTS: {match.get('btts_potential')}\n"
+            f"🔥 Over25: {match.get('o25_potential')}\n"
+            f"🏠 Home xG: {match.get('team_a_xg_prematch')}\n"
+            f"✈️ Away xG: {match.get('team_b_xg_prematch')}\n\n"
+            f"💰 Stake: 10/10"
+    )
 
 app = ApplicationBuilder().token(TOKEN).build()
 
