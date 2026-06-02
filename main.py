@@ -23,6 +23,7 @@ if data["success"] and len(data["data"]) > 0:
             + int(m.get("btts_potential", 0))
             + int(float(m.get("team_a_xg_prematch", 0)) * 10)
             + int(float(m.get("team_b_xg_prematch", 0)) * 10)
+            + int(float(m.get("corners_potential", 0)) * 5)
 )
 
         if score > best_score:
