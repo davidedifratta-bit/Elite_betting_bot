@@ -24,14 +24,6 @@ if data["success"] and len(data["data"]) > 0:
 
     print("HOME:", match["home_name"])
     print("AWAY:", match["away_name"])
-
-    if (
-    float(match.get("home_ppg", 0)) >= 1.5
-    and float(match.get("corners_potential", 0)) >= 9
-    and int(match.get("o35_potential", 0)) >= 60
-):
-    print("🔥 OVER CANDIDATE FOUND 🔥")
-      
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     keyboard = [
