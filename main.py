@@ -24,9 +24,6 @@ if data["success"] and len(data["data"]) > 0:
         if int(m.get("btts_potential", 0)) < 50:
             continue
 
-        if float(m.get("corners_potential", 0)) < 9:
-            continue
-
         if float(m.get("team_a_xg_prematch", 0)) < 1.2:
             continue
 
