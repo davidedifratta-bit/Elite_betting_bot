@@ -104,6 +104,20 @@ BTTS: {match.get("btts_potential")}
 Home Goals: {match.get("team_a_xg_prematch")}
 Away Goals: {match.get("team_b_xg_prematch")}
 """
+if (
+    int(match.get("o25_potential", 0)) >= 70
+    and int(match.get("btts_potential", 0)) >= 60
+):
+    MARKET_SIGNAL = "🔥 OVER 2.5 + ⚽ BTTS"
+
+elif int(match.get("o25_potential", 0)) >= 70:
+    MARKET_SIGNAL = "🔥 OVER 2.5"
+
+elif int(match.get("btts_potential", 0)) >= 60:
+    MARKET_SIGNAL = "⚽ BTTS YES"
+
+else:
+    MARKET_SIGNAL = "⚠️ NO CLEAR EDGE"
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     keyboard = [
@@ -150,6 +164,7 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
             f"🏠 Home xG: {match.get('team_a_xg_prematch')}\n"
             f"✈️ Away xG: {match.get('team_b_xg_prematch')}\n\n"
             f"📈 Confidence: {min(best_score, 99)}%\n"
+            f"🎯 Market: {MARKET_SIGNAL}"
             f"💰 Stake: 10/10"
     )
 
