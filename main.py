@@ -13,6 +13,14 @@ response = requests.get(url)
 
 print("STATUS:", response.status_code)
 print("RESPONSE:", response.text[:500])
+
+data = response.json()
+
+if data["success"] and len(data["data"]) > 0:
+    match = data["data"][0]
+
+    print("HOME:", match["home_name"])
+    print("AWAY:", match["away_name"])
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     keyboard = [
