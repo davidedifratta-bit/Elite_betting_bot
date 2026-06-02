@@ -29,6 +29,12 @@ if data["success"] and len(data["data"]) > 0:
 
         if float(m.get("team_b_xg_prematch", 0)) < 1.0:
             continue
+
+        home_xg = float(m.get("team_a_xg_prematch", 0))
+        away_xg = float(m.get("team_b_xg_prematch", 0))
+
+        if abs(home_xg - away_xg) > 1.5:
+            continue
             
         score = (
             int(m.get("o25_potential", 0))
