@@ -37,7 +37,10 @@ if data["success"] and len(data["data"]) > 0:
             best_match = m
 
     match = best_match
-
+    if best_score < 100:
+        print("NO VALUE TODAY")
+        exit()
+        
     print("BEST SCORE:", best_score)
     print("BEST MATCH:", match["home_name"], "vs", match["away_name"])
 
