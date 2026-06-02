@@ -31,6 +31,7 @@ if data["success"] and len(data["data"]) > 0:
     and int(match.get("o35_potential", 0)) >= 60
 ):
     print("🔥 OVER CANDIDATE FOUND 🔥")
+      
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     keyboard = [
