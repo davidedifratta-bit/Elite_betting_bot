@@ -28,6 +28,12 @@ if data["success"] and len(data["data"]) > 0:
     print("OVER 25:", match.get("o25_potential"))
     print("HOME GOALS:", match.get("team_a_xg_prematch"))
     print("AWAY GOALS:", match.get("team_b_xg_prematch"))
+    if (
+    int(match.get("o25_potential", 0)) >= 75
+    and float(match.get("team_a_xg_prematch", 0)) >= 1.5
+    and float(match.get("team_b_xg_prematch", 0)) >= 1.0
+):
+        print("🔥 OVER 2.5 CANDIDATE 🔥")
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     keyboard = [
