@@ -11,13 +11,12 @@ url = f"https://api.football-data-api.com/todays-matches?key={FOOTYSTATS_API_KEY
 
 response = requests.get(url)
 
-print("STATUS:", response.status_code)
-print("RESPONSE:", response.text[:500])
-
 data = response.json()
 
 if data["success"] and len(data["data"]) > 0:
     match = data["data"][0]
+
+    print("MATCH KEYS:", match.keys())
 
     print("HOME:", match["home_name"])
     print("AWAY:", match["away_name"])
