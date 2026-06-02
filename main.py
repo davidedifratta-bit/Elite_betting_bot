@@ -14,7 +14,17 @@ response = requests.get(url)
 data = response.json()
 
 if data["success"] and len(data["data"]) > 0:
-    match = data["data"][0]
+    best_match = None
+    best_score = 0
+
+    for m in data["data"]:
+        score = int(m.get("o25_potential", 0))
+
+        if score > best_score:
+            best_score = score
+            best_match = m
+
+    match = best_match
 
     print("HOME PPG:", match.get("home_ppg"))
     print("AWAY PPG:", match.get("away_ppg"))
