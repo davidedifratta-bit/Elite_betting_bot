@@ -104,6 +104,15 @@ BTTS: {match.get("btts_potential")}
 Home Goals: {match.get("team_a_xg_prematch")}
 Away Goals: {match.get("team_b_xg_prematch")}
 """
+
+CORNER_SIGNAL = f"""
+📐 CORNER SIGNAL 📐
+
+{match["home_name"]} vs {match["away_name"]}
+
+Corners Potential: {match.get("corners_potential")}
+📈 Confidence: HIGH
+"""
 if (
     int(match.get("o25_potential", 0)) >= 70
     and int(match.get("btts_potential", 0)) >= 60
