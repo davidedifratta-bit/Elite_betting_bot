@@ -124,14 +124,15 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await query.answer()
 
     if query.data == "signal":
-        await query.edit_message_text(
-            "🎯 DAILY SIGNAL\n\n"
-            "⚽ Manchester City vs Arsenal\n"
-            "🎯 Over 2.5 Goals\n"
-            "📈 Odds: 1.85\n"
-            "💰 Stake: 8/10\n"
-            "📊 Confidence: 82%"
-        )
+    await query.edit_message_text(
+        f"🎯 DAILY SIGNAL\n\n"
+        f"⚽ {match['home_name']} vs {match['away_name']}\n\n"
+        f"📊 Smart Score: {best_score}\n"
+        f"⚽ BTTS: {match.get('btts_potential')}\n"
+        f"🔥 Over25: {match.get('o25_potential')}\n"
+        f"🏠 Home xG: {match.get('team_a_xg_prematch')}\n"
+        f"✈️ Away xG: {match.get('team_b_xg_prematch')}"
+    )
 
     elif query.data == "over":
         await query.edit_message_text(OVER_SIGNAL)
