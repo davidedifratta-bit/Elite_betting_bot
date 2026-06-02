@@ -4,6 +4,8 @@ import os
 import requests
 TOKEN = os.getenv("BOT_TOKEN")
 FOOTYSTATS_API_KEY = os.getenv("FOOTYSTATS_API_KEY")
+
+print("API KEY:", FOOTYSTATS_API_KEY)
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     keyboard = [
