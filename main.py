@@ -24,6 +24,10 @@ if data["success"] and len(data["data"]) > 0:
 
     print("HOME:", match["home_name"])
     print("AWAY:", match["away_name"])
+    print("BTTS:", match.get("btts_potential"))
+    print("OVER 25:", match.get("o25_potential"))
+    print("HOME GOALS:", match.get("team_a_xg_prematch"))
+    print("AWAY GOALS:", match.get("team_b_xg_prematch"))
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     keyboard = [
