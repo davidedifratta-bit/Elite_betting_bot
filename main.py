@@ -16,7 +16,11 @@ data = response.json()
 if data["success"] and len(data["data"]) > 0:
     match = data["data"][0]
 
-    print("MATCH KEYS:", match.keys())
+    print("HOME PPG:", match.get("home_ppg"))
+    print("AWAY PPG:", match.get("away_ppg"))
+    print("O35:", match.get("o35_potential"))
+    print("O45:", match.get("o45_potential"))
+    print("CORNERS:", match.get("corners_potential"))
 
     print("HOME:", match["home_name"])
     print("AWAY:", match["away_name"])
