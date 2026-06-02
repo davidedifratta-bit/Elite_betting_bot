@@ -133,6 +133,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
         [InlineKeyboardButton("🎯 Daily Signal", callback_data="signal")],
         [InlineKeyboardButton("🔥 Over 2.5", callback_data="over")],
         [InlineKeyboardButton("⚽ BTTS", callback_data="btts")],
+        [InlineKeyboardButton("📐 Corners", callback_data="corners")],
         [InlineKeyboardButton("💎 VIP", callback_data="vip")]
     ]
 
@@ -164,6 +165,10 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     elif query.data == "btts":
         await query.edit_message_text(BTTS_SIGNAL)
+
+    elif query.data == "corners":
+        await query.edit_message_text(CORNER_SIGNAL)
+        
     elif query.data == "vip":
         await query.edit_message_text(
             f"💎 VIP SIGNAL 💎\n\n"
