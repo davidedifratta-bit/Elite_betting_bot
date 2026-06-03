@@ -208,8 +208,6 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
         [InlineKeyboardButton("📐 Corners", callback_data="corners")],
         [InlineKeyboardButton("📈 Stats", callback_data="stats")],
         [InlineKeyboardButton("💎 VIP", callback_data="vip")],
-        [InlineKeyboardButton("⚙️ Admin", callback_data="admin")]
-    ]
 
     await update.message.reply_text(
         "🔥 ELITE BETTING LAB 🔥\n\nScegli un'opzione:",
@@ -245,19 +243,6 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     elif query.data == "stats":
         await query.edit_message_text(STATS_SIGNAL)
-
-    elif query.data == "admin":
-
-    keyboard = [
-        [InlineKeyboardButton("✅ Add Win", callback_data="win")],
-        [InlineKeyboardButton("❌ Add Loss", callback_data="loss")],
-        [InlineKeyboardButton("➖ Add Push", callback_data="push")]
-    ]
-
-    await query.edit_message_text(
-        "⚙️ ADMIN PANEL",
-        reply_markup=InlineKeyboardMarkup(keyboard)
-    )
         
     elif query.data == "vip":
         await query.edit_message_text(
