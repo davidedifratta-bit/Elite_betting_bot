@@ -257,7 +257,7 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
         keyboard = [
             [InlineKeyboardButton("✅ Add Win", callback_data="win")],
             [InlineKeyboardButton("❌ Add Loss", callback_data="loss")],
-            [InlineKeyboardButton("➖ Add Push", callback_data="push")]
+            [InlineKeyboardButton("➖ Add Push", callback_data="push")],
             [InlineKeyboardButton("🔄 Reset Stats", callback_data="reset")]
     ]
 
