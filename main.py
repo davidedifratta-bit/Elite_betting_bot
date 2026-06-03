@@ -246,7 +246,17 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await query.edit_message_text(STATS_SIGNAL)
 
     elif query.data == "admin":
-        await query.edit_message_text("⚙️ ADMIN PANEL")
+
+        keyboard = [
+            [InlineKeyboardButton("✅ Add Win", callback_data="win")],
+            [InlineKeyboardButton("❌ Add Loss", callback_data="loss")],
+            [InlineKeyboardButton("➖ Add Push", callback_data="push")]
+    ]
+
+    await query.edit_message_text(
+        "⚙️ ADMIN PANEL",
+        reply_markup=InlineKeyboardMarkup(keyboard)
+    )
         
     elif query.data == "vip":
         await query.edit_message_text(
