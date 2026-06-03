@@ -108,12 +108,12 @@ Over25: {match.get("o25_potential")}
 Home Goals: {match.get("team_a_xg_prematch")}
 Away Goals: {match.get("team_b_xg_prematch")}
 """
-STATS_SIGNAL = """
+STATS_SIGNAL = f"""
 📈 ELITE BETTING LAB STATS
 
-✅ Wins: 0
-❌ Losses: 0
-➖ Push: 0
+✅ Wins: {WINS}
+❌ Losses: {LOSSES}
+➖ Push: {PUSHES}
 
 📊 Win Rate: 0%
 
