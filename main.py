@@ -208,7 +208,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
         [InlineKeyboardButton("📐 Corners", callback_data="corners")],
         [InlineKeyboardButton("📈 Stats", callback_data="stats")],
         [InlineKeyboardButton("💎 VIP", callback_data="vip")],
-
+    ]
     await update.message.reply_text(
         "🔥 ELITE BETTING LAB 🔥\n\nScegli un'opzione:",
         reply_markup=InlineKeyboardMarkup(keyboard)
