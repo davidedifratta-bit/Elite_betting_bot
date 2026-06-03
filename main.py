@@ -244,6 +244,9 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     elif query.data == "stats":
         await query.edit_message_text(STATS_SIGNAL)
+
+    elif query.data == "admin":
+        await query.edit_message_text("⚙️ ADMIN PANEL")
         
     elif query.data == "vip":
         await query.edit_message_text(
