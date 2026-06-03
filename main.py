@@ -2,10 +2,46 @@ from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import ApplicationBuilder, CommandHandler, CallbackQueryHandler, ContextTypes
 import os
 import requests
+import json
 TOKEN = os.getenv("BOT_TOKEN")
+
 WINS = 0
 LOSSES = 0
 PUSHES = 0
+
+def load_stats():
+    global WINS, LOSSES, PUSHES
+
+    if os.path.exists("stats.json"):
+        with open("stats.json", "r") as f:
+            data = json.load(f)
+            WINS = data.get("wins", 0)
+            LOSSES = data.get("losses", 0)
+            PUSHES = data.get("pushes", 0)
+
+def save_stats():
+    with open("stats.json", "w") as f:
+        json.dump({
+            "wins": WINS,
+            "losses": LOSSES,
+            "pushes": PUSHES
+        }, f)
+
+def add_win():
+    global WINS
+    WINS += 1
+    save_stats()
+
+def add_loss():
+    global LOSSES
+    LOSSES += 1
+    save_stats()
+
+def add_push():
+    global PUSHES
+    PUSHES += 1
+    save_stats()
+
 FOOTYSTATS_API_KEY = os.getenv("FOOTYSTATS_API_KEY")
 
 print("API KEY:", FOOTYSTATS_API_KEY)
@@ -222,6 +258,8 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
             f"🎯 Market: {'OVER 2.5' if int(match.get('o25_potential',0)) > int(match.get('btts_potential',0)) else 'BTTS YES'}\n"
             f"💰 Stake: {STAKE}"
     )
+
+load_stats()
 
 app = ApplicationBuilder().token(TOKEN).build()
 
