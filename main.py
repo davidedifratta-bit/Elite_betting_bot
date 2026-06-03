@@ -216,6 +216,8 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     )
 
 async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    
+    global WINS, LOSSES, PUSHES
 
     query = update.callback_query
     await query.answer()
@@ -275,7 +277,7 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
         add_push()
         await query.edit_message_text("➖ PUSH ADDED")
     elif query.data == "reset":
-        global WINS, LOSSES, PUSHES
+    
 
         WINS = 0
         LOSSES = 0
