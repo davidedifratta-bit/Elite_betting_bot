@@ -266,7 +266,10 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
     )
     elif query.data == "win":
         add_win()
-        await query.edit_message_text("✅ WIN ADDED")    
+        await query.edit_message_text("✅ WIN ADDED")
+    elif query.data == "loss":
+        add_loss()
+        await query.edit_message_text("❌ LOSS ADDED")
     elif query.data == "vip":
         await query.edit_message_text(
             f"💎 VIP SIGNAL 💎\n\n"
