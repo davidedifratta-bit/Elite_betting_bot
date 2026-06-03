@@ -105,6 +105,17 @@ Over25: {match.get("o25_potential")}
 Home Goals: {match.get("team_a_xg_prematch")}
 Away Goals: {match.get("team_b_xg_prematch")}
 """
+STATS_SIGNAL = """
+📈 ELITE BETTING LAB STATS
+
+✅ Wins: 0
+❌ Losses: 0
+➖ Push: 0
+
+📊 Win Rate: 0%
+
+🚀 Tracking attivo
+"""
 BTTS_SIGNAL = f"""
 ⚽ BTTS SIGNAL ⚽
 
@@ -156,6 +167,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
         [InlineKeyboardButton("🔥 Over 2.5", callback_data="over")],
         [InlineKeyboardButton("⚽ BTTS", callback_data="btts")],
         [InlineKeyboardButton("📐 Corners", callback_data="corners")],
+        [InlineKeyboardButton("📈 Stats", callback_data="stats")],
         [InlineKeyboardButton("💎 VIP", callback_data="vip")]
     ]
 
@@ -190,6 +202,9 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     elif query.data == "corners":
         await query.edit_message_text(CORNER_SIGNAL)
+
+    elif query.data == "stats":
+        await query.edit_message_text(STATS_SIGNAL)
         
     elif query.data == "vip":
         await query.edit_message_text(
