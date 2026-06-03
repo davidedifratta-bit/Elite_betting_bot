@@ -275,9 +275,12 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
         add_push()
         await query.edit_message_text("➖ PUSH ADDED")
     elif query.data == "reset":
-        stats["wins"] = 0
-        stats["losses"] = 0
-        stats["push"] = 0
+        global WINS, LOSSES, PUSHES
+
+        WINS = 0
+        LOSSES = 0
+        PUSHES = 0
+
         save_stats()
 
         await query.edit_message_text("🔄 STATS RESET")
