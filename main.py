@@ -115,7 +115,7 @@ STATS_SIGNAL = f"""
 ❌ Losses: {LOSSES}
 ➖ Push: {PUSHES}
 
-📊 Win Rate: 0%
+📊 Win Rate: {(WINS * 100 // max(1, WINS + LOSSES))}%
 
 🚀 Tracking attivo
 """
