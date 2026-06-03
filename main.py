@@ -243,7 +243,14 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await query.edit_message_text(CORNER_SIGNAL)
 
     elif query.data == "stats":
-        await query.edit_message_text(STATS_SIGNAL)
+        await query.edit_message_text(
+            f"📈 ELITE BETTING LAB STATS\n\n"
+            f"✅ Wins: {WINS}\n"
+            f"❌ Losses: {LOSSES}\n"
+            f"➖ Push: {PUSHES}\n\n"
+            f"📊 Win Rate: {(WINS * 100 // max(1, WINS + LOSSES))}%\n\n"
+            f"🚀 Tracking attivo"
+    )
 
     elif query.data == "admin":
 
