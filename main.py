@@ -3,6 +3,9 @@ from telegram.ext import ApplicationBuilder, CommandHandler, CallbackQueryHandle
 import os
 import requests
 TOKEN = os.getenv("BOT_TOKEN")
+WINS = 0
+LOSSES = 0
+PUSHES = 0
 FOOTYSTATS_API_KEY = os.getenv("FOOTYSTATS_API_KEY")
 
 print("API KEY:", FOOTYSTATS_API_KEY)
