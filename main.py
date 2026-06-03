@@ -137,6 +137,18 @@ elif int(match.get("btts_potential", 0)) >= 60:
 
 else:
     MARKET_SIGNAL = "⚠️ NO CLEAR EDGE"
+    
+if best_score >= 260:
+    CONFIDENCE = "99%"
+elif best_score >= 240:
+    CONFIDENCE = "97%"
+elif best_score >= 220:
+    CONFIDENCE = "93%"
+elif best_score >= 200:
+    CONFIDENCE = "88%"
+else:
+    CONFIDENCE = "82%"
+    
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     keyboard = [
