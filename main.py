@@ -60,6 +60,16 @@ if data["success"] and len(data["data"]) > 0:
     if best_score < 100:
         print("NO VALUE TODAY")
         exit()
+    if best_score >= 240:
+        STAKE = "10/10"
+    elif best_score >= 220:
+        STAKE = "9/10"
+    elif best_score >= 200:
+        STAKE = "8/10"
+    elif best_score >= 180:
+        STAKE = "7/10"
+    else:
+        STAKE = "6/10"
         
     print("BEST SCORE:", best_score)
     print("BEST MATCH:", match["home_name"], "vs", match["away_name"])
@@ -180,7 +190,7 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
             f"✈️ Away xG: {match.get('team_b_xg_prematch')}\n\n"
             f"📈 Confidence: 99%\n"
             f"🎯 Market: {'OVER 2.5' if int(match.get('o25_potential',0)) > int(match.get('btts_potential',0)) else 'BTTS YES'}\n"
-            f"💰 Stake: 10/10"
+            f"💰 Stake: {STAKE}"
     )
 
 app = ApplicationBuilder().token(TOKEN).build()
