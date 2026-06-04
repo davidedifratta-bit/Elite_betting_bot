@@ -326,20 +326,20 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
         await query.edit_message_text("🔄 STATS RESET")
         
-        elif query.data == "history":
+    elif query.data == "history":
 
-            if len(HISTORY) == 0:
-                await query.edit_message_text(
-                    "📜 HISTORY\n\nNessun risultato salvato."
-                )
+        if len(HISTORY) == 0:
+            await query.edit_message_text(
+                "📜 HISTORY\n\nNessun risultato salvato."
+            )
 
-            else:
-                text = "📜 LAST RESULTS\n\n"
+        else:
+            text = "📜 LAST RESULTS\n\n"
 
-                for result in HISTORY[-10:]:
-                    text += f"{result}\n"
+            for result in HISTORY[-10:]:
+                text += f"{result}\n"
 
-                await query.edit_message_text(text)
+            await query.edit_message_text(text)
   
     elif query.data == "vip":
         await query.edit_message_text(
