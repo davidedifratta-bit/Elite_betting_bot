@@ -3,6 +3,7 @@ from telegram.ext import ApplicationBuilder, CommandHandler, CallbackQueryHandle
 import os
 import requests
 import json
+from datetime import datetime
 TOKEN = os.getenv("BOT_TOKEN")
 
 HISTORY = []
@@ -266,9 +267,15 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await query.answer()
 
     if query.data == "signal":
+        
+        match_time = datetime.fromtimestamp(
+            int(match.get("date_unix", 0))
+        ).strftime("%d/%m %H:%M")
+        
         await query.edit_message_text(
             f"🎯 DAILY SIGNAL\n\n"
             f"⚽ {match['home_name']} vs {match['away_name']}\n\n"
+            f"🕒 Kick Off: {match_time}\n\n"
             f"📊 Smart Score: {best_score}\n"
             f"⚽ BTTS: {match.get('btts_potential')}\n"
             f"🔥 Over25: {match.get('o25_potential')}\n"
