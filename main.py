@@ -229,6 +229,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
         [InlineKeyboardButton("⚽ BTTS", callback_data="btts")],
         [InlineKeyboardButton("📐 Corners", callback_data="corners")],
         [InlineKeyboardButton("📈 Stats", callback_data="stats")],
+        [InlineKeyboardButton("📜 History", callback_data="history")],
         [InlineKeyboardButton("💎 VIP", callback_data="vip")],
         [InlineKeyboardButton("⚙️ Admin", callback_data="admin")]
     ]
