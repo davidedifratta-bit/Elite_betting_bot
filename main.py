@@ -133,7 +133,7 @@ if data["success"] and len(data["data"]) > 0:
     match = best_match
     if best_score < 100:
         print("NO VALUE TODAY")
-        exit()
+        
     if best_score >= 240:
         STAKE = "10/10"
     elif best_score >= 220:
