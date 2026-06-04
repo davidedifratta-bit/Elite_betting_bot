@@ -17,9 +17,10 @@ def load_history():
 WINS = 0
 LOSSES = 0
 PUSHES = 0
+PROFIT = 0
 
 def load_stats():
-    global WINS, LOSSES, PUSHES
+    global WINS, LOSSES, PUSHES, PROFIT
 
     if os.path.exists("stats.json"):
         with open("stats.json", "r") as f:
@@ -27,13 +28,15 @@ def load_stats():
             WINS = data.get("wins", 0)
             LOSSES = data.get("losses", 0)
             PUSHES = data.get("pushes", 0)
+            PROFIT = data.get("profit", 0)
 
 def save_stats():
     with open("stats.json", "w") as f:
         json.dump({
             "wins": WINS,
             "losses": LOSSES,
-            "pushes": PUSHES
+            "pushes": PUSHES,
+            "profit": PROFIT
         }, f)
 def save_history():
     with open("history.json", "w") as f:
