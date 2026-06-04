@@ -71,7 +71,7 @@ def add_push():
     save_history()
 FOOTYSTATS_API_KEY = os.getenv("FOOTYSTATS_API_KEY")
 
-print("API KEY:", FOOTYSTATS_API_KEY)
+print("Bot avviato...")
 
 url = f"https://api.football-data-api.com/todays-matches?key={FOOTYSTATS_API_KEY}"
 
@@ -84,10 +84,10 @@ if data["success"] and len(data["data"]) > 0:
     best_score = 0
 
     for m in data["data"]:
-        print("ODD:", m.get("odds_ft_over25"))
+        
         over25_odds = float(m.get("odds_ft_over25", 0) or 0)
 
-        if over25_odds < 1.75:
+        if over25_odds < 1.70:
             continue
 
         if over25_odds > 1.90:
