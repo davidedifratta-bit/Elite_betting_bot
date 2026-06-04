@@ -4,7 +4,16 @@ import os
 import requests
 import json
 TOKEN = os.getenv("BOT_TOKEN")
+
 HISTORY = []
+
+def load_history():
+    global HISTORY
+
+    if os.path.exists("history.json"):
+        with open("history.json", "r") as f:
+            HISTORY = json.load(f)
+            
 WINS = 0
 LOSSES = 0
 PUSHES = 0
