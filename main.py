@@ -42,8 +42,9 @@ def save_history():
     with open("history.json", "w") as f:
         json.dump(HISTORY, f)
 def add_win():
-    global WINS
+    global WINS, PROFIT
     WINS += 1
+    PROFIT += 1
 
     HISTORY.append("WIN")
     
@@ -51,8 +52,9 @@ def add_win():
     save_history()
 
 def add_loss():
-    global LOSSES
+    global LOSSES, PROFIT
     LOSSES += 1
+    PROFIT -= 1
 
     HISTORY.append("LOSS")
     
