@@ -84,6 +84,7 @@ if data["success"] and len(data["data"]) > 0:
     best_score = 0
 
     for m in data["data"]:
+        print(m)
         if int(m.get("o25_potential", 0)) < 60:
             continue
 
