@@ -41,18 +41,29 @@ def save_history():
 def add_win():
     global WINS
     WINS += 1
+
+    HISTORY.append("WIN")
+    
     save_stats()
+    save_history()
 
 def add_loss():
     global LOSSES
     LOSSES += 1
+
+    HISTORY.append("LOSS")
+    
     save_stats()
+    save_history()
 
 def add_push():
     global PUSHES
     PUSHES += 1
-    save_stats()
 
+    HISTORY.append("PUSH")
+    
+    save_stats()
+    save_history()
 FOOTYSTATS_API_KEY = os.getenv("FOOTYSTATS_API_KEY")
 
 print("API KEY:", FOOTYSTATS_API_KEY)
