@@ -329,6 +329,10 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
     )
 
 load_stats()
+load_history()
+
+
+
 
 app = ApplicationBuilder().token(TOKEN).build()
 
