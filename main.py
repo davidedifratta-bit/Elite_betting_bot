@@ -302,9 +302,7 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
         save_stats()
 
         await query.edit_message_text("🔄 STATS RESET")
-
-       keyboard = [
-           [InlineKeyboardButton("🎯 Daily Signal",  
+  
     elif query.data == "vip":
         await query.edit_message_text(
             f"💎 VIP SIGNAL 💎\n\n"
