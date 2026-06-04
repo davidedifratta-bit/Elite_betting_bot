@@ -269,13 +269,28 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
     )
     elif query.data == "win":
         add_win()
-        await query.edit_message_text("✅ WIN ADDED")
+        await query.edit_message_text(
+            f"📈 ELITE BETTING LAB STATS\n\n"
+            f"✅ Wins: {WINS}\n"
+            f"❌ Losses: {LOSSES}\n"
+            f"➖ Push: {PUSHES}"
+    )
     elif query.data == "loss":
         add_loss()
-        await query.edit_message_text("❌ LOSS ADDED")
+        await query.edit_message_text(
+            f"📈 ELITE BETTING LAB STATS\n\n"
+            f"✅ Wins: {WINS}\n"
+            f"❌ Losses: {LOSSES}\n"
+            f"➖ Push: {PUSHES}"
+    )
     elif query.data == "push":
         add_push()
-        await query.edit_message_text("➖ PUSH ADDED")
+        await query.edit_message_text(
+            f"📈 ELITE BETTING LAB STATS\n\n"
+            f"✅ Wins: {WINS}\n"
+            f"❌ Losses: {LOSSES}\n"
+            f"➖ Push: {PUSHES}"
+    )
     elif query.data == "reset":
     
 
