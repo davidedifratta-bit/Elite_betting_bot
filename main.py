@@ -106,6 +106,7 @@ if data["success"] and len(data["data"]) > 0:
 
         home_xg = float(m.get("team_a_xg_prematch", 0))
         away_xg = float(m.get("team_b_xg_prematch", 0))
+        market_odds = over25_odds
 
         if abs(home_xg - away_xg) > 1.5:
             continue
@@ -275,6 +276,7 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
             f"✈️ Away xG: {match.get('team_b_xg_prematch')}\n\n"
             f"📈 Confidence: {min(best_score, 99)}%\n"
             f"🎯 Market: {'OVER 2.5' if int(match.get('o25_potential',0)) > int(match.get('btts_potential',0)) else 'BTTS YES'}"
+            f"💸 Quota: {market_odds}\n"
     )
 
     elif query.data == "over":
