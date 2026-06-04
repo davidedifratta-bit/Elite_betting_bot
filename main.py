@@ -339,6 +339,16 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
             for result in HISTORY[-10:]:
                 text += f"{result}\n"
 
+            total = len(HISTORY)
+
+            winrate = round((WINS / (WINS + LOSSES)) * 100, 1) if (WINS + LOSSES) > 0 else 0
+
+            text += f"\n📊 Total Bets: {total}"
+            text += f"\n✅ Wins: {WINS}"
+            text += f"\n❌ Losses: {LOSSES}"
+            text += f"\n➖ Pushes: {PUSHES}"
+            text += f"\n📈 Win Rate: {winrate}%"
+
             await query.edit_message_text(text)
   
     elif query.data == "vip":
