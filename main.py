@@ -260,7 +260,8 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
             [InlineKeyboardButton("✅ Add Win", callback_data="win")],
             [InlineKeyboardButton("❌ Add Loss", callback_data="loss")],
             [InlineKeyboardButton("➖ Add Push", callback_data="push")],
-            [InlineKeyboardButton("🔄 Reset Stats", callback_data="reset")]
+            [InlineKeyboardButton("🔄 Reset Stats", callback_data="reset")],
+            [InlineKeyboardButton("⬅️ Back", callback_data="back")]
     ]
 
         await query.edit_message_text(
@@ -301,6 +302,8 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
         save_stats()
 
         await query.edit_message_text("🔄 STATS RESET")
+    elif query.data == "back":
+        await start(update, context)
     elif query.data == "vip":
         await query.edit_message_text(
             f"💎 VIP SIGNAL 💎\n\n"
