@@ -278,6 +278,7 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
             f"✅ Wins: {WINS}\n"
             f"❌ Losses: {LOSSES}\n"
             f"➖ Push: {PUSHES}\n\n"
+            f"💰 Profit: {PROFIT}U\n\n"
             f"📊 Win Rate: {(WINS * 100 // max(1, WINS + LOSSES))}%\n\n"
             f"🚀 Tracking attivo"
     )
