@@ -84,8 +84,14 @@ if data["success"] and len(data["data"]) > 0:
     best_score = 0
 
     for m in data["data"]:
-        print("KEYS:", m.keys())
-        break
+        print("ODD:", m.get("odds_ft_over25"))
+        over25_odds = float(m.get("odds_ft_over25", 0) or 0)
+
+        if over25_odds < 1.75:
+            continue
+
+        if over25_odds > 1.90:
+            continue
         if int(m.get("o25_potential", 0)) < 60:
             continue
 
