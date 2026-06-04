@@ -302,8 +302,22 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
         save_stats()
 
         await query.edit_message_text("🔄 STATS RESET")
-    elif query.data == "back":
-        await start(update, context)
+   elif query.data == "back":
+
+       keyboard = [
+           [InlineKeyboardButton("🎯 Daily Signal", callback_data="signal")],
+           [InlineKeyboardButton("🔥 Over 2.5", callback_data="over")],
+           [InlineKeyboardButton("⚽ BTTS", callback_data="btts")],
+           [InlineKeyboardButton("📐 Corners", callback_data="corners")],
+           [InlineKeyboardButton("📈 Stats", callback_data="stats")],
+           [InlineKeyboardButton("💎 VIP", callback_data="vip")],
+           [InlineKeyboardButton("⚙️ Admin", callback_data="admin")]
+    ]
+
+    await query.edit_message_text(
+        "🔥 ELITE BETTING LAB 🔥\n\nScegli un'opzione:",
+        reply_markup=InlineKeyboardMarkup(keyboard)
+    ) 
     elif query.data == "vip":
         await query.edit_message_text(
             f"💎 VIP SIGNAL 💎\n\n"
