@@ -4,7 +4,7 @@ import os
 import requests
 import json
 TOKEN = os.getenv("BOT_TOKEN")
-
+HISTORY = []
 WINS = 0
 LOSSES = 0
 PUSHES = 0
@@ -26,7 +26,9 @@ def save_stats():
             "losses": LOSSES,
             "pushes": PUSHES
         }, f)
-
+def save_history():
+    with open("history.json", "w") as f:
+        json.dump(HISTORY, f)
 def add_win():
     global WINS
     WINS += 1
