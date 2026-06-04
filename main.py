@@ -87,7 +87,7 @@ if data["success"] and len(data["data"]) > 0:
         
         over25_odds = float(m.get("odds_ft_over25", 0) or 0)
 
-        if over25_odds < 1.70:
+        if over25_odds < 1.60:
             continue
 
         if over25_odds > 1.90:
@@ -131,6 +131,12 @@ if data["success"] and len(data["data"]) > 0:
             best_match = m
 
     match = best_match
+    if match is None:
+        print("NO MATCH FOUND")
+        match = {
+            "home_name": "Nessuna partita",
+            "away_name": "trovata"
+        }
     if best_score < 100:
         print("NO VALUE TODAY")
         
