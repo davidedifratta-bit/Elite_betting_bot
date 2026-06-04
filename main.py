@@ -302,7 +302,7 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
         save_stats()
 
         await query.edit_message_text("🔄 STATS RESET")
-   elif query.data == "back":
+    elif query.data == "back":
 
        keyboard = [
            [InlineKeyboardButton("🎯 Daily Signal", callback_data="signal")],
