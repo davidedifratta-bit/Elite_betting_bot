@@ -87,8 +87,8 @@ if data["success"] and len(data["data"]) > 0:
     for m in data["data"]:
          match_time = int(m.get("date_unix", 0))
 
-         if match_time < datetime.now().timestamp():
-             continue   
+        if match_time < datetime.now().timestamp():
+            continue   
         
         over25_odds = float(m.get("odds_ft_over25", 0) or 0)
 
