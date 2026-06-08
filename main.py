@@ -85,7 +85,7 @@ if data["success"] and len(data["data"]) > 0:
     best_score = 0
 
     for m in data["data"]:
-         match_time = int(m.get("date_unix", 0))
+        match_time = int(m.get("date_unix", 0))
 
         if match_time < datetime.now().timestamp():
             continue   
