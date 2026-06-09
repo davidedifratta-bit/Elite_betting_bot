@@ -423,6 +423,7 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
             await query.edit_message_text(text)
   
     elif query.data == "vip":
+    print("VIP CLICKED", match, best_score, STAKE)
         await query.edit_message_text(
             f"💎 VIP SIGNAL 💎\n\n"
             f"⚽ {match['home_name']} vs {match['away_name']}\n\n"
