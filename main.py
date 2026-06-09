@@ -96,10 +96,16 @@ if data["success"] and len(data["data"]) > 0:
         
         over25_odds = float(m.get("odds_ft_over25", 0) or 0)
         print(
-            "ODDS CHECK:",
+            "ODDS RAW:",
             m.get("home_name"),
             "vs",
             m.get("away_name"),
+            "VALUE=",
+            repr(m.get("odds_ft_over25"))
+)
+
+        print(
+            "ODDS FLOAT:",
             over25_odds
 )
 
