@@ -87,6 +87,11 @@ if data["success"] and len(data["data"]) > 0:
 
     for m in data["data"]:
         print(m.get("home_name"), "vs", m.get("away_name"))
+        print("BTTS:", m.get("btts_potential"),
+              "O25:", m.get("o25_potential"),
+              "HXG:", m.get("team_a_xg_prematch"),
+              "AXG:", m.get("team_b_xg_prematch"),
+              "ODDS:", m.get("odds_ft_over25"))
           
         
         over25_odds = float(m.get("odds_ft_over25", 0) or 0)
