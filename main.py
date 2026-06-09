@@ -150,16 +150,16 @@ if data["success"] and len(data["data"]) > 0:
             + int(float(m.get("team_b_xg_prematch", 0)) * 10)
             + int(float(m.get("corners_potential", 0)) * 5)
 )
-if score < 220:
-    continue
+        if score < 220:
+            continue
     
-print(
-    "PASSED:",
-    m.get("home_name"),
-    "vs",
-    m.get("away_name"),
-    "SCORE:",
-    score
+        print(
+            "PASSED:",
+            m.get("home_name"),
+            "vs",
+            m.get("away_name"),
+            "SCORE:",
+            score
 )
 if score > best_score:
     print(
