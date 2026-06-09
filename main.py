@@ -109,7 +109,7 @@ if data["success"] and len(data["data"]) > 0:
             over25_odds
 )
 
-        if over25_odds < 1.20:
+        if over25_odds < 1.55:
             print("SCARTATA QUOTA BASSA")
             continue
 
@@ -150,25 +150,28 @@ if data["success"] and len(data["data"]) > 0:
             + int(float(m.get("team_b_xg_prematch", 0)) * 10)
             + int(float(m.get("corners_potential", 0)) * 5)
 )
-        print(
-            "PASSED:",
-            m.get("home_name"),
-            "vs",
-            m.get("away_name"),
-            "SCORE:",
-            score
+if score < 220:
+    continue
+    
+print(
+    "PASSED:",
+    m.get("home_name"),
+    "vs",
+    m.get("away_name"),
+    "SCORE:",
+    score
 )
-        if score > best_score:
-            print(
-                "NEW BEST:",
-                m.get("home_name"),
-                "vs",
-                m.get("away_name"),
-                "SCORE:",
-                score
+if score > best_score:
+    print(
+        "NEW BEST:",
+        m.get("home_name"),
+        "vs",
+        m.get("away_name"),
+        "SCORE:",
+        score
 )
-            best_score = score
-            best_match = m
+best_score = score
+best_match = m
 
     match = best_match
     if match is None:
