@@ -115,6 +115,14 @@ if data["success"] and len(data["data"]) > 0:
 
         home_xg = float(m.get("team_a_xg_prematch", 0))
         away_xg = float(m.get("team_b_xg_prematch", 0))
+        print(
+            "CHECK:",
+            m.get("home_name"),
+            "vs",
+            m.get("away_name"),
+            "DIFF:",
+            abs(home_xg - away_xg)
+)
         market_odds = over25_odds
 
         if abs(home_xg - away_xg) > 1.5:
@@ -127,7 +135,14 @@ if data["success"] and len(data["data"]) > 0:
             + int(float(m.get("team_b_xg_prematch", 0)) * 10)
             + int(float(m.get("corners_potential", 0)) * 5)
 )
-
+        print(
+            "PASSED:",
+            m.get("home_name"),
+            "vs",
+            m.get("away_name"),
+            "SCORE:",
+            score
+)
         if score > best_score:
             print(
                 "NEW BEST:",
