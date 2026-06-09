@@ -86,6 +86,7 @@ if data["success"] and len(data["data"]) > 0:
     best_score = 0
 
     for m in data["data"]:
+        print(m.get("home_name"), "vs", m.get("away_name"))
           
         
         over25_odds = float(m.get("odds_ft_over25", 0) or 0)
