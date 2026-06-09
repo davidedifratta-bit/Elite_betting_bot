@@ -79,6 +79,7 @@ url = f"https://api.football-data-api.com/todays-matches?key={FOOTYSTATS_API_KEY
 response = requests.get(url)
 
 data = response.json()
+print("MATCHES FOUND:", len(data["data"]))
 
 if data["success"] and len(data["data"]) > 0:
     best_match = None
