@@ -95,11 +95,20 @@ if data["success"] and len(data["data"]) > 0:
           
         
         over25_odds = float(m.get("odds_ft_over25", 0) or 0)
+        print(
+            "ODDS CHECK:",
+            m.get("home_name"),
+            "vs",
+            m.get("away_name"),
+            over25_odds
+)
 
         if over25_odds < 1.60:
+            print("SCARTATA QUOTA BASSA")
             continue
 
         if over25_odds > 1.90:
+            print("SCARTATA QUOTA ALTA")
             continue
         if int(m.get("o25_potential", 0)) < 60:
             continue
