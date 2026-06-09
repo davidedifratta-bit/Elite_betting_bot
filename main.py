@@ -175,14 +175,14 @@ best_match = m
 
 match = best_match
 
-    if match is None:
-        print("NO MATCH FOUND")
-        match = {
-            "home_name": "Nessuna partita",
-            "away_name": "trovata"
+if match is None:
+    print("NO MATCH FOUND")
+    match = {
+        "home_name": "Nessuna partita",
+        "away_name": "trovata"
         }
-    if best_score < 100:
-        print("NO VALUE TODAY")
+if best_score < 100:
+    print("NO VALUE TODAY")
         
     if best_score >= 240:
         STAKE = "10/10"
