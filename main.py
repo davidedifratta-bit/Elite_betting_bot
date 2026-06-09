@@ -172,7 +172,9 @@ if score > best_score:
 )
 best_score = score
 best_match = m
+
 match = best_match
+
     if match is None:
         print("NO MATCH FOUND")
         match = {
