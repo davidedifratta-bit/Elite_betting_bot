@@ -154,6 +154,7 @@ if data["success"] and len(data["data"]) > 0:
         print("SCORE CALCOLATO:", score)
         print("PITBULL TEST 999")
         if score < 220:
+            print("SCARTATA SCORE:", score)
             continue
     
         print(
