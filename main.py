@@ -151,7 +151,7 @@ if data["success"] and len(data["data"]) > 0:
             + int(float(m.get("team_b_xg_prematch", 0)) * 10)
             + int(float(m.get("corners_potential", 0)))
 )
-        if score < 190:
+        if score < 220:
             continue
     
         print(
