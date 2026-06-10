@@ -142,7 +142,8 @@ if data["success"] and len(data["data"]) > 0:
 
         if abs(home_xg - away_xg) > 1.5:
             continue
-            
+        if float(m.get("team_b_xg_prematch", 0)) < 0.50:
+            continue    
         score = (
             int(m.get("o25_potential", 0))
             + int(m.get("btts_potential", 0))
@@ -150,7 +151,7 @@ if data["success"] and len(data["data"]) > 0:
             + int(float(m.get("team_b_xg_prematch", 0)) * 10)
             + int(float(m.get("corners_potential", 0)))
 )
-        if score < 230:
+        if score < 190:
             continue
     
         print(
