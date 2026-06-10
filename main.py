@@ -150,7 +150,7 @@ if data["success"] and len(data["data"]) > 0:
             + int(float(m.get("team_b_xg_prematch", 0)) * 10)
             + int(float(m.get("corners_potential", 0)) * 5)
 )
-        if score < 220:
+        if score < 230:
             continue
     
         print(
@@ -259,15 +259,15 @@ Corners Potential: {match.get("corners_potential")}
 📈 Confidence: HIGH
 """
 if (
-    int(match.get("o25_potential", 0)) >= 70
-    and int(match.get("btts_potential", 0)) >= 60
+    int(match.get("o25_potential", 0)) >= 75
+    and int(match.get("btts_potential", 0)) >= 75
 ):
     MARKET_SIGNAL = "🔥 OVER 2.5 + ⚽ BTTS"
 
-elif int(match.get("o25_potential", 0)) >= 70:
+elif int(match.get("o25_potential", 0)) >= 75:
     MARKET_SIGNAL = "🔥 OVER 2.5"
 
-elif int(match.get("btts_potential", 0)) >= 60:
+elif int(match.get("btts_potential", 0)) >= 75:
     MARKET_SIGNAL = "⚽ BTTS YES"
 
 else:
