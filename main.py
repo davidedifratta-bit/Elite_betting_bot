@@ -163,6 +163,7 @@ if data["success"] and len(data["data"]) > 0:
             score
 )
 if score > best_score:
+    print("REAL SCORE:", score)
     print(
         "NEW BEST:",
         m.get("home_name"),
