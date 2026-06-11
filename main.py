@@ -307,7 +307,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
     
-    global WINS, LOSSES, PUSHES
+    global WINS, LOSSES, PUSHES, STAKE
 
     query = update.callback_query
     await query.answer()
@@ -431,7 +431,7 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
         f"Match: {match['home_name']} vs {match['away_name']}\n"
         f"Score: {best_score}\n"
         f"Confidence: {CONFIDENCE}\n"
-        f"Stake: TEST"
+        f"Stake: {STAKE}"
     )
 
 load_stats()
