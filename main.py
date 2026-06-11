@@ -109,6 +109,7 @@ if data["success"] and len(data["data"]) > 0:
             "ODDS FLOAT:",
             over25_odds
 )
+        print("FILTRO QUOTA =", over25_odds)
 
         if over25_odds < 1.60:
             continue
@@ -172,6 +173,7 @@ if score > best_score:
         "SCORE:",
         score
 )
+    print("PARTITA ACCETTATA:", over25_odds)
 best_score = score
 best_match = m
 
