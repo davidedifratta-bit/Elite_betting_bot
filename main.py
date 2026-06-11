@@ -152,9 +152,7 @@ if data["success"] and len(data["data"]) > 0:
             + int(float(m.get("corners_potential", 0)))
 )
         print("SCORE CALCOLATO:", score)
-        print("PITBULL TEST 999")
-        if score < 999:
-            print("SCARTATA SCORE:", score)
+        if score < 200:
             continue
     
         print(
