@@ -427,7 +427,10 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
             await query.edit_message_text(text)
   
     elif query.data == "vip":
-        await query.edit_message_text("VIP TEST OK")
+        await query.edit_message_text(
+            f"VIP\n\n"
+            f"Match: {match['home_name']} vs {match['away_name']}"
+        )
 
 load_stats()
 load_history()
