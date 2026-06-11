@@ -430,6 +430,7 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await query.edit_message_text(
             f"VIP\n\n"
             f"Match: {match['home_name']} vs {match['away_name']}"
+            f"Score: {best_score}"
         )
 
 load_stats()
