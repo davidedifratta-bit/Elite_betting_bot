@@ -111,7 +111,7 @@ if data["success"] and len(data["data"]) > 0:
 )
         print("FILTRO QUOTA =", over25_odds)
 
-        if over25_odds < 1.60:
+        if over25_odds < 1.40:
             continue
 
         if over25_odds > 1.85:
