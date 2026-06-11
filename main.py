@@ -110,7 +110,7 @@ if data["success"] and len(data["data"]) > 0:
             over25_odds
 )
 
-        if over25_odds < 1.55:
+        if over25_odds < 1.10:
             print("SCARTATA QUOTA BASSA")
             continue
 
