@@ -84,6 +84,7 @@ print("MATCHES FOUND:", len(data["data"]))
 if data["success"] and len(data["data"]) > 0:
     best_match = None
     best_score = 0
+    score = 0
 
     for m in data["data"]:
         print(m.get("home_name"), "vs", m.get("away_name"))
