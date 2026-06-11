@@ -432,6 +432,7 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
             f"Match: {match['home_name']} vs {match['away_name']}"
             f"Score: {best_score}"
             f"Confidence: {CONFIDENCE}"
+            f"Stake: {STAKE}"
         )
 
 load_stats()
