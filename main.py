@@ -365,6 +365,9 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
         ).strftime("%d/%m %H:%M")
 
         print("MATCH_URL SIGNAL:", match.get("match_url"))
+
+        country = match.get("match_url", "").split("/")[1].title()
+        print("COUNTRY SIGNAL:", country)
         
         await query.edit_message_text(
             f"🎯 DAILY SIGNAL\n\n"
