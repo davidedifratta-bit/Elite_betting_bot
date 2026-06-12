@@ -140,6 +140,11 @@ if data["success"] and len(data["data"]) > 0:
 
         print("MATCH DATA:", m)
         
+        print("LEAGUE:", m.get("league"))
+        print("COUNTRY:", m.get("country"))
+        print("COMPETITION:", m.get("competition"))
+        print("LEAGUE_NAME:", m.get("league_name"))
+        
         print(
             "CHECK:",
             m.get("home_name"),
