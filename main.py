@@ -197,6 +197,10 @@ if match is None:
         }
 if best_score < 100:
     print("NO VALUE TODAY")
+
+    print("FINAL PICK")
+    print(match.get("home_name"), "vs", match.get("away_name"))
+    print("FINAL SCORE:", best_score)
         
     if best_score >= 240:
         STAKE = "10/10"
