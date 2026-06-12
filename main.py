@@ -117,7 +117,7 @@ if data["success"] and len(data["data"]) > 0:
 
         if over25_odds > 1.90:
             continue
-        if int(m.get("o25_potential", 0)) < 55:
+        if int(m.get("o25_potential", 0)) < 45:
             print("STOP O25")
             continue
 
@@ -160,7 +160,7 @@ if data["success"] and len(data["data"]) > 0:
             + int(float(m.get("corners_potential", 0)))
 )
         print("SCORE CALCOLATO:", score)
-        if score < 140:
+        if score < 120:
             continue
     
         print(
