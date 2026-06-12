@@ -151,6 +151,9 @@ if data["success"] and len(data["data"]) > 0:
         print("COMPETITION:", m.get("competition"))
         print("MATCH_URL:", m.get("match_url"))
         print("FULL MATCH DATA:", m)
+        
+        print([k for k in m.keys() if "comp" in k.lower()])
+        print([k for k in m.keys() if "tour" in k.lower()])
 
         country = str(m.get("match_url", "")).split("/")[1].title()
         print("COUNTRY EXTRACTED:", country)
