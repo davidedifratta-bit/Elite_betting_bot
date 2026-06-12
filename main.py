@@ -150,6 +150,7 @@ if data["success"] and len(data["data"]) > 0:
         
         print("COMPETITION:", m.get("competition"))
         print("MATCH_URL:", m.get("match_url"))
+        print("FULL MATCH DATA:", m)
 
         country = str(m.get("match_url", "")).split("/")[1].title()
         print("COUNTRY EXTRACTED:", country)
