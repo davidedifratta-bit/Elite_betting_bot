@@ -454,5 +454,6 @@ app.add_handler(CommandHandler("start", start))
 app.add_handler(CallbackQueryHandler(buttons))
 
 print("Bot avviato...")
+print("VERSIONE TEST 999999")
 
 app.run_polling()
