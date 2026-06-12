@@ -161,6 +161,7 @@ if data["success"] and len(data["data"]) > 0:
         print("COMPETITION_ID:", m.get("competition_id"))
         print("ROUND_ID:", m.get("roundID"))
         print("SEASON:", m.get("season"))
+        print("FULL MATCH URL:", m.get("match_url"))
         
         print(
             "CHECK:",
