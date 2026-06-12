@@ -137,6 +137,9 @@ if data["success"] and len(data["data"]) > 0:
 
         home_xg = float(m.get("team_a_xg_prematch", 0))
         away_xg = float(m.get("team_b_xg_prematch", 0))
+
+        print("MATCH DATA:", m)
+        
         print(
             "CHECK:",
             m.get("home_name"),
