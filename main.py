@@ -367,11 +367,22 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
         print("MATCH_URL SIGNAL:", match.get("match_url"))
 
         country = match.get("match_url", "").split("/")[1].title()
+        
+        country_flag = {
+            "Finland": "🇫🇮",
+            "Usa": "🇺🇸",
+            "Argentina": "🇦🇷",
+            "Brazil": "🇧🇷",
+            "Sweden": "🇸🇪",
+            "Norway": "🇳🇴",
+            "Denmark": "🇩🇰",
+        }.get(country, "🌍")
         print("COUNTRY SIGNAL:", country)
         print("******** DAILY SIGNAL CLICKED ********")
         
         await query.edit_message_text(
             f"🎯 DAILY SIGNAL\n\n"
+            f"{country_flag} {country}\n\n"
             f"⚽ {match['home_name']} vs {match['away_name']}\n\n"
             f"🕒 Kick Off: {match_time}\n\n"
             f"📊 Smart Score: {best_score}\n"
