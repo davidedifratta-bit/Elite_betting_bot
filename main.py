@@ -140,6 +140,11 @@ if data["success"] and len(data["data"]) > 0:
 
         print("KEYS:", list(m.keys()))
         
+        print([k for k in m.keys() if "league" in k.lower()])
+        print([k for k in m.keys() if "country" in k.lower()])
+        print([k for k in m.keys() if "round" in k.lower()])
+        print([k for k in m.keys() if "season" in k.lower()])
+        
         print("LEAGUE:", m.get("league"))
         print("COUNTRY:", m.get("country"))
         print("COMPETITION:", m.get("competition"))
