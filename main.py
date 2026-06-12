@@ -141,8 +141,10 @@ if data["success"] and len(data["data"]) > 0:
         market_odds = over25_odds
 
         if abs(home_xg - away_xg) > 1.5:
+            print("SCARTATA DIFFERENZA XG")
             continue
         if float(m.get("team_b_xg_prematch", 0)) < 0.50:
+            print("SCARTATA XG AWAY")
             continue    
         score = (
             int(m.get("o25_potential", 0))
