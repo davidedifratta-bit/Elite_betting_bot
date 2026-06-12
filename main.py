@@ -118,15 +118,19 @@ if data["success"] and len(data["data"]) > 0:
         if over25_odds > 1.90:
             continue
         if int(m.get("o25_potential", 0)) < 55:
+            print("STOP O25")
             continue
 
         if int(m.get("btts_potential", 0)) < 45:
+            print("STOP BTTS")
             continue
 
         if float(m.get("team_a_xg_prematch", 0)) < 1.2:
+            print("STOP HOME XG")
             continue
 
         if float(m.get("team_b_xg_prematch", 0)) < 1.0:
+            print("STOP AWAY XG")
             continue
 
         home_xg = float(m.get("team_a_xg_prematch", 0))
