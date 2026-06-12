@@ -172,15 +172,15 @@ if data["success"] and len(data["data"]) > 0:
             score
 )
     if score > best_score:
-    print("REAL SCORE:", score, "BEST:", best_score)
-    print(
-        "NEW BEST:",
-        m.get("home_name"),
-        "vs",
-        m.get("away_name"),
-        "SCORE:",
-        score
-)
+        print("REAL SCORE:", score, "BEST:", best_score)
+        print(
+            "NEW BEST:",
+            m.get("home_name"),
+            "vs",
+            m.get("away_name"),
+            "SCORE:",
+            score
+    )
     print("PARTITA ACCETTATA:", over25_odds)
     best_score = score
     best_match = m
