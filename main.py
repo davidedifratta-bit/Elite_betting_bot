@@ -147,7 +147,12 @@ if data["success"] and len(data["data"]) > 0:
         
         print("LEAGUE:", m.get("league"))
         print("COUNTRY:", m.get("country"))
+        
         print("COMPETITION:", m.get("competition"))
+        print("MATCH_URL:", m.get("match_url"))
+        print("HOME_ID:", m.get("homeID"))
+        print("AWAY_ID:", m.get("awayID"))
+        
         print("LEAGUE_NAME:", m.get("league_name"))
         print("COMPETITION_ID:", m.get("competition_id"))
         print("ROUND_ID:", m.get("roundID"))
