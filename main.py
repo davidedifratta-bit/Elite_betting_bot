@@ -149,6 +149,9 @@ if data["success"] and len(data["data"]) > 0:
         print("COUNTRY:", m.get("country"))
         print("COMPETITION:", m.get("competition"))
         print("LEAGUE_NAME:", m.get("league_name"))
+        print("COMPETITION_ID:", m.get("competition_id"))
+        print("ROUND_ID:", m.get("roundID"))
+        print("SEASON:", m.get("season"))
         
         print(
             "CHECK:",
