@@ -151,8 +151,8 @@ if data["success"] and len(data["data"]) > 0:
         if float(m.get("team_b_xg_prematch", 0)) < 0.50:
             print("STOP AWAY XG")
             continue
-            print("ARRIVATO ALLO SCORE")
-            score = (
+        print("ARRIVATO ALLO SCORE")
+        score = (
             int(m.get("o25_potential", 0))
             + int(m.get("btts_potential", 0))
             + int(float(m.get("team_a_xg_prematch", 0)) * 10)
@@ -171,7 +171,7 @@ if data["success"] and len(data["data"]) > 0:
             "SCORE:",
             score
 )
-if score > best_score:
+    if score > best_score:
     print("REAL SCORE:", score, "BEST:", best_score)
     print(
         "NEW BEST:",
@@ -182,8 +182,8 @@ if score > best_score:
         score
 )
     print("PARTITA ACCETTATA:", over25_odds)
-best_score = score
-best_match = m
+    best_score = score
+    best_match = m
 
 match = best_match
 
