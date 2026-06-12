@@ -368,6 +368,7 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
         country = match.get("match_url", "").split("/")[1].title()
         print("COUNTRY SIGNAL:", country)
+        print("******** DAILY SIGNAL CLICKED ********")
         
         await query.edit_message_text(
             f"🎯 DAILY SIGNAL\n\n"
