@@ -3,6 +3,7 @@ from telegram.ext import ApplicationBuilder, CommandHandler, CallbackQueryHandle
 import os
 import requests
 import json
+print("VERSIONE TEST 12345")
 from datetime import datetime
 TOKEN = os.getenv("BOT_TOKEN")
 
