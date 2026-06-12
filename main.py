@@ -138,7 +138,7 @@ if data["success"] and len(data["data"]) > 0:
         home_xg = float(m.get("team_a_xg_prematch", 0))
         away_xg = float(m.get("team_b_xg_prematch", 0))
 
-        print("MATCH DATA:", m)
+        print("KEYS:", list(m.keys()))
         
         print("LEAGUE:", m.get("league"))
         print("COUNTRY:", m.get("country"))
@@ -170,7 +170,7 @@ if data["success"] and len(data["data"]) > 0:
             + int(float(m.get("corners_potential", 0)))
 )
         print("SCORE CALCOLATO:", score)
-        if score < 150:
+        if score < 180:
             continue
     
         print(
