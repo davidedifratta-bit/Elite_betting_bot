@@ -149,6 +149,7 @@ if data["success"] and len(data["data"]) > 0:
         print("COUNTRY:", m.get("country"))
         
         print("COMPETITION:", m.get("competition"))
+        print("COMPETITION_ID TYPE:", type(m.get("competition_id")))
         print("MATCH_URL:", m.get("match_url"))
         print("FULL MATCH DATA:", m)
         
