@@ -400,6 +400,7 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
             16543: "USL League One",
         }.get(match.get("competition_id"), f"ID {match.get('competition_id')}")
         print("COMPETITION_ID SIGNAL:", match.get("competition_id"))
+        print("LEAGUE NAME SIGNAL:", league_name)
         print("TYPE:", type(match.get("competition_id")))
         
         await query.edit_message_text(
