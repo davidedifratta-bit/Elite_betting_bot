@@ -386,6 +386,10 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
         print("COUNTRY SIGNAL:", country)
         print("******** DAILY SIGNAL CLICKED ********")
         
+        league_name = {
+            17055: "MLS Next Pro",
+        }.get(match.get("competition_id"), f"ID {match.get('competition_id')}")
+        
         await query.edit_message_text(
             f"🎯 DAILY SIGNAL\n\n"
             f"{country_flag} {country}\n\n"
