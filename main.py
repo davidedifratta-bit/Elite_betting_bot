@@ -375,9 +375,16 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     if query.data == "signal":
         
+        from datetime import datetime
+        from zoneinfo import ZoneInfo
+
         match_time = datetime.fromtimestamp(
-            int(match.get("date_unix", 0))
+            int(match.get("date_unix", 0)),
+            tz=ZoneInfo("Europe/Rome")
         ).strftime("%d/%m %H:%M")
+
+        print("DATE_UNIX:", match.get("date_unix"))
+        print("MATCH TIME:", match_time)
 
         print("MATCH_URL SIGNAL:", match.get("match_url"))
 
