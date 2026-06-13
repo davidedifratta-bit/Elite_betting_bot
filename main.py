@@ -397,6 +397,7 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
         
         league_name = {
             17055: "MLS Next Pro",
+            16543: "USL League One",
         }.get(match.get("competition_id"), f"ID {match.get('competition_id')}")
         
         await query.edit_message_text(
