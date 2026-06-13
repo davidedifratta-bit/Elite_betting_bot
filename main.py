@@ -153,6 +153,15 @@ if data["success"] and len(data["data"]) > 0:
         print("COMPETITION_ID TYPE:", type(m.get("competition_id")))
         print("MATCH_URL:", m.get("match_url"))
         print("FULL MATCH DATA:", m)
+
+        print("LEAGUE_NAME:", m.get("league_name"))
+        print("COMPETITION_NAME:", m.get("competition_name"))
+        print("TOURNAMENT:", m.get("tournament"))
+
+        print([k for k in m.keys() if "name" in k.lower()])
+        print([k for k in m.keys() if "league" in k.lower()])
+        print([k for k in m.keys() if "competition" in k.lower()])
+        print([k for k in m.keys() if "tournament" in k.lower()])
         
         print([k for k in m.keys() if "comp" in k.lower()])
         print([k for k in m.keys() if "tour" in k.lower()])
