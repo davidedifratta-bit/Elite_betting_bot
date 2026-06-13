@@ -411,6 +411,13 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
         print("COMPETITION_ID SIGNAL:", match.get("competition_id"))
         print("LEAGUE NAME SIGNAL:", league_name)
         print("TYPE:", type(match.get("competition_id")))
+
+        if best_score >= 220:
+            rating = "🔥 PREMIUM"
+        elif best_score >= 200:
+            rating = "⭐ ELITE"
+        else:
+            rating = "✅ STANDARD"
         
         await query.edit_message_text(
             f"🎯 DAILY SIGNAL\n\n"
@@ -419,6 +426,7 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
             f"⚽ {match['home_name']} vs {match['away_name']}\n\n"
             f"🕒 Kick Off: {match_time}\n\n"
             f"📊 Smart Score: {best_score}\n"
+            f"🏅 Rating: {rating}\n"
             f"⚽ BTTS: {match.get('btts_potential')}\n"
             f"🔥 Over25: {match.get('o25_potential')}\n"
             f"🏠 Home xG: {match.get('team_a_xg_prematch')}\n"
