@@ -389,6 +389,7 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await query.edit_message_text(
             f"🎯 DAILY SIGNAL\n\n"
             f"{country_flag} {country}\n\n"
+            f"🏆 ID Campionato: {match.get('competition_id')}\n\n"
             f"⚽ {match['home_name']} vs {match['away_name']}\n\n"
             f"🕒 Kick Off: {match_time}\n\n"
             f"📊 Smart Score: {best_score}\n"
