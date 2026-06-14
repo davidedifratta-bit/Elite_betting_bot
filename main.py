@@ -195,6 +195,11 @@ if data["success"] and len(data["data"]) > 0:
             print("STOP AWAY XG")
             continue
         print("ARRIVATO ALLO SCORE")
+        print("O25=", m.get("o25_potential"))
+        print("BTTS=", m.get("btts_potential"))
+        print("HOME_XG=", m.get("team_a_xg_prematch"))
+        print("AWAY_XG=", m.get("team_b_xg_prematch"))
+        print("CORNERS=", m.get("corners_potential"))
         score = (
             int(m.get("o25_potential", 0))
             + int(m.get("btts_potential", 0))
