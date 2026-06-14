@@ -137,6 +137,7 @@ if data["success"] and len(data["data"]) > 0:
 
         home_xg = float(m.get("team_a_xg_prematch", 0))
         away_xg = float(m.get("team_b_xg_prematch", 0))
+        print("SUPERATO XG FILTER")
 
         print("KEYS:", list(m.keys()))
         
@@ -200,6 +201,7 @@ if data["success"] and len(data["data"]) > 0:
         print("HOME_XG=", m.get("team_a_xg_prematch"))
         print("AWAY_XG=", m.get("team_b_xg_prematch"))
         print("CORNERS=", m.get("corners_potential"))
+        print("PRIMA DELLO SCORE")
         score = (
             int(m.get("o25_potential", 0))
             + int(m.get("btts_potential", 0))
