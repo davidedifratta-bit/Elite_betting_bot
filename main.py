@@ -116,7 +116,7 @@ if data["success"] and len(data["data"]) > 0:
             print("STOP QUOTA BASSA")
             continue
 
-        if over25_odds > 1.90:
+        if over25_odds > 2.50:
             print("STOP QUOTA ALTA")
             continue
         if int(m.get("o25_potential", 0)) < 45:
