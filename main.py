@@ -203,7 +203,7 @@ if data["success"] and len(data["data"]) > 0:
             + int(float(m.get("corners_potential", 0)))
 )
         print("SCORE CALCOLATO:", score)
-        if score < 200:
+        if score < 180:
             continue
     
         print(
