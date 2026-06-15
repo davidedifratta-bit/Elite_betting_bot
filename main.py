@@ -89,6 +89,8 @@ if data["success"] and len(data["data"]) > 0:
     score = 0
 
     for m in data["data"]:
+        print("=== NUOVO CICLO ===")
+        print(m.get("home_name"), "vs", m.get("away_name"))
         print(m.get("home_name"), "vs", m.get("away_name"))
         print("BTTS:", m.get("btts_potential"),
               "O25:", m.get("o25_potential"),
@@ -241,6 +243,8 @@ if data["success"] and len(data["data"]) > 0:
             "SCORE:",
             score
 )
+        print("ARRIVATO AL CONFRONTO SCORE")
+        print(m.get("home_name"), "vs", m.get("away_name"))
     if score > best_score:
         print("REAL SCORE:", score, "BEST:", best_score)
         print(
