@@ -114,10 +114,12 @@ if data["success"] and len(data["data"]) > 0:
 
         if over25_odds < 1.70:
             print("STOP QUOTA BASSA")
+            print("MATCH:", m.get("home_name"), "vs", m.get("away_name"))
             continue
 
         if over25_odds > 2.50:
             print("STOP QUOTA ALTA")
+            print("MATCH:", m.get("home_name"), "vs", m.get("away_name"))
             continue
         if int(m.get("o25_potential", 0)) < 45:
             print("STOP O25")
@@ -245,6 +247,10 @@ if data["success"] and len(data["data"]) > 0:
             "SCORE:",
             score
     )
+    print("DEBUG ACCETTAZIONE")
+    print("HOME:", m.get("home_name"))
+    print("AWAY:", m.get("away_name"))
+    print("ODDS FINALI:", over25_odds)    
     print("PARTITA ACCETTATA:", over25_odds)
     best_score = score
     best_match = m
