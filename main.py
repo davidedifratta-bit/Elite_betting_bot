@@ -267,7 +267,7 @@ print("FINE CICLO")
 print("BEST_MATCH =", best_match)
 print("BEST_SCORE =", best_score)
 
-match = best_match
+match = copy.deepcopy(best_match)
 print("MATCH FINALE =", match)
 print("FINAL HOME =", match.get("home_name"))
 print("FINAL AWAY =", match.get("away_name"))
