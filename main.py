@@ -227,6 +227,9 @@ if data["success"] and len(data["data"]) > 0:
                 m.get("away_name")
     )
         if score < 180:
+            print("STOP SCORE", score)
+            continue    
+        if score < 180:
             continue
     
         print(
