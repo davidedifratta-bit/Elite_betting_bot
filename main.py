@@ -3,6 +3,7 @@ from telegram.ext import ApplicationBuilder, CommandHandler, CallbackQueryHandle
 import os
 import requests
 import json
+import copy
 print("VERSIONE TEST 12345")
 from datetime import datetime
 TOKEN = os.getenv("BOT_TOKEN")
@@ -256,7 +257,7 @@ if data["success"] and len(data["data"]) > 0:
     print("ODDS FINALI:", over25_odds)    
     print("PARTITA ACCETTATA:", over25_odds)
     best_score = score
-    best_match = m
+    best_match = copy.deepcopy(m)
     print("DEBUG BEST SCORE=", best_score)
     print("NUOVO BEST SALVATO:")
     print(best_match.get("home_name"), "vs", best_match.get("away_name"))
