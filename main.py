@@ -112,7 +112,7 @@ if data["success"] and len(data["data"]) > 0:
 )
         print("FILTRO QUOTA =", over25_odds)
 
-        if over25_odds < 1.70:
+        if over25_odds < 1.30:
             print("STOP QUOTA BASSA")
             continue
 
@@ -138,6 +138,8 @@ if data["success"] and len(data["data"]) > 0:
         home_xg = float(m.get("team_a_xg_prematch", 0))
         away_xg = float(m.get("team_b_xg_prematch", 0))
         print("SUPERATO XG FILTER")
+
+        print("FULL MATCH DATA:", m)
 
         print("KEYS:", list(m.keys()))
         
