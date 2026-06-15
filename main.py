@@ -261,8 +261,13 @@ if data["success"] and len(data["data"]) > 0:
     print("NUOVO BEST SALVATO:")
     print(best_match.get("home_name"), "vs", best_match.get("away_name"))
     print("BEST SCORE:", best_score)
+    
+print("FINE CICLO")
+print("BEST_MATCH =", best_match)
+print("BEST_SCORE =", best_score)
 
 match = best_match
+print("MATCH FINALE =", match)
 
 if match is None:
     print("NO MATCH FOUND")
