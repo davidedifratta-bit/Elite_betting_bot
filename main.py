@@ -268,6 +268,9 @@ print("BEST_SCORE =", best_score)
 
 match = best_match
 print("MATCH FINALE =", match)
+print("FINAL HOME =", match.get("home_name"))
+print("FINAL AWAY =", match.get("away_name"))
+print("FINAL SCORE =", best_score)
 
 if match is None:
     print("NO MATCH FOUND")
