@@ -112,7 +112,7 @@ if data["success"] and len(data["data"]) > 0:
 )
         print("FILTRO QUOTA =", over25_odds)
 
-        if over25_odds < 1.30:
+        if over25_odds < 1.70:
             print("STOP QUOTA BASSA")
             continue
 
@@ -213,6 +213,17 @@ if data["success"] and len(data["data"]) > 0:
 )
         print("SCORE CALCOLATO:", score)
         print("BEST SCORE ATTUALE:", best_score)
+
+        if score >= 220:
+            print(
+                "HIGH SCORE:",
+                score,
+                "ODDS:",
+                over25_odds,
+                m.get("home_name"),
+                "vs",
+                m.get("away_name")
+    )
         if score < 180:
             continue
     
