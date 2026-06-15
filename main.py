@@ -235,6 +235,7 @@ if data["success"] and len(data["data"]) > 0:
     print("PARTITA ACCETTATA:", over25_odds)
     best_score = score
     best_match = m
+    print("DEBUG BEST SCORE=", best_score)
     print("NUOVO BEST SALVATO:")
     print(best_match.get("home_name"), "vs", best_match.get("away_name"))
     print("BEST SCORE:", best_score)
