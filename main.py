@@ -256,17 +256,17 @@ if score > best_score:
         "SCORE:",
         score
     )
-    print("DEBUG ACCETTAZIONE")
-    print("HOME:", m.get("home_name"))
-    print("AWAY:", m.get("away_name"))
-    print("ODDS FINALI:", over25_odds)    
-    print("PARTITA ACCETTATA:", over25_odds)
-    best_score = score
-    best_match = copy.deepcopy(m)
-    print("DEBUG BEST SCORE=", best_score)
-    print("NUOVO BEST SALVATO:")
-    print(best_match.get("home_name"), "vs", best_match.get("away_name"))
-    print("BEST SCORE:", best_score)
+        print("DEBUG ACCETTAZIONE")
+        print("HOME:", m.get("home_name"))
+        print("AWAY:", m.get("away_name"))
+        print("ODDS FINALI:", over25_odds)    
+        print("PARTITA ACCETTATA:", over25_odds)
+        best_score = score
+        best_match = copy.deepcopy(m)
+        print("DEBUG BEST SCORE=", best_score)
+        print("NUOVO BEST SALVATO:")
+        print(best_match.get("home_name"), "vs", best_match.get("away_name"))
+        print("BEST SCORE:", best_score)
     
 print("FINE CICLO")
 print("BEST_MATCH =", best_match)
