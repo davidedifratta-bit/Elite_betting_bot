@@ -245,15 +245,15 @@ if data["success"] and len(data["data"]) > 0:
 )
         print("ARRIVATO AL CONFRONTO SCORE")
         print(m.get("home_name"), "vs", m.get("away_name"))
-    if score > best_score:
-        print("REAL SCORE:", score, "BEST:", best_score)
-        print(
-            "NEW BEST:",
-            m.get("home_name"),
-            "vs",
-            m.get("away_name"),
-            "SCORE:",
-            score
+if score > best_score:
+    print("REAL SCORE:", score, "BEST:", best_score)
+    print(
+        "NEW BEST:",
+        m.get("home_name"),
+        "vs",
+        m.get("away_name"),
+        "SCORE:",
+        score
     )
     print("DEBUG ACCETTAZIONE")
     print("HOME:", m.get("home_name"))
