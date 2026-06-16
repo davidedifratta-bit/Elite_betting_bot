@@ -216,7 +216,14 @@ if data["success"] and len(data["data"]) > 0:
             + int(float(m.get("team_b_xg_prematch", 0)) * 10)
             + int(float(m.get("corners_potential", 0)))
 )
-        print("SCORE CALCOLATO:", score)
+        print(
+            "SCORE CALCOLATO:",
+            m.get("home_name"),
+            "vs",
+            m.get("away_name"),
+            "=",
+            score
+)
         print("BEST SCORE ATTUALE:", best_score)
         print("VERSIONE TEST 777777")
 
@@ -243,11 +250,19 @@ if data["success"] and len(data["data"]) > 0:
             m.get("away_name"),
             "SCORE:",
             score
-)
+    )
         print("ARRIVATO AL CONFRONTO SCORE")
         print(m.get("home_name"), "vs", m.get("away_name"))
 if score > best_score:
-    print("REAL SCORE:", score, "BEST:", best_score)
+        print(
+            "REAL SCORE:",
+            m.get("home_name"),
+            "vs",
+            m.get("away_name"),
+            score,
+            "BEST:",
+            best_score
+    )
     print(
         "NEW BEST:",
         m.get("home_name"),
