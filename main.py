@@ -218,6 +218,7 @@ if data["success"] and len(data["data"]) > 0:
 )
         print("SCORE CALCOLATO:", score)
         print("BEST SCORE ATTUALE:", best_score)
+        print("VERSIONE TEST 777777")
 
         if score >= 220:
             print(
