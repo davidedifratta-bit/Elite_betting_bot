@@ -262,26 +262,19 @@ if score > best_score:
             score,
             "BEST:",
             best_score
-    )
-    print(
+        )
+        print(
         "NEW BEST:",
         m.get("home_name"),
         "vs",
         m.get("away_name"),
         "SCORE:",
         score
-    )
-    print("DEBUG ACCETTAZIONE")
-    print("HOME:", ...)
-    print("AWAY:", ...)
-    print("ODDS FINALI:", ...)
-    print("PARTITA ACCETTATA:", ...)
-    best_score = score
-    best_match = copy.deepcopy(m)
-    print("DEBUG BEST SCORE=", best_score)
-    print("NUOVO BEST SALVATO:")
-    print(...)
-    print("BEST SCORE:", best_score)
+        )
+    
+        best_score = score
+        best_match = copy.deepcopy(m)
+        
     
 print("FINE CICLO")
 print("BEST_MATCH =", best_match)
