@@ -477,7 +477,7 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
             f"🏠 Home xG: {match.get('team_a_xg_prematch')}\n"
             f"✈️ Away xG: {match.get('team_b_xg_prematch')}\n\n"
             f"📈 Confidence: {min(best_score, 99)}%\n"
-            f"🎯 Market: {'OVER 2.5' if int(match.get('o25_potential',0)) > int(match.get('btts_potential',0)) else 'BTTS YES'}"
+            f"🎯 Market: {'OVER 2.5' if int(match.get('o25_potential',0)) > int(match.get('btts_potential',0)) else 'BTTS YES'}\n"
             f"💸 Quota: {market_odds}\n"
     )
 
@@ -575,12 +575,12 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
             await query.edit_message_text(text)
   
+    elif query.data == "vip":
     await query.edit_message_text(
         f"VIP\n\n"
         f"Match: {match['home_name']} vs {match['away_name']}\n"
         f"Score: {best_score}\n"
         f"Confidence: {CONFIDENCE}\n"
-
     )
 
 load_stats()
