@@ -90,6 +90,7 @@ if data["success"] and len(data["data"]) > 0:
 
     for m in data["data"]:
         print("=== NUOVO CICLO ===")
+        print(list(m.keys()))
         print(m.get("home_name"), "vs", m.get("away_name"))
         print(m.get("home_name"), "vs", m.get("away_name"))
         print("BTTS:", m.get("btts_potential"),
