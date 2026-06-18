@@ -476,7 +476,7 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
             f"🔥 Over25: {match.get('o25_potential')}\n"
             f"🏠 Home xG: {match.get('team_a_xg_prematch')}\n"
             f"✈️ Away xG: {match.get('team_b_xg_prematch')}\n\n"
-            f"📈 Confidence: {min(best_score, 99)}%\n"
+            f"📈 Confidence: {CONFIDENCE}\n"
             f"🎯 Market: {'OVER 2.5' if int(match.get('o25_potential',0)) > int(match.get('btts_potential',0)) else 'BTTS YES'}\n"
             f"💸 Quota: {market_odds}\n"
     )
