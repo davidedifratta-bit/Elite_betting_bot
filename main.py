@@ -240,8 +240,7 @@ if data["success"] and len(data["data"]) > 0:
         if score < 160:
             print("STOP SCORE", score)
             continue    
-        if score < 180:
-            continue
+            
     
         print(
             "PASSED:",
