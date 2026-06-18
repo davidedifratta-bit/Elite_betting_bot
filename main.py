@@ -120,7 +120,7 @@ if data["success"] and len(data["data"]) > 0:
             print("MATCH:", m.get("home_name"), "vs", m.get("away_name"))
             continue
 
-        if over25_odds > 2.50:
+        if over25_odds > 1.90:
             print("STOP QUOTA ALTA")
             print("MATCH:", m.get("home_name"), "vs", m.get("away_name"))
             continue
@@ -237,7 +237,7 @@ if data["success"] and len(data["data"]) > 0:
                 "vs",
                 m.get("away_name")
     )
-        if score < 180:
+        if score < 160:
             print("STOP SCORE", score)
             continue    
         if score < 180:
