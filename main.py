@@ -278,6 +278,9 @@ if data["success"] and len(data["data"]) > 0:
     
 print("FINE CICLO")
 print("BEST_MATCH =", best_match)
+print("ODDS O25 =", BEST_MATCH.get("odds_ft_over25"))
+print("ODDS BTTS =", BEST_MATCH.get("odds_btts_yes"))
+print("KEYS =", BEST_MATCH.keys())
 print("BEST_SCORE =", best_score)
 
 if best_match is None:
