@@ -253,8 +253,8 @@ if data["success"] and len(data["data"]) > 0:
     )
         print("ARRIVATO AL CONFRONTO SCORE")
         print(m.get("home_name"), "vs", m.get("away_name"))
-if score > best_score:
-        print(
+        if score > best_score:
+                print(
             "REAL SCORE:",
             m.get("home_name"),
             "vs",
