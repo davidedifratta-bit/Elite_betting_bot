@@ -280,18 +280,23 @@ print("FINE CICLO")
 print("BEST_MATCH =", best_match)
 print("BEST_SCORE =", best_score)
 
-match = copy.deepcopy(best_match)
+if best_match is None:
+    print("NO MATCH FOUND")
+
+    match = {
+        "home_name": "No Value",
+        "away_name": "Today"
+    }
+
+else:
+    match = copy.deepcopy(best_match)
+
 print("MATCH FINALE =", match)
 print("FINAL HOME =", match.get("home_name"))
 print("FINAL AWAY =", match.get("away_name"))
 print("FINAL SCORE =", best_score)
 
-if match is None:
-    print("NO MATCH FOUND")
-    match = {
-        "home_name": "Nessuna partita",
-        "away_name": "trovata"
-        }
+
 if best_score < 100:
     print("NO VALUE TODAY")
 
