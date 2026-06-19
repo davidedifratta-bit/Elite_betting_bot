@@ -290,25 +290,40 @@ if best_match is None:
         "away_name": "Today"
     }
 
+    market_odds = 0
+
 else:
     match = copy.deepcopy(best_match)
+
+    print("BEST MATCH QUOTE:")
+    print("O25 =", match.get("odds_ft_over25"))
+    print("BTTS =", match.get("odds_btts_yes"))
+
+    if int(match.get("btts_potential", 0)) >= int(match.get("o25_potential", 0)):
+        market_odds = float(match.get("odds_btts_yes", 0) or 0)
+    else:
+        market_odds = float(match.get("odds_ft_over25", 0) or 0)
 
 print("MATCH FINALE =", match)
 print("FINAL HOME =", match.get("home_name"))
 print("FINAL AWAY =", match.get("away_name"))
 print("FINAL SCORE =", best_score)
+print("FINAL ODDS =", market_odds)
 
 
 if best_score < 100:
     print("NO VALUE TODAY")
+    
+print("ARRIVATO ALLA FINE")
+print("####################")    
 
     
     
-    print("ARRIVATO ALLA FINE")
-    print("####################")
-    print("FINAL PICK")
-    print(match.get("home_name"), "vs", match.get("away_name"))
-    print("FINAL SCORE:", best_score)    
+print("ARRIVATO ALLA FINE")
+print("####################")
+print("FINAL PICK")
+print(match.get("home_name"), "vs", match.get("away_name"))
+print("FINAL SCORE:", best_score)    
     if best_score >= 240:
         STAKE = "10/10"
     elif best_score >= 220:
