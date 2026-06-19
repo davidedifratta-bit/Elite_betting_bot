@@ -121,7 +121,7 @@ if data["success"] and len(data["data"]) > 0:
             print("MATCH:", m.get("home_name"), "vs", m.get("away_name"))
             continue
 
-        if over25_odds > 2.00:
+        if over25_odds > 2.70:
             print("STOP QUOTA ALTA")
             print("MATCH:", m.get("home_name"), "vs", m.get("away_name"))
             continue
@@ -254,26 +254,26 @@ if data["success"] and len(data["data"]) > 0:
         print("ARRIVATO AL CONFRONTO SCORE")
         print(m.get("home_name"), "vs", m.get("away_name"))
         if score > best_score:
-                print(
-            "REAL SCORE:",
-            m.get("home_name"),
-            "vs",
-            m.get("away_name"),
-            score,
-            "BEST:",
-            best_score
-        )
-        print(
-        "NEW BEST:",
-        m.get("home_name"),
-        "vs",
-        m.get("away_name"),
-        "SCORE:",
-        score
-        )
+            print(
+                "REAL SCORE:",
+                m.get("home_name"),
+                "vs",
+                m.get("away_name"),
+                score,
+                "BEST:",
+                best_score
+            )
+            print(
+                "NEW BEST:",
+                m.get("home_name"),
+                "vs",
+                m.get("away_name"),
+                "SCORE:",
+                score
+            )
     
-        best_score = score
-        best_match = copy.deepcopy(m)
+            best_score = score
+            best_match = copy.deepcopy(m)
         
     
 print("FINE CICLO")
