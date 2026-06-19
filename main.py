@@ -285,16 +285,9 @@ if best_match is not None:
 
 if best_match is None:
     print("NO MATCH FOUND")
+    return
 
-    match = {
-        "home_name": "No Value",
-        "away_name": "Today"
-    }
-
-    market_odds = 0
-
-else:
-    match = copy.deepcopy(best_match)
+match = copy.deepcopy(best_match)
 
     print("BEST MATCH QUOTE:")
     print("O25 =", match.get("odds_ft_over25"))
