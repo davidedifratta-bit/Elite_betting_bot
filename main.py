@@ -293,10 +293,10 @@ print("BEST MATCH QUOTE:")
 print("O25 =", match.get("odds_ft_over25"))
 print("BTTS =", match.get("odds_btts_yes"))
 
-    if int(match.get("btts_potential", 0)) >= int(match.get("o25_potential", 0)):
-        market_odds = float(match.get("odds_btts_yes", 0) or 0)
-    else:
-        market_odds = float(match.get("odds_ft_over25", 0) or 0)
+if int(match.get("btts_potential", 0)) >= int(match.get("o25_potential", 0)):
+    market_odds = float(match.get("odds_btts_yes", 0) or 0)
+else:
+    market_odds = float(match.get("odds_ft_over25", 0) or 0)
 
 print("MATCH FINALE =", match)
 print("FINAL HOME =", match.get("home_name"))
