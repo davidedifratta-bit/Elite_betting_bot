@@ -116,12 +116,12 @@ if data["success"] and len(data["data"]) > 0:
 )
         print("FILTRO QUOTA =", over25_odds)
 
-        if over25_odds < 1.40:
+        if over25_odds < 1.70:
             print("STOP QUOTA BASSA")
             print("MATCH:", m.get("home_name"), "vs", m.get("away_name"))
             continue
 
-        if over25_odds > 1.70:
+        if over25_odds > 2.00:
             print("STOP QUOTA ALTA")
             print("MATCH:", m.get("home_name"), "vs", m.get("away_name"))
             continue
