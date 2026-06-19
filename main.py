@@ -278,9 +278,10 @@ if data["success"] and len(data["data"]) > 0:
     
 print("FINE CICLO")
 print("best_match =", best_match)
-print("ODDS O25 =", best_match.get("odds_ft_over25"))
-print("ODDS BTTS =", best_match.get("odds_btts_yes"))
-print("BEST_SCORE =", best_score)
+if best_match is not None:
+    print("ODDS O25 =", best_match.get("odds_ft_over25"))
+    print("ODDS BTTS =", best_match.get("odds_btts_yes"))
+    print("BEST_SCORE =", best_score)
 
 if best_match is None:
     print("NO MATCH FOUND")
