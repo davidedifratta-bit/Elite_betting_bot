@@ -324,32 +324,32 @@ print("####################")
 print("FINAL PICK")
 print(match.get("home_name"), "vs", match.get("away_name"))
 print("FINAL SCORE:", best_score)    
-    if best_score >= 240:
-        STAKE = "10/10"
-    elif best_score >= 220:
-        STAKE = "9/10"
-    elif best_score >= 200:
-        STAKE = "8/10"
-    elif best_score >= 180:
-        STAKE = "7/10"
-    else:
-        STAKE = "6/10"
+if best_score >= 240:
+    STAKE = "10/10"
+elif best_score >= 220:
+    STAKE = "9/10"
+elif best_score >= 200:
+    STAKE = "8/10"
+elif best_score >= 180:
+    STAKE = "7/10"
+else:
+    STAKE = "6/10"
         
-    print("BEST SCORE:", best_score)
-    print("BEST MATCH:", match["home_name"], "vs", match["away_name"])
+print("BEST SCORE:", best_score)
+print("BEST MATCH:", match["home_name"], "vs", match["away_name"])
 
-    print("HOME PPG:", match.get("home_ppg"))
-    print("AWAY PPG:", match.get("away_ppg"))
-    print("O35:", match.get("o35_potential"))
-    print("O45:", match.get("o45_potential"))
-    print("CORNERS:", match.get("corners_potential"))
+print("HOME PPG:", match.get("home_ppg"))
+print("AWAY PPG:", match.get("away_ppg"))
+print("O35:", match.get("o35_potential"))
+print("O45:", match.get("o45_potential"))
+print("CORNERS:", match.get("corners_potential"))
 
-    print("HOME:", match["home_name"])
-    print("AWAY:", match["away_name"])
-    print("BTTS:", match.get("btts_potential"))
-    print("OVER 25:", match.get("o25_potential"))
-    print("HOME GOALS:", match.get("team_a_xg_prematch"))
-    print("AWAY GOALS:", match.get("team_b_xg_prematch"))
+print("HOME:", match["home_name"])
+print("AWAY:", match["away_name"])
+print("BTTS:", match.get("btts_potential"))
+print("OVER 25:", match.get("o25_potential"))
+print("HOME GOALS:", match.get("team_a_xg_prematch"))
+print("AWAY GOALS:", match.get("team_b_xg_prematch"))
     if (
     int(match.get("o25_potential", 0)) >= 75
     and float(match.get("team_a_xg_prematch", 0)) >= 1.5
