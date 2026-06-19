@@ -238,7 +238,7 @@ if data["success"] and len(data["data"]) > 0:
                 "vs",
                 m.get("away_name")
     )
-        if score < 160:
+        if score < 140:
             print("STOP SCORE", score)
             continue    
             
