@@ -289,9 +289,9 @@ if best_match is None:
 
 match = copy.deepcopy(best_match)
 
-    print("BEST MATCH QUOTE:")
-    print("O25 =", match.get("odds_ft_over25"))
-    print("BTTS =", match.get("odds_btts_yes"))
+print("BEST MATCH QUOTE:")
+print("O25 =", match.get("odds_ft_over25"))
+print("BTTS =", match.get("odds_btts_yes"))
 
     if int(match.get("btts_potential", 0)) >= int(match.get("o25_potential", 0)):
         market_odds = float(match.get("odds_btts_yes", 0) or 0)
