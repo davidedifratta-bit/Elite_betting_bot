@@ -285,7 +285,12 @@ if best_match is not None:
 
 if best_match is None:
     print("NO MATCH FOUND")
-    return
+    best_match = {
+        "home_name": "NO MATCH",
+        "away_name": "",
+        "odds_ft_over25": 0,
+        "odds_btts_yes": 0
+    }
 
 match = copy.deepcopy(best_match)
 
