@@ -129,7 +129,7 @@ if data["success"] and len(data["data"]) > 0:
             print("STOP O25")
             continue
 
-        if int(m.get("btts_potential", 0)) < 45:
+        if int(m.get("btts_potential", 0)) < 55:
             print("STOP BTTS")
             continue
 
