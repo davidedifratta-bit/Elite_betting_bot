@@ -89,6 +89,8 @@ if data["success"] and len(data["data"]) > 0:
     score = 0
 
     for m in data["data"]:
+        print("LEGA:", m.get("competition_name"))
+        print("ID:", m.get("competition_id"))
         print("=== NUOVO CICLO ===")
         print(list(m.keys()))
         print(m.get("home_name"), "vs", m.get("away_name"))
