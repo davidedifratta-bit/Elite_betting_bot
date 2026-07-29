@@ -476,12 +476,7 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
         print("COUNTRY SIGNAL:", country)
         print("******** DAILY SIGNAL CLICKED ********")
         
-        league_name = {
-            17055: "MLS Next Pro",
-            16543: "USL League One",
-            16625: "NPL New South Wales",
-            16947: "Brazil Serie C",
-        }.get(match.get("competition_id"), f"ID {match.get('competition_id')}")
+        league_name = match.get("competition_name", "Unknown League")
         print("COMPETITION_ID SIGNAL:", match.get("competition_id"))
         print("LEAGUE NAME SIGNAL:", league_name)
         print("TYPE:", type(match.get("competition_id")))
