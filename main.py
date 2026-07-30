@@ -89,7 +89,7 @@ if data["success"] and len(data["data"]) > 0:
     score = 0
 
     for m in data["data"]:
-        print(m.get("competition_id"), m.get("match_url"))
+        print("TEST123", m.get("competition_id"), m.get("match_url"))
         print("=== NUOVO CICLO ===")
         print("ID:", m.get("competition_id"))
         print("LEGA:", m.get("competition_name"))
