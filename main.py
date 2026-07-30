@@ -89,6 +89,12 @@ if data["success"] and len(data["data"]) > 0:
     score = 0
 
     for m in data["data"]:
+        ALLOWED_COMPETITIONS = {
+            16675,
+        }
+
+    if m.get("competition_id") not in ALLOWED_COMPETITIONS:
+        continue
         print("TEST123", m.get("competition_id"), m.get("match_url"))
         print("=== NUOVO CICLO ===")
         print("ID:", m.get("competition_id"))
