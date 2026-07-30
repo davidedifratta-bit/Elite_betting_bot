@@ -293,9 +293,9 @@ if best_match is not None:
     print("BEST_SCORE =", best_score)
 
 if best_match is None:
-    print("NO MATCH FOUND")
+    print("NO VALUE TODAY")
     best_match = {
-        "home_name": "NO MATCH",
+        "home_name": "Nessun match trovato",
         "away_name": "",
         "odds_ft_over25": 0,
         "odds_btts_yes": 0
