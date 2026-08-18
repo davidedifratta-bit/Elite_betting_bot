@@ -473,7 +473,13 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
         print("MATCH_URL SIGNAL:", match.get("match_url"))
 
-        country = match.get("match_url", "").split("/")[1].title()
+        match_url = match.get("match_url")
+
+        if not match_url:
+        print("STOP MATCH URL: None")
+        continue
+
+        country = match_url.strip("/").split("/")[0].title()
         
         country_flag = {
             "Finland": "🇫🇮",
