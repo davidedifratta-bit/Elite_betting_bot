@@ -476,8 +476,8 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
         match_url = match.get("match_url")
 
         if not match_url:
-        print("STOP MATCH URL: None")
-        continue
+            print("STOP MATCH URL: None")
+            continue
 
         country = match_url.strip("/").split("/")[0].title()
         
