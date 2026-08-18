@@ -294,12 +294,11 @@ if best_match is not None:
 
 if best_match is None:
     print("NO VALUE TODAY")
-    best_match = {
-        "home_name": "Nessun match trovato",
-        "away_name": "",
-        "odds_ft_over25": 0,
-        "odds_btts_yes": 0
-    }
+    await query.edit_message_text(
+        "❌ NESSUN MATCH VALIDO TROVATO\n\n"
+        "Il bot non ha trovato nessun match che rispetti i filtri."
+    )
+    return
 
 match = copy.deepcopy(best_match)
 
@@ -311,7 +310,6 @@ if int(match.get("btts_potential", 0)) >= int(match.get("o25_potential", 0)):
     market_odds = float(match.get("odds_btts_yes", 0) or 0)
 else:
     market_odds = float(match.get("odds_ft_over25", 0) or 0)
-
 print("MATCH FINALE =", match)
 print("FINAL HOME =", match.get("home_name"))
 print("FINAL AWAY =", match.get("away_name"))
