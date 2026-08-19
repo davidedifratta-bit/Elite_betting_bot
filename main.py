@@ -292,13 +292,7 @@ if best_match is not None:
     print("ODDS BTTS =", best_match.get("odds_btts_yes"))
     print("BEST_SCORE =", best_score)
 
-if best_match is None:
-    print("NO VALUE TODAY")
-    await query.edit_message_text(
-        "❌ NESSUN MATCH VALIDO TROVATO\n\n"
-        "Il bot non ha trovato nessun match che rispetti i filtri."
-    )
-    return
+
 
 match = copy.deepcopy(best_match)
 
