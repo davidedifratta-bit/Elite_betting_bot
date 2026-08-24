@@ -487,7 +487,9 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
         print("COMPETITION_ID SIGNAL:", match.get("competition_id"))
         print("LEAGUE NAME SIGNAL:", league_name)
         print("TYPE:", type(match.get("competition_id")))
-        
+        if best_score < 220:
+            await query.edit_message_text("❌ NO VALUE TODAY")
+            return
         await query.edit_message_text(
             f"🎯 DAILY SIGNAL\n\n"
             f"{country_flag} {country}\n\n"
