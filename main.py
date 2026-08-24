@@ -315,9 +315,9 @@ print("FINAL SCORE =", best_score)
 print("FINAL ODDS =", market_odds)
 
 
-if best_score < 100:
+if best_score < 220:
     print("NO VALUE TODAY")
-    
+    continue
 print("ARRIVATO ALLA FINE")
 print("####################")    
 
