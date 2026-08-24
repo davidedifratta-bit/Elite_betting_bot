@@ -317,27 +317,22 @@ print("FINAL ODDS =", market_odds)
 
 if best_score < 220:
     print("NO VALUE TODAY")
-    continue
-print("ARRIVATO ALLA FINE")
-print("####################")    
-
-    
-    
-print("ARRIVATO ALLA FINE")
-print("####################")
-print("FINAL PICK")
-print(match.get("home_name"), "vs", match.get("away_name"))
-print("FINAL SCORE:", best_score)    
-if best_score >= 240:
-    STAKE = "10/10"
-elif best_score >= 220:
-    STAKE = "9/10"
-elif best_score >= 200:
-    STAKE = "8/10"
-elif best_score >= 180:
-    STAKE = "7/10"
-else:
-    STAKE = "6/10"
+else:    
+    print("ARRIVATO ALLA FINE")
+    print("####################")
+    print("FINAL PICK")
+    print(match.get("home_name"), "vs", match.get("away_name"))
+    print("FINAL SCORE:", best_score)    
+    if best_score >= 240:
+        STAKE = "10/10"
+    elif best_score >= 220:
+        STAKE = "9/10"
+    elif best_score >= 200:
+        STAKE = "8/10"
+    elif best_score >= 180:
+        STAKE = "7/10"
+    else:
+        STAKE = "6/10"
         
 print("BEST SCORE:", best_score)
 print("BEST MATCH:", match["home_name"], "vs", match["away_name"])
