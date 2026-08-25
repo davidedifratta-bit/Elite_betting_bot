@@ -222,10 +222,10 @@ if data["success"] and len(data["data"]) > 0:
         score = (
             int(m.get("o25_potential", 0))
             + int(m.get("btts_potential", 0))
-            + int(float(m.get("team_a_xg_prematch", 0)) * 10)
-            + int(float(m.get("team_b_xg_prematch", 0)) * 10)
-            + int(float(m.get("corners_potential", 0)))
-)
+            + int(float(m.get("team_a_xg_prematch", 0)) * 25)
+            + int(float(m.get("team_b_xg_prematch", 0)) * 25)
+            + int(m.get("corners_potential", 0))
+        )
         print(
             "SCORE CALCOLATO:",
             m.get("home_name"),
