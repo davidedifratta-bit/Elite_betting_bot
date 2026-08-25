@@ -297,7 +297,10 @@ if best_match is not None:
 
 if best_match is None:
     print("NESSUN MATCH SELEZIONATO")
-    continue
+    best_match = {
+        "home_name": "",
+        "away_name": ""
+    }
 match = copy.deepcopy(best_match)
 
 print("BEST MATCH QUOTE:")
