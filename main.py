@@ -450,8 +450,6 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if query.data == "signal":
         response = requests.get(url)
         data = response.json()
-        print("DATA TYPE:", type(data))
-        print("DATA:", data)
         from datetime import datetime
         from zoneinfo import ZoneInfo
 
