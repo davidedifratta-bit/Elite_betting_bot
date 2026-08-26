@@ -455,6 +455,54 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
         data = response.json()
         print("MATCHES AGGIORNATI:", len(data.get("data", [])))
         print("🔄 RICALCOLO DAILY SIGNAL")
+                best_match = None
+        best_score = 0
+
+        for m in data.get("data", []):
+
+            over25_odds = float(m.get("odds_ft_over25", 0) or 0)
+
+            if over25_odds < 1.70 or over25_odds > 1.90:
+                continue
+
+            o25 = int(m.get("o25_potential", 0) or 0)
+            btts = int(m.get("btts_potential", 0) or 0)
+            home_xg = float(m.get("team_a_xg_prematch", 0) or 0)
+            away_xg = float(m.get("team_b_xg_prematch", 0) or 0)
+            corners = int(m.get("corners_potential", 0) or 0)
+
+            if o25 < 40:
+                continue
+
+            if btts < 55:
+                continue
+
+            if home_xg < 1.20:
+                continue
+
+            if away_xg < 1.00:
+                continue
+
+            if abs(home_xg - away_xg) > 1.70:
+                continue
+
+            score = (
+                o25
+                + btts
+                + int(home_xg * 25)
+                + int(away_xg * 25)
+                + corners
+            )
+
+            if score < 220:
+                continue
+
+            if score > best_score:
+                best_score = score
+                best_match = copy.deepcopy(m)
+
+        print("RICALCOLO BEST MATCH:", best_match)
+        print("RICALCOLO BEST SCORE:", best_score)
         from datetime import datetime
         from zoneinfo import ZoneInfo
 
