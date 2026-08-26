@@ -454,8 +454,6 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
         response = requests.get(url, timeout=30)
         data = response.json()
         print("MATCHES AGGIORNATI:", len(data.get("data", [])))
-        best_match = None
-        best_score = 0
         print("🔄 RICALCOLO DAILY SIGNAL")
         from datetime import datetime
         from zoneinfo import ZoneInfo
