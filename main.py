@@ -455,7 +455,7 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
         data = response.json()
         print("MATCHES AGGIORNATI:", len(data.get("data", [])))
         print("🔄 RICALCOLO DAILY SIGNAL")
-                best_match = None
+        best_match = None
         best_score = 0
 
         for m in data.get("data", []):
