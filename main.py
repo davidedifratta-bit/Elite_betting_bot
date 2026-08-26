@@ -453,6 +453,7 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if query.data == "signal":
         response = requests.get(url, timeout=30)
         data = response.json()
+        print("MATCHES AGGIORNATI:", len(data.get("data", [])))
         from datetime import datetime
         from zoneinfo import ZoneInfo
 
