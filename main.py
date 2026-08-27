@@ -477,20 +477,6 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
               "| HXG", home_xg,
               "| AXG", away_xg,
               "| SCORE", o25 + btts + int(home_xg * 25) + int(away_xg * 25) + corners)
-            if o25 < 30:
-                continue
-
-            if btts < 55:
-                continue
-
-            if home_xg < 1.20:
-                continue
-
-            if away_xg < 1.00:
-                continue
-
-            if abs(home_xg - away_xg) > 1.70:
-                continue
 
             score = (
                 o25
