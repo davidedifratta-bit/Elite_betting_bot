@@ -484,8 +484,8 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
             + int(away_xg * 25)
             + corners
         )
-            if score < 180:
-                continue
+        if score < 180:
+            continue
 
             if score > best_score:
                 best_score = score
