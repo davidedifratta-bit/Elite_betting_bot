@@ -457,7 +457,6 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
         print("🔄 RICALCOLO DAILY SIGNAL")
         best_match = None
         best_score = 0
-
         for m in data.get("data", []):
 
             over25_odds = float(m.get("odds_ft_over25", 0) or 0)
@@ -470,20 +469,23 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
             home_xg = float(m.get("team_a_xg_prematch", 0) or 0)
             away_xg = float(m.get("team_b_xg_prematch", 0) or 0)
             corners = int(m.get("corners_potential", 0) or 0)
-        print("DATI:", m.get("home_name"), "vs", m.get("away_name"),
-              "| QUOTA", over25_odds,
-              "| O25", o25,
-              "| BTTS", btts,
-              "| HXG", home_xg,
-              "| AXG", away_xg,
-              "| SCORE", o25 + btts + int(home_xg * 25) + int(away_xg * 25) + corners)
-        score = (
-            o25
-            + btts
-            + int(home_xg * 25)
-            + int(away_xg * 25)
-            + corners
-        )
+
+            print("DATI:", m.get("home_name"), "vs", m.get("away_name"),
+                  "| QUOTA", over25_odds,
+                  "| O25", o25,
+                  "| BTTS", btts,
+                  "| HXG", home_xg,
+                  "| AXG", away_xg,
+                  "| SCORE", o25 + btts + int(home_xg * 25) + int(away_xg * 25) + corners)
+
+            score = (
+                o25
+                + btts
+                + int(home_xg * 25)
+                + int(away_xg * 25)
+                + corners
+            )
+
             if score < 180:
                 continue
 
