@@ -476,7 +476,8 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
               "| BTTS", btts,
               "| HXG", home_xg,
               "| AXG", away_xg,
-              "| SCORE", o25 + btts + int(home_xg * 25) + int(away_xg * 25) + 
+              "| SCORE", o25 + btts + int(home_xg * 25) + int(away_xg * 25) +
+        )
         score = (
             o25
             + btts
